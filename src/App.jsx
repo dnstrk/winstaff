@@ -6,7 +6,7 @@ import TownOverlay from "./components/TownOverlay/TownOverlay";
 function App() {
   const [currentTown, setCurrentTown] = useState("Москва");
   const [townSearchValue, setTownSearchValue] = useState("");
-  const [townOverlay, setTownOverlay] = useState(true);
+  const [townOverlay, setTownOverlay] = useState(false);
 
   const towns = [
     "Абакан",

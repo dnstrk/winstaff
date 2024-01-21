@@ -76,6 +76,7 @@
 
             .town__btn {
                 cursor: pointer;
+                user-select: none;
 
                 padding: 10px 15px;
                 border-radius: 50px;
@@ -98,6 +99,7 @@
 
         .header__orderBtn {
             cursor: pointer;
+            user-select: none;
             color: var(--white);
             padding: 10px 30px;
             border-radius: 50px;

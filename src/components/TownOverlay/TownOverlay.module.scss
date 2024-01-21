@@ -56,6 +56,7 @@
 
                 .town__selectHead__btnImg {
                     cursor: pointer;
+                    user-select: none;
                 }
             }
         }
@@ -114,10 +115,15 @@
             margin-top: 80px;
             display: flex;
             flex-direction: column;
-            gap: 6px;
+            gap: 10px;
 
             .town__selectTown {
                 cursor: pointer;
+
+                transition: .2s;
+                &:hover {
+                    color: var(--green);
+                }
             }
 
         }

@@ -1,0 +1,131 @@
+.overlay {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(176, 170, 208, 0.30);
+    backdrop-filter: blur(5px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: .3s;
+
+    .town__select {
+        display: flex;
+        flex-direction: column;
+
+        width: 520px;
+        height: 625px;
+        padding: 20px 30px;
+
+        border-radius: 6px;
+        background: #FFF;
+
+        font-family: 'Montserrat', sans-serif;
+
+        .town__selectHead {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            .town__selectHead__text {
+                color: var(--black);
+                font-size: 18px;
+                font-weight: 600;
+            }
+
+            .town__selectHead__currentTown {
+                color: var(--green);
+                font-size: 16px;
+                font-weight: 700;
+                padding: 10px 30px;
+                border-radius: 50px;
+                background: var(--light-gray);
+
+                margin-right: auto;
+                margin-left: 6px;
+            }
+
+            .town__selectHead__btn {
+
+                .town__selectHead__btnImg {
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .town__selectSearch {
+            margin-top: 40px;
+
+            position: relative;
+
+            .town__selectSearch__input {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 70%;
+
+                padding: 12px 60px 12px 15px;
+
+                color: var(--dark-gray);
+
+                font-size: 16px;
+                font-weight: 500;
+
+                border-radius: 50px;
+                background: var(--light-gray);
+            }
+
+            .town__selectSearch__btn {
+                cursor: pointer;
+                position: absolute;
+                right: 0;
+                top: 0;
+
+                padding: 12px 40px;
+
+                color: var(--white);
+
+                font-size: 16px;
+                font-weight: 700;
+
+                border-radius: 50px;
+                background-color: var(--orange);
+
+                transition: .1s;
+                &:hover {
+                    background-color: var(--green);
+                    transform: scale(101%);
+                }
+                &:active {
+                    transform: scale(98%);
+                }
+            }
+
+        }
+
+        .town__selectTowns {
+            margin-top: 80px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+
+            .town__selectTown {
+                cursor: pointer;
+            }
+
+        }
+
+    }
+}
+
+.overlay__visible {
+    visibility: visible;
+    opacity: 1;
+}

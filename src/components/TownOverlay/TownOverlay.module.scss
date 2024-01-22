@@ -1,7 +1,7 @@
 .overlay {
     opacity: 0;
     visibility: hidden;
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     width: 100%;
@@ -14,6 +14,8 @@
     align-items: center;
 
     transition: .3s;
+
+    z-index: 100;
 
     .town__select {
         display: flex;
@@ -33,6 +35,8 @@
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
+
+            user-select: none;
 
             .town__selectHead__text {
                 color: var(--black);
@@ -69,10 +73,10 @@
             .town__selectSearch__input {
                 position: absolute;
                 left: 0;
-                top: 0;
+                top: -1px;
                 width: 70%;
 
-                padding: 12px 60px 12px 15px;
+                padding: 12px 140px 12px 15px;
 
                 color: var(--dark-gray);
 
@@ -81,6 +85,17 @@
 
                 border-radius: 50px;
                 background: var(--light-gray);
+                border: 1px solid #fff;
+
+                transition: .2s;
+
+                &:hover {
+                    border: .5px solid #D0CDE1;
+                }
+
+                &:focus {
+                    border: .5px solid #D0CDE1;
+                }
             }
 
             .town__selectSearch__btn {
@@ -100,10 +115,12 @@
                 background-color: var(--orange);
 
                 transition: .1s;
+
                 &:hover {
                     background-color: var(--green);
                     transform: scale(101%);
                 }
+
                 &:active {
                     transform: scale(98%);
                 }
@@ -121,6 +138,7 @@
                 cursor: pointer;
 
                 transition: .2s;
+
                 &:hover {
                     color: var(--green);
                 }

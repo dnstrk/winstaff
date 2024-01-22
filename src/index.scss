@@ -4,6 +4,7 @@
     --black: #222;
     --white: #f6fafd;
     --green: #1dbf73;
+    --dark-green: #0E9347;
     --light-gray: #f2f0fe;
     --dark-gray: #656084;
     --orange: #fba457;
@@ -43,4 +44,14 @@ a {
 button,
 input {
     all: unset;
+}
+
+::-webkit-scrollbar {
+
+    width: 14px;
+    background-color: #838383;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #5a5a5a;
 }

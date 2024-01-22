@@ -4,6 +4,10 @@
     padding: 0;
 }
 
+.disable {
+    overflow: hidden;
+}
+
 .section__banner {
     // margin-top: 60px;
     padding-top: 120px;
@@ -20,15 +24,84 @@
         .banner__info {
             display: flex;
             flex-direction: column;
+            width: 640px;
 
             .banner__infoTitle {
                 color: var(--black);
                 font-size: 36px;
                 font-weight: 700;
+
                 .banner__infoTitle_marked {
                     color: var(--green);
                 }
             }
+
+            .banner__infoText {
+                margin-top: 30px;
+
+            }
+
+            .banner__actionInp {
+                margin-top: 26px;
+                display: flex;
+                flex-direction: row;
+                gap: 30px;
+                align-items: center;
+
+
+                color: var(--dark-gray);
+                font-size: 16px;
+                font-weight: 500;
+
+
+                .banner__actionInp__num {
+                    width: 300px;
+                    border-radius: 50px;
+                    background: var(--light-gray);
+                    padding: 15px 20px;
+
+                    transition: .2s;
+                    border: 1px solid #fff;
+
+                    &:hover {
+                        border: .5px solid #D0CDE1;
+                    }
+
+                    &:focus {
+                        border: .5px solid #D0CDE1;
+                    }
+                }
+
+                .banner__actionInp__email {
+                    width: 300px;
+
+                    border-radius: 50px;
+                    background: var(--light-gray);
+                    padding: 15px 20px;
+
+                    transition: .2s;
+
+                    border: 1px solid #fff;
+
+                    &:hover {
+                        border: .5px solid #D0CDE1;
+                    }
+
+                    &:focus {
+                        border: .5px solid #D0CDE1;
+                    }
+                }
+            }
+        }
+
+        .banner__img {
+            position: relative;
+            right: -20px;
+            z-index: 0;
         }
     }
+}
+
+.test {
+    min-height: 100vh;
 }

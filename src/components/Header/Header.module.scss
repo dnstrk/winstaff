@@ -1,7 +1,13 @@
+.container {
+    max-width: 1340px;
+    margin: 0 auto;
+    padding: 0;
+}
+
 .header {
     position: fixed;
     width: 100%;
-    background: #F6FAFD;
+    background: #f6fafd;
     box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.25);
     z-index: 100;
 
@@ -32,12 +38,22 @@
             flex-direction: row;
             gap: 10px;
             align-items: center;
+
+            .header__logo1 {
+                width: 35px;
+                height: 35px;
+            }
+            .header__logo2 {
+                width: 170px;
+                height: 40px;
+            }
         }
 
         .header__nav {
             .header__navList {
                 display: flex;
                 flex-direction: row;
+                align-items: center;
                 gap: 40px;
 
                 font-size: 16px;
@@ -68,7 +84,7 @@
 
                             svg {
                                 path {
-                                    transition: .3s;
+                                    transition: 0.3s;
                                     fill: var(--green);
                                 }
                             }
@@ -81,54 +97,69 @@
                 }
             }
         }
-
-        .header__town {
+        .mediaHeader__town {
             display: flex;
             flex-direction: row;
+            gap: 12px;
             align-items: center;
-            gap: 10px;
-            padding: 10px 15px;
-            border-radius: 50px;
-            background-color: var(--light-gray);
+            .header__town {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 10px;
+                padding: 10px 15px;
+                border-radius: 50px;
+                background-color: var(--light-gray);
 
-            user-select: none;
+                user-select: none;
 
-
-            .town__text {
-                font-size: 14px;
-                font-weight: 400;
-            }
-
-            .town__btn {
-                cursor: pointer;
-
-                max-width: 95px;
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-
-                // padding: 10px 15px;
-                // border-radius: 50px;
-
-                color: var(--green);
-                font-size: 16px;
-                font-weight: 600;
-                // background-color: var(--light-gray);
-
-                transition: 0.2s;
-
-                &:hover {
-                    opacity: .8;
+                .town__text {
+                    text-wrap: nowrap;
+                    font-size: 14px;
+                    font-weight: 400;
                 }
 
-                &:active {
-                    color: var(--dark-green);
+                .town__btn {
+                    cursor: pointer;
+
+                    max-width: 95px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+
+                    // padding: 10px 15px;
+                    // border-radius: 50px;
+
+                    color: var(--green);
+                    font-size: 16px;
+                    font-weight: 600;
+                    // background-color: var(--light-gray);
+
+                    transition: 0.2s;
+
+                    &:hover {
+                        opacity: 0.8;
+                    }
+
+                    &:active {
+                        color: var(--dark-green);
+                    }
+                }
+            }
+            .mediaTownCall {
+                display: none;
+                width: 25px;
+                height: 25px;
+                .mediaTownCall_Link {
+                    .mediaTownCall_LinkImg {
+                    }
                 }
             }
         }
 
         .header__orderBtn {
             cursor: pointer;
+            text-wrap: nowrap;
             user-select: none;
             color: var(--white);
             padding: 10px 30px;
@@ -141,13 +172,196 @@
             transition: 0.2s;
 
             &:hover {
-                background-color: var(--light-gray);
-                color: var(--green);
+                background-color: var(--dark-green);
             }
 
             &:active {
                 background-color: var(--dark-green);
                 color: var(--light-gray);
+            }
+        }
+
+        .mediaHeader__order {
+            display: none;
+            flex-direction: row;
+            gap: 10px;
+            align-items: center;
+        }
+    }
+}
+
+@media screen and (max-width: 1240px) {
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0;
+    }
+    .header {
+        .header__wrap {
+            padding: 10px 5px;
+            .header__logo {
+                .header__logo1 {
+                    width: 20px;
+                    height: 20px;
+                }
+                .header__logo2 {
+                    width: 100px;
+                    height: 20px;
+                }
+            }
+
+            .header__nav {
+                display: none;
+            }
+
+            .mediaHeader__town {
+                .header__town {
+                    padding: 5px 10px;
+                    .town__text {
+                        display: none;
+                    }
+
+                    .town__btn {
+                    }
+                }
+                .mediaTownCall {
+                    display: block;
+                    .mediaTownCall_Link {
+                        .mediaTownCall_LinkImg {
+                        }
+                    }
+                }
+            }
+
+            .header__orderBtn {
+                display: none;
+            }
+
+            .mediaHeader__order {
+                display: flex;
+            }
+        }
+    }
+}
+@media screen and (max-width: 800px) {
+    ::-webkit-scrollbar {
+        width: 10px;
+        background-color: #838383;
+    }
+    .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 0;
+    }
+    .header {
+        position: fixed;
+        .header__wrap {
+            padding: 10px 5px;
+            .header__logo {
+                .header__logo1 {
+                    width: 20px;
+                    height: 20px;
+                }
+                .header__logo2 {
+                    width: 100px;
+                    height: 20px;
+                }
+            }
+
+            .header__nav {
+                display: none;
+            }
+
+            .mediaHeader__town {
+                .header__town {
+                    padding: 5px 10px;
+                    .town__text {
+                        display: none;
+                    }
+
+                    .town__btn {
+                    }
+                }
+                .mediaTownCall {
+                    display: block;
+                    .mediaTownCall_Link {
+                        .mediaTownCall_LinkImg {
+                        }
+                    }
+                }
+            }
+
+            .header__orderBtn {
+                display: none;
+            }
+
+            .mediaHeader__order {
+                display: flex;
+            }
+        }
+    }
+}
+@media screen and (max-width: 375px) {
+    .container {
+        max-width: 350px;
+        margin: 0 auto;
+        padding: 0;
+    }
+    .header {
+        left: 0;
+        right: 0;
+        .header__wrap {
+            padding: 10px 5px;
+            .header__logo {
+                .header__logo1 {
+                    width: 20px;
+                    height: 20px;
+                }
+                .header__logo2 {
+                    width: 100px;
+                    height: 20px;
+                }
+            }
+
+            .header__nav {
+                display: none;
+            }
+
+            .mediaHeader__town {
+                .header__town {
+                    max-width: 70px;
+                    padding: 5px 10px;
+                    .town__text {
+                        display: none;
+                    }
+
+                    .town__btn {
+                    }
+                }
+                .mediaTownCall {
+                    display: block;
+                    .mediaTownCall_Link {
+                        .mediaTownCall_LinkImg {
+                        }
+                    }
+                }
+            }
+
+            .header__orderBtn {
+                display: none;
+            }
+
+            .mediaHeader__order {
+                display: flex;
+
+                .mediaHeader__orderChat {
+                    width: 25px;
+                    height: 25px;
+                }
+                .mediaHeader__orderPay {
+                    width: 25px;
+                    height: 25px;
+                }
             }
         }
     }

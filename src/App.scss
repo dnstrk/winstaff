@@ -38,57 +38,80 @@
 
             .banner__infoText {
                 margin-top: 30px;
-
             }
 
-            .banner__actionInp {
-                margin-top: 26px;
-                display: flex;
-                flex-direction: row;
-                gap: 30px;
-                align-items: center;
+            .banner__form {
+                .banner__actionInp {
+                    margin-top: 26px;
+                    display: flex;
+                    flex-direction: row;
+                    gap: 30px;
+                    align-items: center;
 
+                    color: var(--dark-gray);
+                    font-size: 16px;
+                    font-weight: 500;
 
-                color: var(--dark-gray);
-                font-size: 16px;
-                font-weight: 500;
+                    .banner__actionInp__num {
+                        width: 300px;
+                        border-radius: 50px;
+                        background: var(--light-gray);
+                        padding: 15px 20px;
 
+                        transition: 0.2s;
+                        border: 1px solid transparent;
 
-                .banner__actionInp__num {
-                    width: 300px;
-                    border-radius: 50px;
-                    background: var(--light-gray);
-                    padding: 15px 20px;
+                        &:hover {
+                            border: 0.5px solid #d0cde1;
+                        }
 
-                    transition: .2s;
-                    border: 1px solid #fff;
-
-                    &:hover {
-                        border: .5px solid #D0CDE1;
+                        &:focus {
+                            border: 0.5px solid #d0cde1;
+                        }
                     }
 
-                    &:focus {
-                        border: .5px solid #D0CDE1;
+                    .banner__actionInp__email {
+                        width: 300px;
+
+                        border-radius: 50px;
+                        background: var(--light-gray);
+                        padding: 15px 20px;
+
+                        transition: 0.2s;
+
+                        border: 1px solid transparent;
+
+                        &:hover {
+                            border: 0.5px solid #d0cde1;
+                        }
+
+                        &:focus {
+                            border: 0.5px solid #d0cde1;
+                        }
                     }
                 }
 
-                .banner__actionInp__email {
-                    width: 300px;
+                .banner__specText {
+                    margin-top: 30px;
+                }
 
-                    border-radius: 50px;
-                    background: var(--light-gray);
-                    padding: 15px 20px;
+                .banner__specRadioGroup {
+                    margin-top: 30px;
 
-                    transition: .2s;
+                    .banner__specRadioGroup__btn {
 
-                    border: 1px solid #fff;
+                        .banner__specRadioGroup__btnInp {
+                            padding: 10px 20px;
+                            
+                            width: 115px;
+                            height: 20px;
+                            border-radius: 50px;
+                            border: 1px solid #e8e6f6;
 
-                    &:hover {
-                        border: .5px solid #D0CDE1;
-                    }
-
-                    &:focus {
-                        border: .5px solid #D0CDE1;
+                            &:checked {
+                                border: 1px solid var(--orange, #fba457);
+                            }
+                        }
                     }
                 }
             }
@@ -96,12 +119,138 @@
 
         .banner__img {
             position: relative;
-            right: -20px;
-            z-index: 0;
+            width: 600px;
+            height: 630px;
+
+            .banner__imgAbs {
+                position: absolute;
+                content: "";
+                // left: 0;
+                // top: 0;
+            }
+
+            .s1 {
+                z-index: 10;
+            }
+            .s2 {
+                z-index: 9;
+                left: 60px;
+                top: 68px;
+            }
+            .s3 {
+                z-index: 10;
+                left: -60px;
+                top: 140px;
+            }
+            .s3_1 {
+                z-index: 10;
+                left: -18px;
+                top: 158px;
+            }
+            .s3_text {
+                z-index: 10;
+                left: -20px;
+                top: 190px;
+                font-size: 14px;
+            }
+            .s4 {
+                z-index: 11;
+                left: 400px;
+                top: 250px;
+            }
+            .s5 {
+                transition: 0.2s;
+            }
+            .s6 {
+                bottom: 30px;
+                animation-name: puls;
+                animation-duration: 5s;
+                animation-iteration-count: infinite;
+            }
+            .s7 {
+                z-index: 8;
+                left: 460px;
+                top: 50px;
+            }
+            .s8 {
+                transition: 0.2s;
+                z-index: 10;
+                left: 500px;
+                top: 120px;
+            }
+            .s9 {
+                z-index: 11;
+                bottom: 66px;
+                right: 50px;
+            }
         }
+    }
+}
+
+.typed-cursor {
+    display: none;
+}
+
+@keyframes puls {
+    from {
+        transform: scale(100%);
+    }
+    50% {
+        transform: scale(90%);
+    }
+    to {
+        transform: scale(100%);
     }
 }
 
 .test {
     min-height: 100vh;
+}
+
+@media screen and (max-width: 375px) {
+    .container {
+        max-width: 350px;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    .section__banner {
+        // margin-top: 60px;
+        padding-top: 120px;
+        min-height: calc(100vh - 120px);
+        font-family: "Montserrat", sans-serif;
+        background: var(--super-light-gray);
+        overflow-x: hidden;
+
+        .banner-wrap {
+            flex-direction: column;
+            .banner__info {
+                width: 350px;
+                .banner__infoTitle {
+                    .banner__infoTitle_marked {
+                    }
+                }
+
+                .banner__infoText {
+                }
+
+                .banner__form {
+                    .banner__actionInp {
+                        flex-direction: column;
+                        .banner__actionInp__num {
+                        }
+
+                        .banner__actionInp__email {
+                        }
+                    }
+
+                    .banner__specText {
+                    }
+                }
+            }
+
+            .banner__img {
+            }
+        }
+    }
 }

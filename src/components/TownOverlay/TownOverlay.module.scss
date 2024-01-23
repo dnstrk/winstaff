@@ -153,3 +153,58 @@
     visibility: visible;
     opacity: 1;
 }
+
+@media screen and (max-width: 375px) {
+    .overlay {
+        
+        .town__select {
+            margin-top: 40px;
+            width: 350px;
+            height: 100%;
+            
+    
+            .town__selectHead {
+                
+    
+                .town__selectHead__text {
+                  
+                }
+    
+                .town__selectHead__currentTown {
+                  
+                }
+    
+                .town__selectHead__btn {
+    
+                    .town__selectHead__btnImg {
+                        
+                    }
+                }
+            }
+    
+            .town__selectSearch {
+                
+    
+                .town__selectSearch__input {
+                    width: 40%;
+                    padding: 12px 70px 12px 15px;
+                }
+    
+                .town__selectSearch__btn {
+                    
+                }
+    
+            }
+    
+            .town__selectTowns {
+                
+    
+                .town__selectTown {
+                   
+                }
+    
+            }
+    
+        }
+    }
+}

@@ -1,0 +1,103 @@
+.footer {
+    padding-top: 35px;
+    padding-bottom: 60px;
+    font-family: "Montserrat", sans-serif;
+    background: #F2F0FE;
+
+    .footerWrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .footer__title {
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .footer__social {
+            margin-top: 55px;
+            display: flex;
+            flex-direction: row;
+            gap: 33px;
+
+            .footer__socialLink {
+                transition: .05s;
+
+                // svg #bg {
+                //     transition: .15s;
+                // }
+
+                // &:hover {
+                //     svg #bg {
+                //         fill: #afafaf;
+                //     }
+                // }
+
+                &:active {
+                    transform: scale(98%);
+                }
+            }
+        }
+
+        .footer__copyright {
+            text-align: center;
+            user-select: none;
+            margin-top: 60px;
+            font-size: 12px;
+            font-weight: 400;
+        }
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .footer {
+        padding-top: 25px;
+        padding-bottom: 30px;
+        font-family: "Montserrat", sans-serif;
+        background: #F2F0FE;
+
+        .footerWrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .footer__title {
+                font-size: 16px;
+                font-weight: 700;
+            }
+
+            .footer__social {
+                margin-top: 40px;
+                display: flex;
+                flex-direction: row;
+                gap: 33px;
+
+                .footer__socialLink {
+                    transition: .05s;
+
+                    // svg #bg {
+                    //     transition: .15s;
+                    // }
+
+                    // &:hover {
+                    //     svg #bg {
+                    //         fill: #afafaf;
+                    //     }
+                    // }
+
+                    &:active {
+                        transform: scale(98%);
+                    }
+                }
+            }
+
+            .footer__copyright {
+                text-align: center;
+                user-select: none;
+                margin-top: 40px;
+                font-size: 12px;
+                font-weight: 400;
+            }
+        }
+    }
+}

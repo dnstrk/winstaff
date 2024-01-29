@@ -6,42 +6,55 @@ const MapInteractive = ({ setRegion, setOffices }) => {
     {
       region: "Красноярский край",
       office: [
-        "г. Красноярск, ул. Конституции СССР, д. 7, пом. 428 800 777 93 55",
-        "г.Лесосибирск, ул. Привокзальная, д.12, оф. 2058 800 777 93 55",
+        {
+          addr: "г. Красноярск, ул. Конституции СССР, д. 7, пом. 428",
+          num: "800 777 93 55",
+        },
+        {
+          addr: "г.Лесосибирск, ул. Привокзальная, д.12, оф. 2058",
+          num: "800 777 93 55",
+        },
       ],
     },
     {
       region: "Камчатский край",
-      office: ["тест1", "тест2"],
+      office: [
+        {
+          addr: "test",
+          num: "123 123 22 33",
+        },
+        {
+          addr: "test 2",
+          num: "321 231 11 44",
+        },
+      ],
     },
   ];
 
   useEffect(() => {
     const regions = document.querySelectorAll("[data-title]");
-
+    //выбор элементов содержащих data-title
 
     const hover = (region) => {
       region.onmousemove = () => {
-        setRegion(region.dataset.title);
+        setRegion(region.dataset.title); //динамическое изменение региона
       };
       region.onclick = () => {
         regionsAndOffices.map((reg) => {
           if (region.dataset.title === reg.region) {
-            setOffices(reg.office)
-          } else {
-            //
+            //сравнение на совпадение data-title и региона из объекта
+            setOffices(reg.office); //  фиксация адресов офисов из объекта
           }
         });
-        regions.forEach(region=>{
-            region.classList.remove('rf-clickMarked')
-        })
-        region.classList.add('rf-clickMarked')
+        regions.forEach((region) => {
+          region.classList.remove("rf-clickMarked");    //снятие зеленой окраски
+        });
+        region.classList.add("rf-clickMarked");     
+        //установка зеленой окраски для выбранного 
       };
     };
 
     regions.forEach((region) => hover(region));
-
-    
   });
 
   return (

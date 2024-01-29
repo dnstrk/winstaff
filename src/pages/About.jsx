@@ -76,7 +76,7 @@ export default function About() {
                                 Центральный офис в Москве:
                             </b>
                             <p className="about__imgAddrText">
-                                <span className="about__imgAddrText_marked">+7 495 933 40 63</span><br />ул.
+                                <a href="tel:+7 495 933 40 63" className="about__imgAddrText_marked">+7 495 933 40 63</a><br />ул.
                                 Краснобогатырская, д. 2, стр. 1
                             </p>
                         </div>

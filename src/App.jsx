@@ -12,6 +12,7 @@ import UserContext from "./UserContext";
 
 function App() {
   const [alert, setAlert] = useState(false); //алерт при незаполненном поле
+  const [requestAccept, setRequestAccept] = useState(false); //отображение окна принятой заявки
 
   const [currentTown, setCurrentTown] = useState("Москва");
   const [townSearchValue, setTownSearchValue] = useState("");
@@ -57,6 +58,10 @@ function App() {
           setSelectedSpec,
           alert,
           setAlert,
+          requestAccept,
+          setRequestAccept,
+          requestOverlay,
+          setRequestOverlay,
         }}
       >
         <Header

@@ -3,6 +3,7 @@ import CardSpec from "../components/CardSpec/CardSpec";
 import MapInteractive from "../components/MapInteractive/MapInteractive";
 import RadioSpec from "../components/RadioSpec/RadioSpec";
 import UserContext from "../UserContext";
+import { Link } from "react-router-dom";
 
 export default function Home({
   phoneBanner,
@@ -14,8 +15,15 @@ export default function Home({
   countBanner,
   setCountBanner,
 }) {
-  const { setRequests, selectedSpec, setSelectedSpec } =
-    useContext(UserContext);
+  const {
+    requests,
+    setRequests,
+    selectedSpec,
+    setSelectedSpec,
+    requestAccept,
+    setRequestAccept,
+    setRequestOverlay,
+  } = useContext(UserContext);
 
   //< динамически меняющиеся регионы
   const [region, setRegion] = useState("Нажмите на регион для выбора офиса");
@@ -108,23 +116,30 @@ export default function Home({
       countBanner.length &&
       selectedSpec.length > 0
     ) {
-      const obj = [
-        phoneBanner,
-        mailBanner,
-        townBanner,
-        countBanner,
-        selectedSpec,
-      ];
+      const obj = {
+        id: requests.length,
+        phone: phoneBanner,
+        email: mailBanner,
+        town: townBanner,
+        count: countBanner,
+        specialisation: selectedSpec,
+      };
+
       setRequests((prev) => [...prev, obj]);
+      setRequestAccept(true);
+      setRequestOverlay(true);
       setPhoneBanner("");
       setMailBanner("");
       setTownBanner("");
       setCountBanner("");
       setSelectedSpec("");
+      const radio = document.getElementsByName("radio");
+      radio.forEach((r) => {
+        r.checked = false;
+      });
     } else {
     }
   };
-
 
   return (
     <>
@@ -175,12 +190,12 @@ export default function Home({
                   <RadioSpec radio={8} specialisation="Горничная" />
                   <RadioSpec radio={9} specialisation="Фасовщик" />
                   <RadioSpec radio={10} specialisation="Мойщик" />
-                  <button
-                    type="button"
+                  <Link
+                  to='/specialties'
                     className="banner__specRadioGroup__btnAllSpec"
                   >
                     Все специалисты
-                  </button>
+                  </Link>
                 </div>
                 <div className="banner__formBottom">
                   <input
@@ -664,7 +679,10 @@ export default function Home({
                   src="/img/coopVertDots.svg"
                   alt=""
                 />
-                <button className="coop__imgAbs coop__imgBtn e8">
+                <button
+                  onClick={(e) => setRequestOverlay(true)}
+                  className="coop__imgAbs coop__imgBtn e8"
+                >
                   Заполнить заявку
                 </button>
               </div>

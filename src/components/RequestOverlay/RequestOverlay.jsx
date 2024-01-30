@@ -1,7 +1,8 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import cl from "./RequestOverlay.module.scss";
 import RadioSpec from "../RadioSpec/RadioSpec";
 import UserContext from "../../UserContext";
+import { Link } from "react-router-dom";
 
 const RequestOverlay = ({
   requestOverlay,
@@ -22,9 +23,9 @@ const RequestOverlay = ({
     setSelectedSpec,
     alert,
     setAlert,
+    requestAccept,
+    setRequestAccept,
   } = useContext(UserContext);
-
-  const [requestAccept, setRequestAccept] = useState(false); //отображение окна принятой заявки
 
   const closeOverlay = (e) => {
     if (e.target.classList.contains(cl.overlay)) {
@@ -44,7 +45,9 @@ const RequestOverlay = ({
     }, 500);
   };
 
+  // отправка заполненной формы заявки
   const sendForm = () => {
+    //проверка на отсутствие незаполненных полей
     if (
       phoneRequest.length &&
       mailRequest.length &&
@@ -52,21 +55,32 @@ const RequestOverlay = ({
       countRequest.length &&
       selectedSpec.length > 0
     ) {
+        // формирование объекта исходя из заполненных значений полей
       const obj = {
+        id: requests.length,
         phone: phoneRequest,
         email: mailRequest,
         town: townRequest,
         count: countRequest,
         specialisation: selectedSpec,
       };
+      // добавление заявки в общий пул
       setRequests((prev) => [...prev, obj]);
+      // открытие экрана принятия заявки
       setRequestAccept(true);
+      // сброс алерта о незаполненных полях
       setAlert(false);
+      // сброс всех заполненных значений
       setPhoneRequest("");
       setMailRequest("");
       setTownRequest("");
       setCountRequest("");
       setSelectedSpec("");
+      // снятие check на радиокнопках
+      const radio = document.getElementsByName("radio");
+      radio.forEach((r) => {
+        r.checked = false;
+      });
     } else {
       setAlert(true);
     }
@@ -161,22 +175,25 @@ const RequestOverlay = ({
             <div className={cl.requestDrawer__specialists}>
               <p className={cl.specialists__title}>Выберите специалиста</p>
               <div className={cl.specialists__radioGroup}>
-                <RadioSpec radio={1} specialisation="Кассир" />
-                <RadioSpec radio={2} specialisation="Официант" />
-                <RadioSpec radio={3} specialisation="Промоутер" />
-                <RadioSpec radio={4} specialisation="Упаковщик" />
-                <RadioSpec radio={5} specialisation="Продавец" />
-                <RadioSpec radio={6} specialisation="Работник торгового зала" />
-                <RadioSpec radio={7} specialisation="Сотрудник клининга" />
-                <RadioSpec radio={8} specialisation="Горничная" />
-                <RadioSpec radio={9} specialisation="Фасовщик" />
-                <RadioSpec radio={10} specialisation="Мойщик" />
-                <button
-                  type="button"
+                <RadioSpec radio={11} specialisation="Кассир" />
+                <RadioSpec radio={12} specialisation="Официант" />
+                <RadioSpec radio={13} specialisation="Промоутер" />
+                <RadioSpec radio={14} specialisation="Упаковщик" />
+                <RadioSpec radio={15} specialisation="Продавец" />
+                <RadioSpec
+                  radio={16}
+                  specialisation="Работник торгового зала"
+                />
+                <RadioSpec radio={17} specialisation="Сотрудник клининга" />
+                <RadioSpec radio={18} specialisation="Горничная" />
+                <RadioSpec radio={19} specialisation="Фасовщик" />
+                <RadioSpec radio={20} specialisation="Мойщик" />
+                <Link
+                  to='/specialties'
                   className={cl.specialists__radioGroup__btnAllSpec}
                 >
                   Все специалисты
-                </button>
+                </Link>
               </div>
             </div>
             <div className={cl.requestDrawer__foot}>

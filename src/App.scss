@@ -918,6 +918,7 @@
 .section__map {
     position: static;
     padding-top: 150px;
+    padding-bottom: 300px;
     height: 800px;
     font-family: "Montserrat", sans-serif;
 
@@ -1085,7 +1086,7 @@
 
 .about {
     padding-top: 120px;
-    padding-bottom: 60px;
+    padding-bottom: 350px;
     font-family: "Montserrat", sans-serif;
 
     .aboutWrap {
@@ -1226,6 +1227,35 @@
                     transform: scale(99%);
                 }
             }
+        }
+    }
+}
+
+.specialties {
+    padding-top: 120px;
+    padding-bottom: 380px;
+    font-family: "Montserrat", sans-serif;
+
+    .specialtiesWrap {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+
+        .specialties__title {
+            font-size: 36px;
+            font-weight: 600;
+            letter-spacing: 0.72px;
+
+            .specialties__title_marked {
+                color: #1DBF73;
+            }
+        }
+
+        .specialties__cards {
+            display: flex;
+            flex-direction: row;
+            gap: 30px;
+            flex-wrap: wrap;
         }
     }
 }

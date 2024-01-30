@@ -1,13 +1,31 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import CardSpec from "../components/CardSpec/CardSpec";
 import Typed from "typed.js";
 import MapInteractive from "../components/MapInteractive/MapInteractive";
+import RadioSpec from "../components/RadioSpec/RadioSpec";
+import UserContext from "../UserContext";
 
-export default function Home({ phone, setPhone, mail, setMail }) {
+export default function Home({
+  phoneBanner,
+  setPhoneBanner,
+  mailBanner,
+  setMailBanner,
+  townBanner,
+  setTownBanner,
+  countBanner,
+  setCountBanner,
+}) {
+  const { setRequests } = useContext(UserContext);
+
+  //< динамически меняющиеся регионы
   const [region, setRegion] = useState("Нажмите на регион для выбора офиса");
+  //>
 
+  //< отображение офисов у карты
   const [offices, setOffices] = useState([]);
+  //>
 
+  //< закрытие окна с адресами офисов
   useEffect(() => {
     const closeOfficesInfo = document.querySelector(
       ".map__bottom__box__closeBtn"
@@ -19,7 +37,9 @@ export default function Home({ phone, setPhone, mail, setMail }) {
       regions.forEach((region) => region.classList.remove("rf-clickMarked"));
     });
   });
+  //>
 
+  //< паралакс для кружков
   useEffect(() => {
     const s5 = document.querySelector(".s5");
     const s8 = document.querySelector(".s8");
@@ -34,6 +54,7 @@ export default function Home({ phone, setPhone, mail, setMail }) {
       c3.style.transform = "translate(-" + x * 20 + "px, -" + y * 20 + "px)";
       c5.style.transform = "translate(+" + x * 20 + "px, -" + y * 20 + "px)";
     };
+    
 
     const observer = new IntersectionObserver((entries, options) => {
       entries.forEach((entry) => {
@@ -74,6 +95,21 @@ export default function Home({ phone, setPhone, mail, setMail }) {
     const scrolledEl = document.querySelectorAll(".scrolled");
     scrolledEl.forEach((el) => observer.observe(el));
   });
+  //>
+
+  const sendForm = () => {
+    if (
+      phoneBanner.length &&
+      mailBanner.length &&
+      townBanner.length &&
+      countBanner.length > 0
+    ) {
+      const obj = [];
+      setRequests((prev) => [...prev, obj]);
+    } else {
+      
+    }
+  };
 
   return (
     <>
@@ -97,110 +133,33 @@ export default function Home({ phone, setPhone, mail, setMail }) {
                   <input
                     className="banner__actionInp__num"
                     type="text"
-                    value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
+                    value={phoneBanner}
+                    onChange={(e) => setPhoneBanner(e.target.value)}
                     placeholder="Ваш телефон"
                   />
                   <input
                     className="banner__actionInp__email"
                     type="text"
-                    value={mail}
-                    onChange={(e) => setMail(e.target.value)}
+                    value={mailBanner}
+                    onChange={(e) => setMailBanner(e.target.value)}
                     placeholder="Ваш e-mail"
                   />
                 </div>
                 <p className="banner__specText">Выберите специалиста</p>
                 <div className="banner__specRadioGroup">
-                  <div className="banner__specRadioGroup__btn">
-                    <input name="radio" id="radio-1" type="radio" />
-                    <label
-                      htmlFor="radio-1"
-                      className="banner__specRadioGroup__btnLbl"
-                    >
-                      Кассир
-                    </label>
-                  </div>
-                  <div className="banner__specRadioGroup__btn">
-                    <input name="radio" id="radio-2" type="radio" />
-                    <label
-                      htmlFor="radio-2"
-                      className="banner__specRadioGroup__btnLbl"
-                    >
-                      Официант
-                    </label>
-                  </div>
-                  <div className="banner__specRadioGroup__btn">
-                    <input name="radio" id="radio-3" type="radio" />
-                    <label
-                      htmlFor="radio-3"
-                      className="banner__specRadioGroup__btnLbl"
-                    >
-                      Промоутер
-                    </label>
-                  </div>
-                  <div className="banner__specRadioGroup__btn">
-                    <input name="radio" id="radio-4" type="radio" />
-                    <label
-                      htmlFor="radio-4"
-                      className="banner__specRadioGroup__btnLbl"
-                    >
-                      Упаковщик
-                    </label>
-                  </div>
-                  <div className="banner__specRadioGroup__btn">
-                    <input name="radio" id="radio-5" type="radio" />
-                    <label
-                      htmlFor="radio-5"
-                      className="banner__specRadioGroup__btnLbl"
-                    >
-                      Продавец
-                    </label>
-                  </div>
-                  <div className="banner__specRadioGroup__btn">
-                    <input name="radio" id="radio-6" type="radio" />
-                    <label
-                      htmlFor="radio-6"
-                      className="banner__specRadioGroup__btnLbl"
-                    >
-                      Работник торгового зала
-                    </label>
-                  </div>
-                  <div className="banner__specRadioGroup__btn">
-                    <input name="radio" id="radio-7" type="radio" />
-                    <label
-                      htmlFor="radio-7"
-                      className="banner__specRadioGroup__btnLbl"
-                    >
-                      Сотрудник клининга
-                    </label>
-                  </div>
-                  <div className="banner__specRadioGroup__btn">
-                    <input name="radio" id="radio-8" type="radio" />
-                    <label
-                      htmlFor="radio-8"
-                      className="banner__specRadioGroup__btnLbl"
-                    >
-                      Горничная
-                    </label>
-                  </div>
-                  <div className="banner__specRadioGroup__btn">
-                    <input name="radio" id="radio-9" type="radio" />
-                    <label
-                      htmlFor="radio-9"
-                      className="banner__specRadioGroup__btnLbl"
-                    >
-                      Фасовщик
-                    </label>
-                  </div>
-                  <div className="banner__specRadioGroup__btn">
-                    <input name="radio" id="radio-10" type="radio" />
-                    <label
-                      htmlFor="radio-10"
-                      className="banner__specRadioGroup__btnLbl"
-                    >
-                      Мойщик
-                    </label>
-                  </div>
+                  <RadioSpec radio={1} specialisation="Кассир" />
+                  <RadioSpec radio={2} specialisation="Официант" />
+                  <RadioSpec radio={3} specialisation="Промоутер" />
+                  <RadioSpec radio={4} specialisation="Упаковщик" />
+                  <RadioSpec radio={5} specialisation="Продавец" />
+                  <RadioSpec
+                    radio={6}
+                    specialisation="Работник торгового зала"
+                  />
+                  <RadioSpec radio={7} specialisation="Сотрудник клининга" />
+                  <RadioSpec radio={8} specialisation="Горничная" />
+                  <RadioSpec radio={9} specialisation="Фасовщик" />
+                  <RadioSpec radio={10} specialisation="Мойщик" />
                   <button
                     type="button"
                     className="banner__specRadioGroup__btnAllSpec"
@@ -212,6 +171,8 @@ export default function Home({ phone, setPhone, mail, setMail }) {
                   <input
                     className="banner__formBottom__inpTown"
                     type="text"
+                    value={townBanner}
+                    onChange={(e) => setTownBanner(e.target.value)}
                     placeholder="Город"
                     name=""
                     id=""
@@ -219,6 +180,8 @@ export default function Home({ phone, setPhone, mail, setMail }) {
                   <input
                     className="banner__formBottom__inpCount"
                     type="text"
+                    value={countBanner}
+                    onChange={(e) => setCountBanner(e.target.value)}
                     placeholder="Количество"
                     name=""
                     id=""
@@ -292,6 +255,7 @@ export default function Home({ phone, setPhone, mail, setMail }) {
             <h5 className="specialists__title">Топ специалистов</h5>
             <div className="specialists__cards">
               <CardSpec
+                home
                 img={"/img/spec1.png"}
                 spec={"Кассир"}
                 subTitle={"< 1014 кассиров"}
@@ -300,27 +264,31 @@ export default function Home({ phone, setPhone, mail, setMail }) {
                 }
               />
               <CardSpec
+                home
                 img={"/img/spec2.png"}
                 spec={"Работник торгового зала"}
                 subTitle={"< 2598 сотрудников  "}
                 text={"Выходит на объекты наших клиентов каждый день"}
               />
               <CardSpec
+                home
                 img={"/img/spec3.png"}
                 spec={"Грузчик"}
                 subTitle={"< 786 грузчиков  "}
                 text={"Выходит на объекты наших клиентов каждый день"}
               />
               <CardSpec
+                home
                 img={"/img/spec4.png"}
                 spec={"Официант"}
                 subTitle={"~ 218 официантов  "}
                 text={"Выходит на объекты наших клиентов каждый день"}
               />
               <CardSpec
+                home
                 img={"/img/spec5.png"}
                 spec={"Промоутер"}
-                subTitle={"subTitle"}
+                subTitle={"~ 115 промоутеров"}
                 text={"Выходит на объекты наших клиентов каждый день"}
               />
               <div className="specialists__cardMore">

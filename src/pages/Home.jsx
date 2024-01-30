@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
 import CardSpec from "../components/CardSpec/CardSpec";
-import Typed from "typed.js";
 import MapInteractive from "../components/MapInteractive/MapInteractive";
 import RadioSpec from "../components/RadioSpec/RadioSpec";
 import UserContext from "../UserContext";
@@ -15,7 +14,8 @@ export default function Home({
   countBanner,
   setCountBanner,
 }) {
-  const { setRequests } = useContext(UserContext);
+  const { setRequests, selectedSpec, setSelectedSpec } =
+    useContext(UserContext);
 
   //< динамически меняющиеся регионы
   const [region, setRegion] = useState("Нажмите на регион для выбора офиса");
@@ -45,6 +45,7 @@ export default function Home({
     const s8 = document.querySelector(".s8");
     const c3 = document.querySelector(".c3");
     const c5 = document.querySelector(".c5");
+
     document.onmousemove = (e) => {
       let x = e.clientX / window.innerWidth;
       let y = e.clientY / window.innerHeight;
@@ -54,40 +55,42 @@ export default function Home({
       c3.style.transform = "translate(-" + x * 20 + "px, -" + y * 20 + "px)";
       c5.style.transform = "translate(+" + x * 20 + "px, -" + y * 20 + "px)";
     };
-    
 
     const observer = new IntersectionObserver((entries, options) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          var typed = new Typed(".s3_text", {
-            strings: ["Более 300 000 <br /> анкет в базе"],
-            typeSpeed: 60,
-            startDelay: 1500,
-            // backSpeed: 100,
-            backDelay: 5000,
-            fadeOut: true,
-            // loop: true,
-          });
-          var typed = new Typed(".s4_text", {
-            strings: [
-              "18519 работников<br /> мы вывели на объекты<br /> заказчиков",
-            ],
-            typeSpeed: 30,
-            startDelay: 2500,
-            // backSpeed: 100,
-            backDelay: 5000,
-            fadeOut: true,
-            // loop: true,
-          });
-          var typed = new Typed(".c8_text", {
-            strings: ["Мы отбираем для<br /> вас лучших!"],
-            typeSpeed: 60,
-            startDelay: 500,
-            // backSpeed: 100,
-            backDelay: 5000,
-            fadeOut: true,
-            // loop: true,
-          });
+          entry.target.classList.add("visible");
+          // var typed = new Typed(".s3_text", {
+          //   strings: ["Более 300 000 <br /> анкет в базе"],
+          //   typeSpeed: 60,
+          //   startDelay: 1500,
+          //   // backSpeed: 100,
+          //   backDelay: 5000,
+          //   fadeOut: true,
+          //   // loop: true,
+          // });
+          // var typed = new Typed(".s4_text", {
+          //   strings: [
+          //     "18519 работников<br /> мы вывели на объекты<br /> заказчиков",
+          //   ],
+          //   typeSpeed: 30,
+          //   startDelay: 2500,
+          //   // backSpeed: 100,
+          //   backDelay: 5000,
+          //   fadeOut: true,
+          //   // loop: true,
+          // });
+          // var typed = new Typed(".c8_text", {
+          //   strings: ["Мы отбираем для<br /> вас лучших!"],
+          //   typeSpeed: 60,
+          //   startDelay: 500,
+          //   // backSpeed: 100,
+          //   backDelay: 5000,
+          //   fadeOut: true,
+          //   // loop: true,
+          // });
+        } else if (!entry.isIntersecting) {
+          entry.target.classList.remove("visible");
         }
       });
     });
@@ -102,14 +105,26 @@ export default function Home({
       phoneBanner.length &&
       mailBanner.length &&
       townBanner.length &&
-      countBanner.length > 0
+      countBanner.length &&
+      selectedSpec.length > 0
     ) {
-      const obj = [];
+      const obj = [
+        phoneBanner,
+        mailBanner,
+        townBanner,
+        countBanner,
+        selectedSpec,
+      ];
       setRequests((prev) => [...prev, obj]);
+      setPhoneBanner("");
+      setMailBanner("");
+      setTownBanner("");
+      setCountBanner("");
+      setSelectedSpec("");
     } else {
-      
     }
   };
+
 
   return (
     <>
@@ -186,7 +201,11 @@ export default function Home({
                     name=""
                     id=""
                   />
-                  <button type="button" className="banner__formBottom__btnSend">
+                  <button
+                    onClick={(e) => sendForm()}
+                    type="button"
+                    className="banner__formBottom__btnSend"
+                  >
                     Отправить
                   </button>
                 </div>
@@ -213,13 +232,19 @@ export default function Home({
                 src="/img/bannerForm1dop.svg"
                 alt=""
               />
-              <b className="banner__imgAbs s3_text scrolled"></b>
+              <b className="banner__imgAbs s3_text scrolled">
+                Более 300 000 <br /> анкет в базе
+              </b>
               <img
                 className="banner__imgAbs s4"
                 src="/img/bannerForm2.svg"
                 alt=""
               />
-              <b className="banner__imgAbs s4_text scrolled"></b>
+              <b className="banner__imgAbs s4_text scrolled">
+                18519 работников
+                <br /> мы вывели на объекты
+                <br /> заказчиков
+              </b>
               <img
                 className="banner__imgAbs s5"
                 src="/img/bannerLightOrangeEllipse.svg"
@@ -344,7 +369,10 @@ export default function Home({
                 src="/img/clientInfoForm.svg"
                 alt=""
               />
-              <b className="clientInfo__imgAbs c8_text scrolled"></b>
+              <b className="clientInfo__imgAbs c8_text scrolled">
+                Мы отбираем для
+                <br /> вас лучших!
+              </b>
               <img
                 className="clientInfo__imgAbs c9"
                 src="/img/clientInfoFormDop.svg"

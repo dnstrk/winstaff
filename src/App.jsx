@@ -45,7 +45,7 @@ function App() {
     "Санкт-Петербург",
   ];
 
-  console.log(requests);
+  console.log(requests)
 
   return (
     <div className="App">

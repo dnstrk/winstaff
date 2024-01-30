@@ -29,6 +29,7 @@ const RequestOverlay = ({
   const closeOverlay = (e) => {
     if (e.target.classList.contains(cl.overlay)) {
       setRequestOverlay(false);
+      setSelectedSpec("");
       setTimeout(() => {
         setRequestAccept(false);
       }, 500);
@@ -37,6 +38,7 @@ const RequestOverlay = ({
   const closeOverlayBtn = (e) => {
     setRequestOverlay(false);
     setAlert(false);
+    setSelectedSpec("");
     setTimeout(() => {
       setRequestAccept(false);
     }, 500);

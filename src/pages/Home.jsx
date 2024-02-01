@@ -4,6 +4,8 @@ import MapInteractive from "../components/MapInteractive/MapInteractive";
 import RadioSpec from "../components/RadioSpec/RadioSpec";
 import UserContext from "../UserContext";
 import { Link } from "react-router-dom";
+// import IMask from "imask/holder";
+import IMask from "imask";
 
 export default function Home({
     phoneBanner,
@@ -23,10 +25,11 @@ export default function Home({
         requestAccept,
         setRequestAccept,
         setRequestOverlay,
-        
+        phoneValid,
+        setPhoneValid,
+        mailValid,
+        setMailValid,
     } = useContext(UserContext);
-
-   
 
     //< динамически меняющиеся регионы
     const [region, setRegion] = useState("Нажмите на регион для выбора офиса");
@@ -123,7 +126,10 @@ export default function Home({
             mailBanner.length &&
             townBanner.length &&
             countBanner.length &&
-            selectedSpec.length > 0
+            selectedSpec.length > 0 &&
+            phoneValid &&
+            mailValid &&
+            Number(countBanner) != 0
         ) {
             const obj = {
                 id: requests.length,
@@ -142,6 +148,19 @@ export default function Home({
             setTownBanner("");
             setCountBanner("");
             setSelectedSpec("");
+
+            //сброс валидации phone поля
+            const inpPhoneBanner = document.getElementById("inpPhoneB");
+            inpPhoneBanner.style.borderColor = "transparent";
+
+            //сброс валидации email поля
+            const inpEmailBanner = document.getElementById("inpEmailB");
+            inpEmailBanner.style.borderColor = "transparent";
+
+            //сброс валидации email поля
+            const inpCountBanner = document.getElementById("inpCountB");
+            inpCountBanner.style.borderColor = "transparent";
+
             const radio = document.getElementsByName("radio");
             radio.forEach((r) => {
                 r.checked = false;
@@ -150,13 +169,124 @@ export default function Home({
         }
     };
 
+    //только числовой ввод в countBanner и текстовый в townBanner
+    useEffect(() => {
+        const inpCountBanner = document.querySelector(
+            ".banner__formBottom__inpCount"
+        );
+
+        inpCountBanner.addEventListener("keydown", (event) => {
+            if (
+                event.keyCode == 46 ||
+                event.keyCode == 8 ||
+                event.keyCode == 9 ||
+                event.keyCode == 27 ||
+                // Разрешаем: Ctrl+A
+                (event.keyCode == 65 && event.ctrlKey === true) ||
+                // Разрешаем: home, end, влево, вправо
+                (event.keyCode >= 35 && event.keyCode <= 39)
+            ) {
+                // Ничего не делаем
+                return;
+            } else {
+                // Запрещаем все, кроме цифр на основной клавиатуре, а так же Num-клавиатуре
+                if (
+                    (event.keyCode < 48 || event.keyCode > 57) &&
+                    (event.keyCode < 96 || event.keyCode > 105)
+                ) {
+                    event.preventDefault();
+                }
+            }
+        });
+
+        const inpTownBanner = document.querySelector(
+            ".banner__formBottom__inpTown"
+        );
+        inpTownBanner.addEventListener("keydown", (event) => {
+            // console.log(event.keyCode);
+            if (
+                (event.keyCode > 48 && event.keyCode < 57) ||
+                (event.keyCode > 96 && event.keyCode < 105)
+            ) {
+                event.preventDefault();
+            }
+        });
+    });
+
+    //маска телефона и почты
+    useEffect(() => {
+        const inpPhoneBanner = document.getElementById("inpPhoneB");
+        let maskOption = {
+            mask: "+{7} (000) 000-00-00",
+        };
+        IMask(inpPhoneBanner, maskOption);
+
+        const inpEmailBanner = document.getElementById("inpEmailB");
+        inpEmailBanner.addEventListener("input", onInput);
+
+        const EMAIL_REGEXP =
+            /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
+
+        function onInput() {
+            if (isEmailValid(inpEmailBanner.value)) {
+                inpEmailBanner.style.borderColor = "green";
+            } else {
+                inpEmailBanner.style.borderColor = "red";
+            }
+        }
+
+        function isEmailValid(value) {
+            return EMAIL_REGEXP.test(value);
+        }
+    });
+
+    const emailValidation = () => {
+        const inpEmailBanner = document.getElementById("inpEmailB");
+        const EMAIL_REGEXP =
+            /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
+        function isEmailValid(value) {
+            return EMAIL_REGEXP.test(value);
+        }
+        if (isEmailValid(inpEmailBanner.value)) {
+            setMailValid(true);
+        } else {
+            setMailValid(false);
+        }
+    };
+
+    //проверка на не 0 в countBanner
+    const countValidation = () => {
+        const inpCountBanner = document.getElementById(
+            "inpCountB"
+        );
+
+        if (Number(countBanner) == 0) {
+            inpCountBanner.style.borderColor = "red";
+        } else {
+            inpCountBanner.style.borderColor = "green";
+        }
+    };
+
+    //проверка на заполненность phoneBanner
+    const phoneValidation = () => {
+        const inpPhoneBanner = document.getElementById("inpPhoneB");
+        if (phoneBanner.length < 18) {
+            setPhoneValid(false);
+            inpPhoneBanner.style.borderColor = "red";
+        } else {
+            setPhoneValid(true);
+            inpPhoneBanner.style.borderColor = "green";
+        }
+    };
+
+    // console.log(phoneBanner.length)
+
     return (
         <>
             <section className="section__banner">
                 <div className="container">
                     <div className="banner-wrap">
                         <div className="banner__info">
-                           
                             <h2 className="banner__infoTitle">
                                 <span className="banner__infoTitle_marked">
                                     Поиск персонала
@@ -173,8 +303,10 @@ export default function Home({
                                 <div className="banner__actionInp">
                                     <input
                                         className="banner__actionInp__num"
+                                        id="inpPhoneB"
                                         type="text"
                                         value={phoneBanner}
+                                        onBlur={() => phoneValidation()}
                                         onChange={(e) =>
                                             setPhoneBanner(e.target.value)
                                         }
@@ -182,8 +314,10 @@ export default function Home({
                                     />
                                     <input
                                         className="banner__actionInp__email"
+                                        id="inpEmailB"
                                         type="text"
                                         value={mailBanner}
+                                        onBlur={() => emailValidation()}
                                         onChange={(e) =>
                                             setMailBanner(e.target.value)
                                         }
@@ -256,13 +390,14 @@ export default function Home({
                                     <input
                                         className="banner__formBottom__inpCount"
                                         type="text"
+                                        id="inpCountB"
                                         value={countBanner}
+                                        onBlur={() => countValidation()}
                                         onChange={(e) =>
                                             setCountBanner(e.target.value)
                                         }
                                         placeholder="Количество"
                                         name=""
-                                        id=""
                                     />
                                     <button
                                         onClick={(e) => sendForm()}

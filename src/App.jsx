@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { useState } from "react";
 import "./App.scss";
 import Header from "./components/Header/Header";
 import TownOverlay from "./components/TownOverlay/TownOverlay";
@@ -9,7 +9,6 @@ import About from "./pages/About";
 import Spec from "./pages/Spec";
 import RequestOverlay from "./components/RequestOverlay/RequestOverlay";
 import UserContext from "./UserContext";
-import axios from "axios";
 // import data from "./specialties.json";
 
 function App() {
@@ -72,6 +71,9 @@ function App() {
     const [townRequest, setTownRequest] = useState("");
     const [countRequest, setCountRequest] = useState("");
 
+    const [phoneValid, setPhoneValid] = useState(false);
+    const [mailValid, setMailValid] = useState(false);
+
     const [phoneBanner, setPhoneBanner] = useState("");
     const [mailBanner, setMailBanner] = useState("");
     const [townBanner, setTownBanner] = useState("");
@@ -92,7 +94,7 @@ function App() {
         "Санкт-Петербург",
     ];
 
-    console.log(requests);
+    // console.log(requests);
 
     return (
         <div className="App">
@@ -108,7 +110,10 @@ function App() {
                     setRequestAccept,
                     requestOverlay,
                     setRequestOverlay,
-                    
+                    phoneValid,
+                    setPhoneValid,
+                    mailValid,
+                    setMailValid,
                 }}
             >
                 <Header

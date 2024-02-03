@@ -1,0 +1,3045 @@
+{
+    "?xml": { "@version": "1.0", "@encoding": "UTF-8" },
+    "Города": {
+        "Город": [
+            {
+                "sity": "Москва",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Центральный офис qWell"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Москва, Севастопольский проспект, дом 95Б"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "e8463d75362d5bc7fff141c90c5c5293"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "e6eb3a7361bf01ed68df48c399e93e3e"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Московская" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Московская область"
+                    }
+                ]
+            },
+            {
+                "sity": "Санкт-Петербург и ЛО",
+                "Описание": "Телефон: 8 (800) 777-93-55<br> E-mail:&nbsp;<a href=\"mailto:request@qwell.ru\" style=\"color: #ee4623; background-image: initial;\">request@qwell.ru</a>",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Санкт-Петербурге"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Санкт-Петербург, Лиговский просп., дом 50, лит. О (корп.1), оф. 136"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "565be77875323c92cceb7f50a709427d"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "58f29773d7782d685c327cbd0a59045a"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Ленинградская" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Ленинградская область"
+                    }
+                ]
+            },
+            {
+                "Ид": "101",
+                "sity": "Абакан",
+                "Описание": "Телефон: 8 &#40;800&#41; 777-93-55&lt;br&gt;<br />\nE-mail:&nbsp;&lt;a href=&quot;mailto:<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&quot; style=&quot;color: #ee4623; background-image: initial;&quot;&gt;<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&lt;/a&gt;",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Абакане"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Абакан, пр-т Дружбы Народов, д. 4, пом 75Н"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "1" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "56c2513499d194d78e1dfd2364616620"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "605e905c1445c6514a5dfcc535022d6b"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Хакасия" },
+                    { "Ид": "UF_REGION_WINDOWS", "Значение": "Хакасия" }
+                ]
+            },
+            {
+                "Ид": "128",
+                "sity": "Азов",
+                "Описание": "Телефон: 8 &#40;800&#41; 777-93-55&lt;br&gt;<br />\nE-mail:&nbsp;&lt;a href=&quot;mailto:<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&quot; style=&quot;color: #ee4623; background-image: initial;&quot;&gt;<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&lt;/a&gt;",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Азове"
+                    },
+                    { "Ид": "UF_ADDRESS", "Значение": "" },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "565be77875323c92cceb7f50a709427d"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "e9479b656812c2a45ea24ada75824678"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Ростовская" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Ростовская область"
+                    }
+                ]
+            },
+            {
+                "Ид": "129",
+                "sity": "Аксай",
+                "Описание": "Телефон: 8 &#40;800&#41; 777-93-55&lt;br&gt;<br />\nE-mail:&nbsp;&lt;a href=&quot;mailto:<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&quot; style=&quot;color: #ee4623; background-image: initial;&quot;&gt;<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&lt;/a&gt;",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Аксае"
+                    },
+                    { "Ид": "UF_ADDRESS", "Значение": "" },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "565be77875323c92cceb7f50a709427d"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "e9479b656812c2a45ea24ada75824678"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Ростовская" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Ростовская область"
+                    }
+                ]
+            },
+            {
+                "Ид": "86",
+                "sity": "Анапа",
+                "Описание": "Телефон: 8 (800) 777-93-55<br>\r\nE-mail:&nbsp;<a href=\"mailto:request@qwell.ru\" style=\"color: #ee4623; background-image: initial;\">request@qwell.ru</a>",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Новороссийске"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Новороссийск, ул. Видова, д. 98/1"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "565be77875323c92cceb7f50a709427d"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "e9479b656812c2a45ea24ada75824678"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Краснодарский" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Краснодарский край"
+                    }
+                ]
+            },
+            {
+                "Ид": "147",
+                "sity": "Армавир",
+                "Описание": "Телефон: 8 &#40;800&#41; 777-93-55&lt;br&gt;<br />\nE-mail:&nbsp;&lt;a href=&quot;mailto:<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&quot; style=&quot;color: #ee4623; background-image: initial;&quot;&gt;<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&lt;/a&gt;",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Армавире"
+                    },
+                    { "Ид": "UF_ADDRESS", "Значение": "" },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "565be77875323c92cceb7f50a709427d"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "e9479b656812c2a45ea24ada75824678"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Краснодарский" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Краснодарский край"
+                    }
+                ]
+            },
+            {
+                "Ид": "138",
+                "sity": "Архангельск",
+                "Описание": "Телефон: 8 (800) 777-93-55<br>\r\nE-mail:&nbsp;<a href=\"mailto:request@qwell.ru\" style=\"color: #ee4623; background-image: initial;\">request@qwell.ru</a>",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Архангельске"
+                    },
+                    { "Ид": "UF_ADDRESS", "Значение": "г. Архангельск" },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "565be77875323c92cceb7f50a709427d"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "58f29773d7782d685c327cbd0a59045a"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Архангельская" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Архангельская область"
+                    }
+                ]
+            },
+            {
+                "Ид": "109",
+                "sity": "Балаково",
+                "Описание": "Телефон: 8 &#40;800&#41; 777-93-55&lt;br&gt;<br />\nE-mail:&nbsp;&lt;a href=&quot;mailto:<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&quot; style=&quot;color: #ee4623; background-image: initial;&quot;&gt;<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&lt;/a&gt;",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Балаково"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Балаково, ул. Каховская, д. 11А, оф. 104"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "56c2513499d194d78e1dfd2364616620"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "301bfa52f46f983abb6080039daa5389"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Саратовская" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Саратовская область"
+                    }
+                ]
+            },
+            {
+                "Ид": "81",
+                "sity": "Барнаул",
+                "Описание": "Телефон: 8 (800) 777-93-55<br>\r\nE-mail:&nbsp;<a href=\"mailto:request@qwell.ru\" style=\"color: #ee4623; background-image: initial;\">request@qwell.ru</a>",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Барнауле"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Барнаул, пр. Красноармейский, д.78"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "1" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "56c2513499d194d78e1dfd2364616620"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "605e905c1445c6514a5dfcc535022d6b"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Алтайский" },
+                    { "Ид": "UF_REGION_WINDOWS", "Значение": "Алтайский край" }
+                ]
+            },
+            {
+                "Ид": "10",
+                "sity": "Белгород",
+                "Описание": "Телефон: 8 (800) 777-93-55<br>\r\nE-mail:&nbsp;<a href=\"mailto:request@qwell.ru\" style=\"color: #ee4623; background-image: initial;\">request@qwell.ru</a>",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Белгороде"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Белгород, ул. Буденного, д. 17Г"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "565be77875323c92cceb7f50a709427d"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "71b7e57ea606f037603a4a82d84d8dff"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Белгородская" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Белгородская область"
+                    }
+                ]
+            },
+            {
+                "Ид": "108",
+                "sity": "Бийск",
+                "Описание": "Телефон: 8 &#40;800&#41; 777-93-55&lt;br&gt;<br />\nE-mail:&nbsp;&lt;a href=&quot;mailto:<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&quot; style=&quot;color: #ee4623; background-image: initial;&quot;&gt;<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&lt;/a&gt;",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Бийске"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Бийск, ул. Мухачева, д. 240а, корп. 1"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "1" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "56c2513499d194d78e1dfd2364616620"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "605e905c1445c6514a5dfcc535022d6b"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Алтайский" },
+                    { "Ид": "UF_REGION_WINDOWS", "Значение": "Алтайский край" }
+                ]
+            },
+            {
+                "Ид": "112",
+                "sity": "Братск",
+                "Описание": "Телефон: 8 &#40;800&#41; 777-93-55&lt;br&gt;<br />\nE-mail:&nbsp;&lt;a href=&quot;mailto:<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&quot; style=&quot;color: #ee4623; background-image: initial;&quot;&gt;<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&lt;/a&gt;",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Братске"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Братск, ул. Южная, д. 18А, оф. 110"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "1" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "56c2513499d194d78e1dfd2364616620"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "320c7f3974ee66e425ecde5be4aba5ab"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Иркутская" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Иркутская область"
+                    }
+                ]
+            },
+            {
+                "Ид": "91",
+                "sity": "Брянск",
+                "Описание": "Телефон: 8 (800) 777-93-55<br>\r\nE-mail:&nbsp;<a href=\"mailto:request@qwell.ru\" style=\"color: #ee4623; background-image: initial;\">request@qwell.ru</a>",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Брянске"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Брянск, ул. Дуки, д. 65"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "565be77875323c92cceb7f50a709427d"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "71b7e57ea606f037603a4a82d84d8dff"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Брянская" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Брянская область"
+                    }
+                ]
+            },
+            {
+                "Ид": "11",
+                "sity": "Великий Новгород",
+                "Описание": "Телефон: 8 (800) 777-93-55<br>\r\nE-mail:&nbsp;<a href=\"mailto:request@qwell.ru\" style=\"color: #ee4623; background-image: initial;\">request@qwell.ru</a>",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Великом Новгороде"
+                    },
+                    { "Ид": "UF_ADDRESS", "Значение": "" },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "565be77875323c92cceb7f50a709427d"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "58f29773d7782d685c327cbd0a59045a"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Новгородская" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Новгородская область"
+                    }
+                ]
+            },
+            {
+                "Ид": "99",
+                "sity": "Владивосток",
+                "Описание": "Телефон: 8 (800) 777-93-55<br>\r\nE-mail:&nbsp;<a href=\"mailto:request@qwell.ru\" style=\"color: #ee4623; background-image: initial;\">request@qwell.ru</a>",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Владивостоке"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Владивосток, ул. Пушкинская, д. 31"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "1" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "56c2513499d194d78e1dfd2364616620"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "320c7f3974ee66e425ecde5be4aba5ab"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Приморский" },
+                    { "Ид": "UF_REGION_WINDOWS", "Значение": "Приморский край" }
+                ]
+            },
+            {
+                "Ид": "12",
+                "sity": "Владимир",
+                "Описание": "Телефон: 8 (4922) 77-98-00<br>\r\nE-mail:&nbsp;<a href=\"mailto:request@qwell.ru\" style=\"color: #ee4623; background-image: initial;\">request@qwell.ru</a>",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell во Владимире"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Владимир, ул. Садовая, д. 12"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "565be77875323c92cceb7f50a709427d"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "3a76adbfdc8fb967ec4dec429fb6069e"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Владимирская" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Владимирская область"
+                    }
+                ]
+            },
+            {
+                "sity": "Волгоград",
+                "Описание": "Телефон: 8 (800) 777-93-55<br>\r\nE-mail:&nbsp;<a href=\"mailto:request@qwell.ru\" style=\"color: #ee4623; background-image: initial;\">request@qwell.ru</a>",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Волгограде"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Волгоград, ул. Коммунистическая, д. 6"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "565be77875323c92cceb7f50a709427d"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "e9479b656812c2a45ea24ada75824678"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Волгоградская" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Волгоградская область"
+                    }
+                ]
+            },
+            {
+                "Ид": "134",
+                "sity": "Волжский",
+                "Описание": "Телефон: 8 &#40;800&#41; 777-93-55&lt;br&gt;<br />\nE-mail:&nbsp;&lt;a href=&quot;mailto:<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&quot; style=&quot;color: #ee4623; background-image: initial;&quot;&gt;<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&lt;/a&gt;",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Волжском"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Волжский, Проспект Ленина, д. 46"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "565be77875323c92cceb7f50a709427d"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "e9479b656812c2a45ea24ada75824678"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Волгоградская" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Волгоградская область"
+                    }
+                ]
+            },
+            {
+                "Ид": "14",
+                "sity": "Воронеж",
+                "Описание": "Телефон: 8 (800) 777-93-55<br>\r\nE-mail:&nbsp;<a href=\"mailto:request@qwell.ru\" style=\"color: #ee4623; background-image: initial;\">request@qwell.ru</a>",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Воронеже"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Воронеж, ул. Лётчика Замкина, д. 48"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "565be77875323c92cceb7f50a709427d"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "71b7e57ea606f037603a4a82d84d8dff"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Воронежская" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Воронежская область"
+                    }
+                ]
+            },
+            {
+                "Ид": "131",
+                "sity": "Гагарин",
+                "Описание": "Телефон: 8 &#40;800&#41; 777-93-55&lt;br&gt;<br />\nE-mail:&nbsp;&lt;a href=&quot;mailto:<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&quot; style=&quot;color: #ee4623; background-image: initial;&quot;&gt;<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&lt;/a&gt;",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Гагарине"
+                    },
+                    { "Ид": "UF_ADDRESS", "Значение": "" },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "565be77875323c92cceb7f50a709427d"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "3a76adbfdc8fb967ec4dec429fb6069e"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Смоленская" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Смоленская область"
+                    }
+                ]
+            },
+            {
+                "Ид": "87",
+                "sity": "Геленджик",
+                "Описание": "Телефон: 8 (800) 777-93-55<br>\r\nE-mail:&nbsp;<a href=\"mailto:request@qwell.ru\" style=\"color: #ee4623; background-image: initial;\">request@qwell.ru</a>",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Геленджике"
+                    },
+                    { "Ид": "UF_ADDRESS", "Значение": "" },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "565be77875323c92cceb7f50a709427d"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "e9479b656812c2a45ea24ada75824678"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Краснодарский" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Краснодарский край"
+                    }
+                ]
+            },
+            {
+                "Ид": "113",
+                "sity": "Горно-Алтайск",
+                "Описание": "Телефон: 8 &#40;800&#41; 777-93-55&lt;br&gt;<br />\nE-mail:&nbsp;&lt;a href=&quot;mailto:<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&quot; style=&quot;color: #ee4623; background-image: initial;&quot;&gt;<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&lt;/a&gt;",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Горно-Алтайске"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Горно-Алтайск, ул. Григория Чорос-Гуркина, д. 39/15"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "1" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "56c2513499d194d78e1dfd2364616620"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "605e905c1445c6514a5dfcc535022d6b"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Алтайский" },
+                    { "Ид": "UF_REGION_WINDOWS", "Значение": "Алтайский край" }
+                ]
+            },
+            {
+                "Ид": "124",
+                "sity": "Гуково",
+                "Описание": "Телефон: 8 &#40;800&#41; 777-93-55&lt;br&gt;<br />\nE-mail:&nbsp;&lt;a href=&quot;mailto:<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&quot; style=&quot;color: #ee4623; background-image: initial;&quot;&gt;<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&lt;/a&gt;",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Гуково"
+                    },
+                    { "Ид": "UF_ADDRESS", "Значение": "" },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "565be77875323c92cceb7f50a709427d"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "e9479b656812c2a45ea24ada75824678"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Ростовская" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Ростовская область"
+                    }
+                ]
+            },
+            {
+                "Ид": "114",
+                "sity": "Дзержинск",
+                "Описание": "Телефон: 8 &#40;800&#41; 777-93-55&lt;br&gt;<br />\nE-mail:&nbsp;&lt;a href=&quot;mailto:<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&quot; style=&quot;color: #ee4623; background-image: initial;&quot;&gt;<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&lt;/a&gt;",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Дзержинске"
+                    },
+                    { "Ид": "UF_ADDRESS", "Значение": "г. Дзержинск" },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "56c2513499d194d78e1dfd2364616620"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "dd2adcc6b9fa956a8192dd49cc723fe9"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Нижегородская" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Нижегородская область"
+                    }
+                ]
+            },
+            {
+                "Ид": "16",
+                "sity": "Екатеринбург",
+                "Описание": "Телефон: 8 (800) 777-93-55<br>\r\nE-mail:&nbsp;<a href=\"mailto:request@qwell.ru\" style=\"color: #ee4623; background-image: initial;\">request@qwell.ru</a>",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Екатеринбурге"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Екатеринбург, ул. Радищева, д. 33"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "1" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "56c2513499d194d78e1dfd2364616620"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "881ca6115b241d8b4dc2d0b60b0f907e"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Свердловская" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Свердловская область"
+                    }
+                ]
+            },
+            {
+                "Ид": "80",
+                "sity": "Елабуга",
+                "Описание": "Телефон: 8 (800) 777-93-55<br>\r\nE-mail:&nbsp;<a href=\"mailto:request@qwell.ru\" style=\"color: #ee4623; background-image: initial;\">request@qwell.ru</a>",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Елабуге"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Елабуга, ул. Интернациональная, д. 4А, офис 207А"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "1" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "56c2513499d194d78e1dfd2364616620"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "dd2adcc6b9fa956a8192dd49cc723fe9"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Татарстан" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Татарстан республика"
+                    }
+                ]
+            },
+            {
+                "Ид": "133",
+                "sity": "Елец",
+                "Описание": "Телефон: 8 &#40;800&#41; 777-93-55&lt;br&gt;<br />\nE-mail:&nbsp;&lt;a href=&quot;mailto:<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&quot; style=&quot;color: #ee4623; background-image: initial;&quot;&gt;<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&lt;/a&gt;",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Ельце"
+                    },
+                    { "Ид": "UF_ADDRESS", "Значение": "" },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "565be77875323c92cceb7f50a709427d"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "71b7e57ea606f037603a4a82d84d8dff"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Липецкая " },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Липецкая область"
+                    }
+                ]
+            },
+            {
+                "Ид": "115",
+                "sity": "Златоуст",
+                "Описание": "Телефон: 8 &#40;800&#41; 777-93-55&lt;br&gt;<br />\nE-mail:&nbsp;&lt;a href=&quot;mailto:<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&quot; style=&quot;color: #ee4623; background-image: initial;&quot;&gt;<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&lt;/a&gt;",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Златоусте"
+                    },
+                    { "Ид": "UF_ADDRESS", "Значение": "" },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "1" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "56c2513499d194d78e1dfd2364616620"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "881ca6115b241d8b4dc2d0b60b0f907e"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Челябинская" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Челябинская область"
+                    }
+                ]
+            },
+            {
+                "Ид": "17",
+                "sity": "Иваново",
+                "Описание": "Телефон: 8 (800) 777-93-55<br>\r\nE-mail:&nbsp;<a href=\"mailto:request@qwell.ru\" style=\"color: #ee4623; background-image: initial;\">request@qwell.ru</a>",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Иванове"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Иваново, ул. Советская, д.22А, 1 этаж, оф. 31Б"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "565be77875323c92cceb7f50a709427d"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "3a76adbfdc8fb967ec4dec429fb6069e"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Ивановская" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Ивановская область"
+                    }
+                ]
+            },
+            {
+                "Ид": "18",
+                "sity": "Ижевск",
+                "Описание": "Телефон: 8 (800) 777-93-55<br>\r\nE-mail:&nbsp;<a href=\"mailto:request@qwell.ru\" style=\"color: #ee4623; background-image: initial;\">request@qwell.ru</a>",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Ижевске"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Ижевск, улица Воровского 158, литер Б, оф. 5"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "56c2513499d194d78e1dfd2364616620"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "dd2adcc6b9fa956a8192dd49cc723fe9"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Удмуртская" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Удмуртская республика"
+                    }
+                ]
+            },
+            {
+                "Ид": "74",
+                "sity": "Иркутск",
+                "Описание": "Телефон: 8 (800) 777-93-55<br>\r\nE-mail:&nbsp;<a href=\"mailto:request@qwell.ru\" style=\"color: #ee4623; background-image: initial;\">request@qwell.ru</a>",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Иркутске"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Иркутск, ул. Полины Осипенко, д. 13"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "1" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "56c2513499d194d78e1dfd2364616620"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "320c7f3974ee66e425ecde5be4aba5ab"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Иркутская" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Иркутская область"
+                    }
+                ]
+            },
+            {
+                "Ид": "116",
+                "sity": "Йошкар-Ола",
+                "Описание": "Телефон: 8 &#40;800&#41; 777-93-55&lt;br&gt;<br />\nE-mail:&nbsp;&lt;a href=&quot;mailto:<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&quot; style=&quot;color: #ee4623; background-image: initial;&quot;&gt;<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&lt;/a&gt;",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Йошкар-Оле"
+                    },
+                    { "Ид": "UF_ADDRESS", "Значение": "г. Йошкар-Ола" },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "56c2513499d194d78e1dfd2364616620"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "dd2adcc6b9fa956a8192dd49cc723fe9"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Марий Эл" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Республика Марий Эл"
+                    }
+                ]
+            },
+            {
+                "Ид": "19",
+                "sity": "Казань",
+                "Описание": "Телефон: 8 (800) 777-93-55<br>\r\n E-mail:&nbsp;<a href=\"mailto:request@qwell.ru\" style=\"color: #ee4623; background-image: initial;\">request@qwell.ru</a>",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Казани"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Казань, ул. Николая Ершова, д. 18, оф. 300"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "56c2513499d194d78e1dfd2364616620"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "dd2adcc6b9fa956a8192dd49cc723fe9"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Татарстан" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Татарстан республика"
+                    }
+                ]
+            },
+            {
+                "Ид": "104",
+                "sity": "Калининград",
+                "Описание": "Телефон: 8 (800) 777-93-55<br>\r\nE-mail:&nbsp;<a href=\"mailto:request@qwell.ru\" style=\"color: #ee4623; background-image: initial;\">request@qwell.ru</a>",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Калининграде"
+                    },
+                    { "Ид": "UF_ADDRESS", "Значение": "" },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "565be77875323c92cceb7f50a709427d"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "58f29773d7782d685c327cbd0a59045a"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Калининградская" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Калининградская область"
+                    }
+                ]
+            },
+            {
+                "Ид": "21",
+                "sity": "Калуга",
+                "Описание": "Телефон: 8 (800) 777-93-55<br>\r\nE-mail:&nbsp;<a href=\"mailto:request@qwell.ru\" style=\"color: #ee4623; background-image: initial;\">request@qwell.ru</a>",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Калуге"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Калуга, ул. Тульская, д. 38, офис 302"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "565be77875323c92cceb7f50a709427d"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "3a76adbfdc8fb967ec4dec429fb6069e"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Калужская" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Калужская область"
+                    }
+                ]
+            },
+            {
+                "Ид": "22",
+                "sity": "Камышин",
+                "Описание": "Телефон: +7 (995) 407-99-46<br>\r\nТелефон: +7 (995) 407-99-47<br>\r\nE-mail:&nbsp;<a href=\"mailto:request@qwell.ru\" style=\"color: #ee4623; background-image: initial;\">request@qwell.ru</a>",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Камышине"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Камышин, 5-ый микрорайон, д. 68, пом. 54"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "565be77875323c92cceb7f50a709427d"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "e9479b656812c2a45ea24ada75824678"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Волгоградская" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Волгоградская область"
+                    }
+                ]
+            },
+            {
+                "Ид": "23",
+                "sity": "Кемерово",
+                "Описание": "Телефон: 8 (800) 777-93-55<br>\r\nE-mail:&nbsp;<a href=\"mailto:request@qwell.ru\" style=\"color: #ee4623; background-image: initial;\">request@qwell.ru</a>",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Кемерово"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Кемерово, ул. Дзержинского, д. 2Б"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "1" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "56c2513499d194d78e1dfd2364616620"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "605e905c1445c6514a5dfcc535022d6b"
+                    },
+                    {
+                        "Ид": "UF_REGION_DADATA",
+                        "Значение": "Кемеровская область - Кузбасс"
+                    },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Кемеровская область - Кузбасс"
+                    }
+                ]
+            },
+            {
+                "Ид": "24",
+                "sity": "Киров",
+                "Описание": "Телефон: +7 (912) 734-47-88<br>\r\nТелефон: +7 (982) 383-47-33<br>\r\nE-mail:&nbsp;<a href=\"mailto:request@qwell.ru\" style=\"color: #ee4623; background-image: initial;\">request@qwell.ru</a>",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Кирове"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Киров, ул. Карла Маркса, д. 127, оф. 503"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "56c2513499d194d78e1dfd2364616620"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "dd2adcc6b9fa956a8192dd49cc723fe9"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Кировская" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Кировская область"
+                    }
+                ]
+            },
+            {
+                "Ид": "144",
+                "sity": "Кисловодск",
+                "Описание": "Телефон: 8 &#40;800&#41; 777-93-55&lt;br&gt;<br />\nE-mail:&nbsp;&lt;a href=&quot;mailto:<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&quot; style=&quot;color: #ee4623; background-image: initial;&quot;&gt;<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&lt;/a&gt;",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Кисловодске"
+                    },
+                    { "Ид": "UF_ADDRESS", "Значение": "" },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "565be77875323c92cceb7f50a709427d"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "e9479b656812c2a45ea24ada75824678"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Ставропольский" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Ставропольский край"
+                    }
+                ]
+            },
+            {
+                "Ид": "93",
+                "sity": "Кострома",
+                "Описание": "Телефон: 8 (800) 777-93-55<br>\r\nE-mail:&nbsp;<a href=\"mailto:request@qwell.ru\" style=\"color: #ee4623; background-image: initial;\">request@qwell.ru</a>",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Костроме"
+                    },
+                    { "Ид": "UF_ADDRESS", "Значение": "" },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "565be77875323c92cceb7f50a709427d"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "3a76adbfdc8fb967ec4dec429fb6069e"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Костромская" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Костромская области"
+                    }
+                ]
+            },
+            {
+                "Ид": "25",
+                "sity": "Краснодар",
+                "Описание": "Телефон: 8 (800) 777-93-55<br>\r\nE-mail:&nbsp;<a href=\"mailto:request@qwell.ru\" style=\"color: #ee4623; background-image: initial;\">request@qwell.ru</a>",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Краснодаре"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Краснодар, ул.Октябрьская, д. 72, 2 этаж"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "565be77875323c92cceb7f50a709427d"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "e9479b656812c2a45ea24ada75824678"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Краснодарский" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Краснодарский край"
+                    }
+                ]
+            },
+            {
+                "Ид": "26",
+                "sity": "Красноярск",
+                "Описание": "Телефон: 8 (800) 777-93-55<br>\r\nE-mail:&nbsp;<a href=\"mailto:request@qwell.ru\" style=\"color: #ee4623; background-image: initial;\">request@qwell.ru</a>",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Красноярске"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Красноярск, ул. Конституции СССР, д. 7, пом. 42"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "1" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "56c2513499d194d78e1dfd2364616620"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "605e905c1445c6514a5dfcc535022d6b"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Красноярский" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Красноярский край"
+                    }
+                ]
+            },
+            {
+                "Ид": "146",
+                "sity": "Крымск",
+                "Описание": "Телефон: 8 &#40;800&#41; 777-93-55&lt;br&gt;<br />\nE-mail:&nbsp;&lt;a href=&quot;mailto:<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&quot; style=&quot;color: #ee4623; background-image: initial;&quot;&gt;<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&lt;/a&gt;",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Крымске"
+                    },
+                    { "Ид": "UF_ADDRESS", "Значение": "" },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "565be77875323c92cceb7f50a709427d"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "e9479b656812c2a45ea24ada75824678"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Краснодарский" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Краснодарский край"
+                    }
+                ]
+            },
+            {
+                "Ид": "97",
+                "sity": "Курган",
+                "Описание": "Телефон: 8 &#40;800&#41; 777-93-55&lt;br&gt;<br />\nE-mail:&nbsp;&lt;a href=&quot;mailto:<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&quot; style=&quot;color: #ee4623; background-image: initial;&quot;&gt;<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&lt;/a&gt;",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Кургане"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Курган, ул. Коли Мяготина  д. 119, офис 211"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "1" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "56c2513499d194d78e1dfd2364616620"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "881ca6115b241d8b4dc2d0b60b0f907e"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Курганская" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Курганская область"
+                    }
+                ]
+            },
+            {
+                "Ид": "27",
+                "sity": "Курск",
+                "Описание": "Телефон: 8 (800) 777-93-55<br>\r\nE-mail:&nbsp;<a href=\"mailto:request@qwell.ru\" style=\"color: #ee4623; background-image: initial;\">request@qwell.ru</a>",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Курске"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Курск, ул. Димитрова, д.70"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "565be77875323c92cceb7f50a709427d"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "71b7e57ea606f037603a4a82d84d8dff"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Курская" },
+                    { "Ид": "UF_REGION_WINDOWS", "Значение": "Курская область" }
+                ]
+            },
+            {
+                "Ид": "141",
+                "sity": "Лесосибирск",
+                "Описание": "Телефон: 8 &#40;800&#41; 777-93-55&lt;br&gt;<br />\nE-mail:&nbsp;&lt;a href=&quot;mailto:<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&quot; style=&quot;color: #ee4623; background-image: initial;&quot;&gt;<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&lt;/a",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Лесосибирске"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Лесосибирск, ул. Привокзальная, д.12, оф. 205"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "1" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "56c2513499d194d78e1dfd2364616620"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "605e905c1445c6514a5dfcc535022d6b"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Красноярский" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Красноярский край"
+                    }
+                ]
+            },
+            {
+                "Ид": "28",
+                "sity": "Липецк",
+                "Описание": "Телефон: 8 (800) 777-93-55<br>\r\nE-mail:&nbsp;<a href=\"mailto:request@qwell.ru\" style=\"color: #ee4623; background-image: initial;\">request@qwell.ru</a>",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Липецке"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Липецк, просп. Победы, д. 29"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "565be77875323c92cceb7f50a709427d"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "71b7e57ea606f037603a4a82d84d8dff"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Липецкая" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Липецкая область"
+                    }
+                ]
+            },
+            {
+                "Ид": "111",
+                "sity": "Магнитогорск",
+                "Описание": "Телефон: 8 (909) 099-11-00<br>\r\nE-mail:&nbsp;<a href=\"mailto:request@qwell.ru\" style=\"color: #ee4623; background-image: initial;\">request@qwell.ru</a>",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Магнитогорске"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": " г. Магнитогорск, ул. Завенягина, д. 4Г, 4 этаж, офис 413"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "1" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "56c2513499d194d78e1dfd2364616620"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "881ca6115b241d8b4dc2d0b60b0f907e"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Челябинская" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Челябинская область"
+                    }
+                ]
+            },
+            {
+                "Ид": "148",
+                "sity": "Майкоп",
+                "Описание": "Телефон: 8 &#40;800&#41; 777-93-55&lt;br&gt;<br />\nE-mail:&nbsp;&lt;a href=&quot;mailto:<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&quot; style=&quot;color: #ee4623; background-image: initial;&quot;&gt;<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&lt;/a&gt;",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Майкопе"
+                    },
+                    { "Ид": "UF_ADDRESS", "Значение": "" },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "565be77875323c92cceb7f50a709427d"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "e9479b656812c2a45ea24ada75824678"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Краснодарский" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Краснодарский край"
+                    }
+                ]
+            },
+            {
+                "Ид": "29",
+                "sity": "Миасс",
+                "Описание": "Телефон: 8 (800) 777-93-55<br>\r\nE-mail:&nbsp;<a href=\"mailto:request@qwell.ru\" style=\"color: #ee4623; background-image: initial;\">request@qwell.ru</a>",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Миассе"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Миасс, ул. Калинина, д. 10, оф. 233"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "1" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "56c2513499d194d78e1dfd2364616620"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "881ca6115b241d8b4dc2d0b60b0f907e"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Челябинская" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Челябинская область"
+                    }
+                ]
+            },
+            {
+                "Ид": "145",
+                "sity": "Минеральные Воды",
+                "Описание": "Телефон: 8 &#40;800&#41; 777-93-55&lt;br&gt;<br />\nE-mail:&nbsp;&lt;a href=&quot;mailto:<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&quot; style=&quot;color: #ee4623; background-image: initial;&quot;&gt;<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&lt;/a&gt;",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell Минеральных Водах"
+                    },
+                    { "Ид": "UF_ADDRESS", "Значение": "" },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "565be77875323c92cceb7f50a709427d"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "e9479b656812c2a45ea24ada75824678"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Ставропольский" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Ставропольский край"
+                    }
+                ]
+            },
+            {
+                "Ид": "122",
+                "sity": "Михайловск",
+                "Описание": "Телефон: 8 &#40;800&#41; 777-93-55&lt;br&gt;<br />\nE-mail:&nbsp;&lt;a href=&quot;mailto:<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&quot; style=&quot;color: #ee4623; background-image: initial;&quot;&gt;<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&lt;/a&gt;",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Михайловске"
+                    },
+                    { "Ид": "UF_ADDRESS", "Значение": "" },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "565be77875323c92cceb7f50a709427d"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "e9479b656812c2a45ea24ada75824678"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Ставропольский" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Ставропольский край"
+                    }
+                ]
+            },
+            {
+                "Ид": "137",
+                "sity": "Мурманск",
+                "Описание": "Телефон: 8 (800) 777-93-55<br>\r\nE-mail:&nbsp;<a href=\"mailto:request@qwell.ru\" style=\"color: #ee4623; background-image: initial;\">request@qwell.ru</a>",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Санкт-Петербурге"
+                    },
+                    { "Ид": "UF_ADDRESS", "Значение": "г. Мурманск" },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "565be77875323c92cceb7f50a709427d"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "58f29773d7782d685c327cbd0a59045a"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Мурманская" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Мурманская область"
+                    }
+                ]
+            },
+            {
+                "Ид": "30",
+                "sity": "Набережные Челны",
+                "Описание": "Телефон: 8 (800) 777-93-55<br>\r\nE-mail:&nbsp;<a href=\"mailto:request@qwell.ru\" style=\"color: #ee4623; background-image: initial;\">request@qwell.ru</a>",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Набережных Челнах"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Набережные Челны, пр-т Чулман, д. 32/42, оф. 302"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "56c2513499d194d78e1dfd2364616620"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "dd2adcc6b9fa956a8192dd49cc723fe9"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Татарстан" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Татарстан республика"
+                    }
+                ]
+            },
+            {
+                "Ид": "79",
+                "sity": "Нижнекамск",
+                "Описание": "Телефон: +7 927 048 01 73<br>\r\nE-mail:&nbsp;<a href=\"mailto:request@qwell.ru\" style=\"color: #ee4623; background-image: initial;\">request@qwell.ru</a>",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Нижнекамске"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Нижнекамск, ул. Ахтубинская, д. 2, оф. 3.9"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "1" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "56c2513499d194d78e1dfd2364616620"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "dd2adcc6b9fa956a8192dd49cc723fe9"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Татарстан" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Татарстан республика"
+                    }
+                ]
+            },
+            {
+                "Ид": "31",
+                "sity": "Нижний Новгород",
+                "Описание": "Телефон: 8 (800) 777-93-55<br>\r\nE-mail:&nbsp;<a href=\"mailto:request@qwell.ru\" style=\"color: #ee4623; background-image: initial;\">request@qwell.ru</a>",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Нижнем Новгороде"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Нижний Новгород, ул. Костина, д. 6/1, оф. 12"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "56c2513499d194d78e1dfd2364616620"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "dd2adcc6b9fa956a8192dd49cc723fe9"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Нижегородская" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Нижегородская область"
+                    }
+                ]
+            },
+            {
+                "Ид": "76",
+                "sity": "Нижний Тагил",
+                "Описание": "Телефон: 8 (800) 777-93-55<br>\r\nE-mail:&nbsp;<a href=\"mailto:request@qwell.ru\" style=\"color: #ee4623; background-image: initial;\">request@qwell.ru</a>",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Нижнем Тагиле"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Нижний Тагил, ул. Уральская, д. 11 оф. 307"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "1" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "56c2513499d194d78e1dfd2364616620"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "881ca6115b241d8b4dc2d0b60b0f907e"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Свердловская" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Свердловская область"
+                    }
+                ]
+            },
+            {
+                "Ид": "32",
+                "sity": "Новокузнецк",
+                "Описание": "Телефон: 8 &#40;800&#41; 777-93-55&lt;br&gt;<br />\nE-mail:&nbsp;&lt;a href=&quot;mailto:<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&quot; style=&quot;color: #ee4623; background-image: initial;&quot;&gt;<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&lt;/a&gt;",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Новокузнецке"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Новокузнецк, Кузнецкстроевский пр-т, д. 10"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "1" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "56c2513499d194d78e1dfd2364616620"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "605e905c1445c6514a5dfcc535022d6b"
+                    },
+                    {
+                        "Ид": "UF_REGION_DADATA",
+                        "Значение": "Кемеровская область - Кузбасс"
+                    },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Кемеровская область - Кузбасс"
+                    }
+                ]
+            },
+            {
+                "Ид": "33",
+                "sity": "Новороссийск",
+                "Описание": "Телефон: 8 (800) 777-93-55<br>\r\nE-mail:&nbsp;<a href=\"mailto:request@qwell.ru\" style=\"color: #ee4623; background-image: initial;\">request@qwell.ru</a>",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Новороссийске"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Новороссийск, пр-т Ленина, д. 13"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "565be77875323c92cceb7f50a709427d"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "e9479b656812c2a45ea24ada75824678"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Краснодарский" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Краснодарский край"
+                    }
+                ]
+            },
+            {
+                "Ид": "34",
+                "sity": "Новосибирск",
+                "Описание": "Телефон: 8 (800) 777-93-55<br>\r\nE-mail:&nbsp;<a href=\"mailto:request@qwell.ru\" style=\"color: #ee4623; background-image: initial;\">request@qwell.ru</a>",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Новосибирске"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Новосибирск, ул. Галущака, д. 4, оф.14"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "1" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "56c2513499d194d78e1dfd2364616620"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "605e905c1445c6514a5dfcc535022d6b"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Новосибирская" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Новосибирская область"
+                    }
+                ]
+            },
+            {
+                "Ид": "89",
+                "sity": "Новочеркасск",
+                "Описание": "Телефон: 8 (800) 777-93-55<br>\r\nE-mail:&nbsp;<a href=\"mailto:request@qwell.ru\" style=\"color: #ee4623; background-image: initial;\">request@qwell.ru</a>",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Ростове-на-Дону"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Ростов-на-Дону, пр. Ленина, д. 44/13"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "565be77875323c92cceb7f50a709427d"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "e9479b656812c2a45ea24ada75824678"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Ростовская" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Ростовская области"
+                    }
+                ]
+            },
+            {
+                "Ид": "123",
+                "sity": "Новошахтинск",
+                "Описание": "Телефон: 8 &#40;800&#41; 777-93-55&lt;br&gt;<br />\nE-mail:&nbsp;&lt;a href=&quot;mailto:<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&quot; style=&quot;color: #ee4623; background-image: initial;&quot;&gt;<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&lt;/a&gt;",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Новошахтинске"
+                    },
+                    { "Ид": "UF_ADDRESS", "Значение": "" },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "565be77875323c92cceb7f50a709427d"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "e9479b656812c2a45ea24ada75824678"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Ростовская" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Ростовская область"
+                    }
+                ]
+            },
+            {
+                "Ид": "94",
+                "sity": "Обнинск",
+                "Описание": "Телефон: 8 (800) 777-93-55<br>\r\nE-mail:&nbsp;<a href=\"mailto:request@qwell.ru\" style=\"color: #ee4623; background-image: initial;\">request@qwell.ru</a>",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Обнинске"
+                    },
+                    { "Ид": "UF_ADDRESS", "Значение": "" },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "565be77875323c92cceb7f50a709427d"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "3a76adbfdc8fb967ec4dec429fb6069e"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Калужская" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Калужская области"
+                    }
+                ]
+            },
+            {
+                "Ид": "36",
+                "sity": "Омск",
+                "Описание": "Телефон: 8 (800) 777-93-55<br>\r\nE-mail:&nbsp;<a href=\"mailto:request@qwell.ru\" style=\"color: #ee4623; background-image: initial;\">request@qwell.ru</a>",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Омске"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Омск, ул.10 лет Октября, д. 43/1"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "1" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "56c2513499d194d78e1dfd2364616620"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "605e905c1445c6514a5dfcc535022d6b"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Омская" },
+                    { "Ид": "UF_REGION_WINDOWS", "Значение": "Омская область" }
+                ]
+            },
+            {
+                "Ид": "90",
+                "sity": "Орёл",
+                "Описание": "Телефон: 8 (800) 777-93-55<br>\r\nE-mail:&nbsp;<a href=\"mailto:request@qwell.ru\" style=\"color: #ee4623; background-image: initial;\">request@qwell.ru</a>",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Орле"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Орёл, ул. Старо-Московская, дом 20"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "565be77875323c92cceb7f50a709427d"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "71b7e57ea606f037603a4a82d84d8dff"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Орловская" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Орловская область"
+                    }
+                ]
+            },
+            {
+                "Ид": "103",
+                "sity": "Оренбург",
+                "Описание": "Телефон:8 958 111 38 96<br>\r\nE-mail:&nbsp;<a href=\"mailto:request@qwell.ru\" style=\"color: #ee4623; background-image: initial;\">request@qwell.ru</a>",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Оренбурге"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Оренбург ул. Плеханова 2, оф 13 ( 2-й этаж )"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "1" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "56c2513499d194d78e1dfd2364616620"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "301bfa52f46f983abb6080039daa5389"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Оренбургская" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Оренбургская область"
+                    }
+                ]
+            },
+            {
+                "Ид": "73",
+                "sity": "Пенза",
+                "Описание": "Телефон: 8 (800) 777-93-55<br>\r\nE-mail:&nbsp;<a href=\"mailto:request@qwell.ru\" style=\"color: #ee4623; background-image: initial;\">request@qwell.ru</a>",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Пензе"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Пенза, ул. Московская, д. 56 / ул. Максима Горького, д. 34, 2 этаж, оф. 233"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "56c2513499d194d78e1dfd2364616620"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "301bfa52f46f983abb6080039daa5389"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Пензенская" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Пензенская область"
+                    }
+                ]
+            },
+            {
+                "Ид": "37",
+                "sity": "Пермь",
+                "Описание": "Телефон: 8 (800) 777-93-55<br>\r\nE-mail:&nbsp;<a href=\"mailto:request@qwell.ru\" style=\"color: #ee4623; background-image: initial;\">request@qwell.ru</a>",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Перми"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Пермь, ул. Монастырская, д. 41"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "56c2513499d194d78e1dfd2364616620"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "881ca6115b241d8b4dc2d0b60b0f907e"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Пермский" },
+                    { "Ид": "UF_REGION_WINDOWS", "Значение": "Пермский край" }
+                ]
+            },
+            {
+                "Ид": "106",
+                "sity": "Петрозаводск",
+                "Описание": "Телефон: 8 (800) 777-93-55<br>\r\nE-mail:&nbsp;<a href=\"mailto:request@qwell.ru\" style=\"color: #ee4623; background-image: initial;\">request@qwell.ru</a>",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Петрозаводске"
+                    },
+                    { "Ид": "UF_ADDRESS", "Значение": "" },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "565be77875323c92cceb7f50a709427d"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "58f29773d7782d685c327cbd0a59045a"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Карелия" },
+                    { "Ид": "UF_REGION_WINDOWS", "Значение": "Карелия" }
+                ]
+            },
+            {
+                "Ид": "117",
+                "sity": "Прокопьевск",
+                "Описание": "Телефон: 8 &#40;800&#41; 777-93-55&lt;br&gt;<br />\nE-mail:&nbsp;&lt;a href=&quot;mailto:<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&quot; style=&quot;color: #ee4623; background-image: initial;&quot;&gt;<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&lt;/a&gt;",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Прокопьевске"
+                    },
+                    { "Ид": "UF_ADDRESS", "Значение": "" },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "1" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "56c2513499d194d78e1dfd2364616620"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "605e905c1445c6514a5dfcc535022d6b"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Кемеровская" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Кемеровская область"
+                    }
+                ]
+            },
+            {
+                "Ид": "105",
+                "sity": "Псков",
+                "Описание": "Телефон: 8 (800) 777-93-55<br>\r\nE-mail:&nbsp;<a href=\"mailto:request@qwell.ru\" style=\"color: #ee4623; background-image: initial;\">request@qwell.ru</a>",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Пскове"
+                    },
+                    { "Ид": "UF_ADDRESS", "Значение": "" },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "565be77875323c92cceb7f50a709427d"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "58f29773d7782d685c327cbd0a59045a"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Псковская" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Псковская область"
+                    }
+                ]
+            },
+            {
+                "Ид": "142",
+                "sity": "Пятигорск",
+                "Описание": "Телефон: 8 &#40;800&#41; 777-93-55&lt;br&gt;<br />\nE-mail:&nbsp;&lt;a href=&quot;mailto:<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&quot; style=&quot;color: #ee4623; background-image: initial;&quot;&gt;<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&lt;/a&gt;",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Пятигорске"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Пятигорск, ул. Октябрьская, д. 50"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "565be77875323c92cceb7f50a709427d"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "e9479b656812c2a45ea24ada75824678"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Ставропольский" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Ставропольский край"
+                    }
+                ]
+            },
+            {
+                "Ид": "38",
+                "sity": "Ростов-на-Дону",
+                "Описание": "Телефон: 8 (800) 777-93-55<br>\r\nE-mail:&nbsp;<a href=\"mailto:request@qwell.ru\" style=\"color: #ee4623; background-image: initial;\">request@qwell.ru</a>",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Ростове-на-Дону"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Ростов-на-Дону, пр. Ленина, д. 44/13"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "565be77875323c92cceb7f50a709427d"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "e9479b656812c2a45ea24ada75824678"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Ростовская" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Ростовская область"
+                    }
+                ]
+            },
+            {
+                "Ид": "39",
+                "sity": "Рязань",
+                "Описание": "Телефон: 8 &#40;800&#41; 777-93-55&lt;br&gt;<br />\nE-mail:&nbsp;&lt;a href=&quot;mailto:<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&quot; style=&quot;color: #ee4623; background-image: initial;&quot;&gt;<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&lt;/a&gt;",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Рязани"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Рязань, ул. Вокзальная, д. 20"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "565be77875323c92cceb7f50a709427d"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "3a76adbfdc8fb967ec4dec429fb6069e"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Рязанская" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Рязанская область"
+                    }
+                ]
+            },
+            {
+                "Ид": "40",
+                "sity": "Самара",
+                "Описание": "Телефон: 8 (800) 777-93-55<br>\r\nE-mail:&nbsp;<a href=\"mailto:request@qwell.ru\" style=\"color: #ee4623; background-image: initial;\">request@qwell.ru</a>",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Самаре"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Самара ул. Ново-Вокзальная, д. 61Д"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "56c2513499d194d78e1dfd2364616620"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "301bfa52f46f983abb6080039daa5389"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Самарская" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Самарская область"
+                    }
+                ]
+            },
+            {
+                "Ид": "118",
+                "sity": "Саранск",
+                "Описание": "Телефон: 8 &#40;800&#41; 777-93-55&lt;br&gt;<br />\nE-mail:&nbsp;&lt;a href=&quot;mailto:<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&quot; style=&quot;color: #ee4623; background-image: initial;&quot;&gt;<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&lt;/a&gt;",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Саранске"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Саранск, ул. Васенко, д.15, оф. 219"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "56c2513499d194d78e1dfd2364616620"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "301bfa52f46f983abb6080039daa5389"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Мордовия" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Республика Мордовия"
+                    }
+                ]
+            },
+            {
+                "Ид": "41",
+                "sity": "Саратов",
+                "Описание": "Телефон: 8 &#40;800&#41; 777-93-55&lt;br&gt;<br />\nE-mail:&nbsp;&lt;a href=&quot;mailto:<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&quot; style=&quot;color: #ee4623; background-image: initial;&quot;&gt;<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&lt;/a&gt;",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Саратове "
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Саратов, ул. Челюскинцев, д. 151/161"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "56c2513499d194d78e1dfd2364616620"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "301bfa52f46f983abb6080039daa5389"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Саратовская" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Саратовская область"
+                    }
+                ]
+            },
+            {
+                "Ид": "92",
+                "sity": "Смоленск",
+                "Описание": "Телефон: 8 (800) 777-93-55<br>\r\nE-mail:&nbsp;<a href=\"mailto:request@qwell.ru\" style=\"color: #ee4623; background-image: initial;\">request@qwell.ru</a>",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Смоленске"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Смоленск, ул. Ленина, д. 16, оф. 17"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "565be77875323c92cceb7f50a709427d"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "71b7e57ea606f037603a4a82d84d8dff"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Смоленская" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Смоленская область"
+                    }
+                ]
+            },
+            {
+                "Ид": "42",
+                "sity": "Сочи",
+                "Описание": "Телефон: 8 (800) 777-93-55<br>\r\nE-mail:&nbsp;<a href=\"mailto:request@qwell.ru\" style=\"color: #ee4623; background-image: initial;\">request@qwell.ru</a>",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Сочи"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Сочи, ул. Островского, д. 71А"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "565be77875323c92cceb7f50a709427d"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "e9479b656812c2a45ea24ada75824678"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Краснодарский" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Краснодарский край"
+                    }
+                ]
+            },
+            {
+                "Ид": "43",
+                "sity": "Ставрополь",
+                "Описание": "Телефон: 8 (800) 777-93-55<br>\r\nE-mail:&nbsp;<a href=\"mailto:request@qwell.ru\" style=\"color: #ee4623; background-image: initial;\">request@qwell.ru</a>",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Ставрополе"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Ставрополь, ул. Мира, д. 264А, оф. 15"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "565be77875323c92cceb7f50a709427d"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "e9479b656812c2a45ea24ada75824678"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Ставропольский" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Ставропольский край"
+                    }
+                ]
+            },
+            {
+                "Ид": "135",
+                "sity": "Старый Оскол",
+                "Описание": "Телефон: 8 &#40;800&#41; 777-93-55&lt;br&gt;<br />\nE-mail:&nbsp;&lt;a href=&quot;mailto:<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&quot; style=&quot;color: #ee4623; background-image: initial;&quot;&gt;<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&lt;/a&gt;",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Старом Осколе"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Старый Оскол, ул. Заводская, д. 1, каб. №16 "
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "565be77875323c92cceb7f50a709427d"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "71b7e57ea606f037603a4a82d84d8dff"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Белгородская" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Белгородская область"
+                    }
+                ]
+            },
+            {
+                "Ид": "78",
+                "sity": "Стерлитамак",
+                "Описание": "Телефон: 8 (800) 777-93-55<br>\r\nE-mail:&nbsp;<a href=\"mailto:request@qwell.ru\" style=\"color: #ee4623; background-image: initial;\">request@qwell.ru</a>",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Стерлитамаке"
+                    },
+                    { "Ид": "UF_ADDRESS", "Значение": "" },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "1" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "56c2513499d194d78e1dfd2364616620"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "301bfa52f46f983abb6080039daa5389"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Башкортостан" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Республика Башкортостан"
+                    }
+                ]
+            },
+            {
+                "Ид": "102",
+                "sity": "Сургут",
+                "Описание": "Телефон: 8 (800) 777-93-55<br>\r\nE-mail:&nbsp;<a href=\"mailto:request@qwell.ru\" style=\"color: #ee4623; background-image: initial;\">request@qwell.ru</a>",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Сургуте"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Сургут, ул. Энергетиков д. 20, оф. 112"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "1" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "56c2513499d194d78e1dfd2364616620"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "881ca6115b241d8b4dc2d0b60b0f907e"
+                    },
+                    {
+                        "Ид": "UF_REGION_DADATA",
+                        "Значение": "Ханты-Мансийский Автономный округ - Югра"
+                    },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Ханты-Мансийский Автономный округ - Югра"
+                    }
+                ]
+            },
+            {
+                "Ид": "110",
+                "sity": "Сызрань",
+                "Описание": "Телефон: 8 &#40;800&#41; 777-93-55&lt;br&gt;<br />\nE-mail:&nbsp;&lt;a href=&quot;mailto:<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&quot; style=&quot;color: #ee4623; background-image: initial;&quot;&gt;<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&lt;/a&gt;",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Сызрани"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Сызрань, пер. Достоевского, д. 19, офис 404 "
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "56c2513499d194d78e1dfd2364616620"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "301bfa52f46f983abb6080039daa5389"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Самарская" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Самарская область"
+                    }
+                ]
+            },
+            {
+                "Ид": "127",
+                "sity": "Таганрог",
+                "Описание": "Телефон: 8 &#40;800&#41; 777-93-55&lt;br&gt;<br />\nE-mail:&nbsp;&lt;a href=&quot;mailto:<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&quot; style=&quot;color: #ee4623; background-image: initial;&quot;&gt;<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&lt;/a&gt;",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Таганроге"
+                    },
+                    { "Ид": "UF_ADDRESS", "Значение": "" },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "565be77875323c92cceb7f50a709427d"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "e9479b656812c2a45ea24ada75824678"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Ростовская" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Ростовская область"
+                    }
+                ]
+            },
+            {
+                "Ид": "54",
+                "sity": "Тамбов",
+                "Описание": "Телефон: 8 (800) 777-93-55<br>\r\nE-mail:&nbsp;<a href=\"mailto:request@qwell.ru\" style=\"color: #ee4623; background-image: initial;\">request@qwell.ru</a>",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Тамбове"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Тамбов, ул. Октябрьская, д. 47."
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "565be77875323c92cceb7f50a709427d"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "71b7e57ea606f037603a4a82d84d8dff"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Тамбовская" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Тамбовская область"
+                    }
+                ]
+            },
+            {
+                "Ид": "51",
+                "sity": "Тверь",
+                "Описание": "Телефон: 8 (800) 777-93-55<br>\r\nE-mail:&nbsp;<a href=\"mailto:request@qwell.ru\" style=\"color: #ee4623; background-image: initial;\">request@qwell.ru</a>",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Твери"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г .Тверь, ул. Симеоновская, д.60"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "565be77875323c92cceb7f50a709427d"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "3a76adbfdc8fb967ec4dec429fb6069e"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Тверская" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Тверская область"
+                    }
+                ]
+            },
+            {
+                "Ид": "46",
+                "sity": "Тольятти",
+                "Описание": "Телефон: 8 (800) 777-93-55<br>\r\nE-mail:&nbsp;<a href=\"mailto:request@qwell.ru\" style=\"color: #ee4623; background-image: initial;\">request@qwell.ru</a>",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Тольятти"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Тольятти, ул. Тополиная, д. 9А, оф. 7"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "56c2513499d194d78e1dfd2364616620"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "301bfa52f46f983abb6080039daa5389"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Самарская" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Самарская область"
+                    }
+                ]
+            },
+            {
+                "Ид": "77",
+                "sity": "Томск",
+                "Описание": "Телефон: 8 (800) 777-93-55<br>\r\nE-mail:&nbsp;<a href=\"mailto:request@qwell.ru\" style=\"color: #ee4623; background-image: initial;\">request@qwell.ru</a>",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Томске"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": " г. Томск, ул. Елизаровых, д. 15/1"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "1" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "56c2513499d194d78e1dfd2364616620"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "605e905c1445c6514a5dfcc535022d6b"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Томская" },
+                    { "Ид": "UF_REGION_WINDOWS", "Значение": "Томская область" }
+                ]
+            },
+            {
+                "Ид": "88",
+                "sity": "Туапсе",
+                "Описание": "Телефон: 8 (800) 777-93-55<br>\r\nE-mail:&nbsp;<a href=\"mailto:request@qwell.ru\" style=\"color: #ee4623; background-image: initial;\">request@qwell.ru</a>",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Туапсе"
+                    },
+                    { "Ид": "UF_ADDRESS", "Значение": "" },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "565be77875323c92cceb7f50a709427d"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "e9479b656812c2a45ea24ada75824678"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Краснодарский" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Краснодарский край"
+                    }
+                ]
+            },
+            {
+                "Ид": "52",
+                "sity": "Тула",
+                "Описание": "Телефон: 8 (800) 777-93-55<br>\r\nE-mail:&nbsp;<a href=\"mailto:request@qwell.ru\" style=\"color: #ee4623; background-image: initial;\">request@qwell.ru</a>",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Туле"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Тула, ул. Дзержинского, д. 11"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "565be77875323c92cceb7f50a709427d"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "3a76adbfdc8fb967ec4dec429fb6069e"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Тульская" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Тульская область"
+                    }
+                ]
+            },
+            {
+                "Ид": "49",
+                "sity": "Тюмень",
+                "Описание": "Телефон: 8 (800) 777-93-55<br>\r\nE-mail:&nbsp;<a href=\"mailto:request@qwell.ru\" style=\"color: #ee4623; background-image: initial;\">request@qwell.ru</a>",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Тюмени"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Тюмень, улица Семакова, д. 2/1"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "1" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "56c2513499d194d78e1dfd2364616620"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "881ca6115b241d8b4dc2d0b60b0f907e"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Тюменская" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Тюменская область"
+                    }
+                ]
+            },
+            {
+                "Ид": "107",
+                "sity": "Улан-Удэ",
+                "Описание": "Телефон: 8 (800) 777-93-55<br>\r\nE-mail:&nbsp;<a href=\"mailto:request@qwell.ru\" style=\"color: #ee4623; background-image: initial;\">request@qwell.ru</a>",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Улан-Удэ"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Улан-Удэ, Железнодорожный район, ул. Хоца Намсараева, 7А, оф. 319/5"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "1" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "56c2513499d194d78e1dfd2364616620"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "320c7f3974ee66e425ecde5be4aba5ab"
+                    },
+                    {
+                        "Ид": "UF_REGION_DADATA",
+                        "Значение": "Республика Бурятия"
+                    },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Республика Бурятия"
+                    }
+                ]
+            },
+            {
+                "Ид": "47",
+                "sity": "Ульяновск",
+                "Описание": "Телефон: 8 (800) 777-93-55<br>\r\nE-mail:&nbsp;<a href=\"mailto:request@qwell.ru\" style=\"color: #ee4623; background-image: initial;\">request@qwell.ru</a>",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Ульяновске"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Ульяновск, ул. Гончарова, д. 24"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "56c2513499d194d78e1dfd2364616620"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "301bfa52f46f983abb6080039daa5389"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Ульяновская" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Ульяновская область"
+                    }
+                ]
+            },
+            {
+                "Ид": "48",
+                "sity": "Уфа",
+                "Описание": "Телефон: 8 (800) 777-93-55<br>\r\nE-mail:&nbsp;<a href=\"mailto:request@qwell.ru\" style=\"color: #ee4623; background-image: initial;\">request@qwell.ru</a>",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Уфе"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Уфа, проспект Октября, д. 128/3"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "1" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "56c2513499d194d78e1dfd2364616620"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "301bfa52f46f983abb6080039daa5389"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Башкортостан" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Башкортостан республика"
+                    }
+                ]
+            },
+            {
+                "Ид": "100",
+                "sity": "Хабаровск",
+                "Описание": "Телефон: 8 &#40;800&#41; 777-93-55&lt;br&gt;<br />\nE-mail:&nbsp;&lt;a href=&quot;mailto:<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&quot; style=&quot;color: #ee4623; background-image: initial;&quot;&gt;<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&lt;/a&gt;",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Хабаровске"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Хабаровск, ул. Шеронова, д. 5, пом. 1"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "1" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "56c2513499d194d78e1dfd2364616620"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "320c7f3974ee66e425ecde5be4aba5ab"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Хабаровский" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Хабаровский край"
+                    }
+                ]
+            },
+            {
+                "Ид": "44",
+                "sity": "Чебоксары",
+                "Описание": "Телефон: 8 (800) 777-93-55<br>\r\nE-mail:&nbsp;<a href=\"mailto:request@qwell.ru\" style=\"color: #ee4623; background-image: initial;\">request@qwell.ru</a>",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Чебоксарах"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Чебоксары, ул. Энгельса, д.3, корп.1, пом.7, каб.20"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "56c2513499d194d78e1dfd2364616620"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "dd2adcc6b9fa956a8192dd49cc723fe9"
+                    },
+                    {
+                        "Ид": "UF_REGION_DADATA",
+                        "Значение": "Чувашская республика"
+                    },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Чувашская республика"
+                    }
+                ]
+            },
+            {
+                "Ид": "50",
+                "sity": "Челябинск",
+                "Описание": "Телефон: 8 (800) 777-93-55<br>\r\nE-mail:&nbsp;<a href=\"mailto:request@qwell.ru\" style=\"color: #ee4623; background-image: initial;\">request@qwell.ru</a>",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Челябинске"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Челябинск, ул. Курчатова, д. 1, корп. А., оф. 26"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "1" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "56c2513499d194d78e1dfd2364616620"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "881ca6115b241d8b4dc2d0b60b0f907e"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Челябинская" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Челябинская область"
+                    }
+                ]
+            },
+            {
+                "Ид": "140",
+                "sity": "Череповец",
+                "Описание": "Телефон: 8 (800) 777-93-55<br>\r\nE-mail:&nbsp;<a href=\"mailto:request@qwell.ru\" style=\"color: #ee4623; background-image: initial;\">request@qwell.ru</a>",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Санкт-Петербурге"
+                    },
+                    { "Ид": "UF_ADDRESS", "Значение": "" },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "565be77875323c92cceb7f50a709427d"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "58f29773d7782d685c327cbd0a59045a"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Ленинградская" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Ленинградская область"
+                    }
+                ]
+            },
+            {
+                "Ид": "55",
+                "sity": "Шахты",
+                "Описание": "Телефон: 8 (800) 777-93-55<br>\r\nE-mail:&nbsp;<a href=\"mailto:request@qwell.ru\" style=\"color: #ee4623; background-image: initial;\">request@qwell.ru</a>",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Шахтах"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Шахты, ул. Пролетарская, д. 146"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "565be77875323c92cceb7f50a709427d"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "e9479b656812c2a45ea24ada75824678"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Ростовская" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Ростовская область"
+                    }
+                ]
+            },
+            {
+                "Ид": "120",
+                "sity": "Энгельс",
+                "Описание": "Телефон: 8 &#40;800&#41; 777-93-55&lt;br&gt;<br />\nE-mail:&nbsp;&lt;a href=&quot;mailto:<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&quot; style=&quot;color: #ee4623; background-image: initial;&quot;&gt;<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&lt;/a&gt;",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Энгельсе"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Энгельс, площадь Свободы, д. 15б, оф. 703"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "56c2513499d194d78e1dfd2364616620"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "301bfa52f46f983abb6080039daa5389"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Саратовская" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Саратовская область"
+                    }
+                ]
+            },
+            {
+                "Ид": "53",
+                "sity": "Ярославль",
+                "Описание": "Телефон: 8 (800) 777-93-55<br>\r\n E-mail:&nbsp;<a href=\"mailto:request@qwell.ru\" style=\"color: #ee4623; background-image: initial;\">request@qwell.ru</a>",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Ярославле"
+                    },
+                    {
+                        "Ид": "UF_ADDRESS",
+                        "Значение": "г. Ярославль, ул. Собинова, д. 5Б"
+                    },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "565be77875323c92cceb7f50a709427d"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "3a76adbfdc8fb967ec4dec429fb6069e"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Ярославская" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Ярославская область"
+                    }
+                ]
+            },
+            {
+                "Ид": "130",
+                "sity": "Ярцево",
+                "Описание": "Телефон: 8 &#40;800&#41; 777-93-55&lt;br&gt;<br />\nE-mail:&nbsp;&lt;a href=&quot;mailto:<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&quot; style=&quot;color: #ee4623; background-image: initial;&quot;&gt;<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&lt;/a&gt;",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Ярцево"
+                    },
+                    { "Ид": "UF_ADDRESS", "Значение": "" },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "565be77875323c92cceb7f50a709427d"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "3a76adbfdc8fb967ec4dec429fb6069e"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Смоленская" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Смоленская область"
+                    }
+                ]
+            },
+            {
+                "Ид": "132",
+                "sity": "Ясногорск",
+                "Описание": "Телефон: 8 &#40;800&#41; 777-93-55&lt;br&gt;<br />\nE-mail:&nbsp;&lt;a href=&quot;mailto:<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&quot; style=&quot;color: #ee4623; background-image: initial;&quot;&gt;<a class=\"txttohtmllink\" href=\"mailto:request@qwell.ru\" title=\"Написать письмо\">request@qwell.ru</a>&lt;/a&gt;",
+                "ЗначенияСвойства": [
+                    {
+                        "Ид": "UF_ADDRESS_TITLE",
+                        "Значение": "Офис компании qWell в Ясногорске"
+                    },
+                    { "Ид": "UF_ADDRESS", "Значение": "" },
+                    { "Ид": "CITY_EMAIL", "Значение": "request@qwell.ru" },
+                    { "Ид": "UF_SIBERIA", "Значение": "0" },
+                    {
+                        "Ид": "UF_COMPANY",
+                        "Значение": "565be77875323c92cceb7f50a709427d"
+                    },
+                    {
+                        "Ид": "UF_RU",
+                        "Значение": "3a76adbfdc8fb967ec4dec429fb6069e"
+                    },
+                    { "Ид": "UF_REGION_DADATA", "Значение": "Тульская" },
+                    {
+                        "Ид": "UF_REGION_WINDOWS",
+                        "Значение": "Тульская область"
+                    }
+                ]
+            }
+        ]
+    }
+}

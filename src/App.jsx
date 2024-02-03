@@ -10,8 +10,12 @@ import Spec from "./pages/Spec";
 import RequestOverlay from "./components/RequestOverlay/RequestOverlay";
 import UserContext from "./UserContext";
 // import data from "./specialties.json";
+import officeData from './offises.json'
 
 function App() {
+
+
+
   // const [userData, setUserData] = useState();
 
   // useEffect(() => {

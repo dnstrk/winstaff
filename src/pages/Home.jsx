@@ -957,6 +957,7 @@ export default function Home({
                             <MapInteractive
                                 region={region}
                                 setRegion={setRegion}
+                                officesAddr={officesAddr}
                                 setOfficesAddr={setOfficesAddr}
                             />
                         </div>

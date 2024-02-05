@@ -39,7 +39,7 @@
 
     .requestDrawer {
         width: 700px;
-        height: 490px;
+        height: 460px;
 
         display: flex;
         flex-direction: column;
@@ -113,10 +113,12 @@
 
             .specialists__radioGroup {
                 width: 100%;
+                max-height: 170px;
                 display: flex;
+                overflow-y: scroll;
                 flex-direction: row;
                 align-items: center;
-                align-content: center;
+                // align-content: center;
                 flex-wrap: wrap;
                 gap: 14px;
 
@@ -179,7 +181,7 @@
         }
 
         .requestDrawer__foot {
-            margin-top: 30px;
+            margin-top: auto;
 
             display: flex;
             flex-direction: row;

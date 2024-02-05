@@ -4,22 +4,28 @@ import RadioSpec from "../RadioSpec/RadioSpec";
 import UserContext from "../../UserContext";
 import { Link } from "react-router-dom";
 import IMask from "imask";
+import prices from "../../price.json";
 
-const RequestOverlay = ({
-  requestOverlay,
-  setRequestOverlay,
-  phoneRequest,
-  setPhoneRequest,
-  mailRequest,
-  setMailRequest,
-  townRequest,
-  setTownRequest,
-  countRequest,
-  setCountRequest,
-}) => {
+const RequestOverlay = ({}) => {
   const {
     requests,
     setRequests,
+
+    cardRequest,
+    setCardReuest,
+
+    requestOverlay,
+    setRequestOverlay,
+    phoneRequest,
+    mailRequest,
+    townRequest,
+    countRequest,
+    setPhoneRequest,
+    setMailRequest,
+    setTownRequest,
+    setCountRequest,
+
+    currentTown,
     selectedSpec,
     setSelectedSpec,
     alert,
@@ -39,6 +45,24 @@ const RequestOverlay = ({
     townValidationMarker,
   } = useContext(UserContext);
 
+  const [specs, setSpecs] = useState([]);
+
+  useEffect(() => {
+    setSpecs([]);
+    for (let price of prices) {
+      if (price.Город.includes(currentTown) && price.Цена != 0) {
+        // const obj = {
+        //   Город: price.Город,
+        //   Специализация: price.СПЕЦИАЛИЗАЦИЯ,
+        //   Цена: price.Цена,
+        // };
+        setSpecs((prev) => [...prev, price.СПЕЦИАЛИЗАЦИЯ]);
+      }
+    }
+  }, [currentTown]);
+
+  // console.log(currentTown + ":" + specs);
+
   const closeOverlay = (e) => {
     if (e.target.classList.contains(cl.overlay)) {
       setRequestOverlay(false);
@@ -46,6 +70,7 @@ const RequestOverlay = ({
       setTimeout(() => {
         setRequestAccept(false);
       }, 500);
+      setCardReuest(false);
     }
   };
 
@@ -56,6 +81,7 @@ const RequestOverlay = ({
     setTimeout(() => {
       setRequestAccept(false);
     }, 500);
+    setCardReuest(false);
   };
 
   // отправка заполненной формы заявки
@@ -237,8 +263,24 @@ const RequestOverlay = ({
             </div>
             <div className={cl.requestDrawer__specialists}>
               <p className={cl.specialists__title}>Выберите специалиста</p>
+
               <div className={cl.specialists__radioGroup}>
-                <RadioSpec radio={11} specialisation="Кассир" />
+                {cardRequest ? (
+                  <RadioSpec
+                    radio={11}
+                    specialisation={selectedSpec}
+                    selected
+                  />
+                ) : (
+                  specs.map((spec, index) => (
+                    <RadioSpec
+                      key={index}
+                      radio={10 + index}
+                      specialisation={spec}
+                    />
+                  ))
+                )}
+                {/* <RadioSpec radio={11} specialisation="Кассир" />
                 <RadioSpec radio={12} specialisation="Официант" />
                 <RadioSpec radio={13} specialisation="Промоутер" />
                 <RadioSpec radio={14} specialisation="Упаковщик" />
@@ -250,13 +292,13 @@ const RequestOverlay = ({
                 <RadioSpec radio={17} specialisation="Сотрудник клининга" />
                 <RadioSpec radio={18} specialisation="Горничная" />
                 <RadioSpec radio={19} specialisation="Фасовщик" />
-                <RadioSpec radio={20} specialisation="Мойщик" />
-                <Link
+                <RadioSpec radio={20} specialisation="Мойщик" /> */}
+                {/* <Link
                   to="/specialties"
                   className={cl.specialists__radioGroup__btnAllSpec}
                 >
                   Все специалисты
-                </Link>
+                </Link> */}
               </div>
             </div>
             <div className={cl.requestDrawer__foot}>

@@ -35,7 +35,7 @@ const Spec = () => {
               <CardSpec
                 key={index}
                 specPage
-                img={`/img/${spec.Специализация.split(' ').join('')}.svg`}
+                img={`/img/${spec.Специализация.split(" ").join("")}.svg`}
                 spec={spec.Специализация}
                 subTitle={`от ${spec.Цена} руб/час`}
               />

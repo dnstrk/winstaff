@@ -2,13 +2,13 @@ import React, { useContext } from "react";
 import cl from "./RadioSpec.module.scss";
 import UserContext from "../../UserContext";
 
-const RadioSpec = ({ specialisation, radio }) => {
+const RadioSpec = ({ specialisation, radio, selected = false }) => {
   const { setSelectedSpec } = useContext(UserContext);
 
   return (
     <div
       className={cl.radioGroup}
-        onChange={(e) => setSelectedSpec(e.target.value)}
+      onChange={(e) => setSelectedSpec(e.target.value)}
     >
       <input
         name="radio"
@@ -16,7 +16,10 @@ const RadioSpec = ({ specialisation, radio }) => {
         id={`radio-${radio}`}
         type="radio"
       />
-      <label htmlFor={`radio-${radio}`} className={cl.radioGroup__lbl}>
+      <label
+        htmlFor={`radio-${radio}`}
+        className={`${cl.radioGroup__lbl} ${selected && cl.selected}`}
+      >
         {specialisation}
       </label>
     </div>

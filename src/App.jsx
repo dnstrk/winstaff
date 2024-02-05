@@ -67,7 +67,7 @@ function App() {
   // useEffect(() => {
   //     fetchData();
   // }, []);
-
+  const [cardRequest, setCardReuest] = useState(false); //открытие модалки через карточку специалиста на странице 'специалисты и цены'
   const [alert, setAlert] = useState(false); //алерт при незаполненном поле
   const [requestAccept, setRequestAccept] = useState(false); //отображение окна принятой заявки
   const [writeAccept, setWriteAccept] = useState(false); //отображение окна принятой заявки
@@ -100,6 +100,12 @@ function App() {
   const [countValid, setCountValid] = useState(false);
 
   const [requests, setRequests] = useState([]);
+
+  const createCardRequest = (spec) => {
+    setCardReuest(true);
+    setSelectedSpec(spec);
+    setRequestOverlay(true);
+  };
 
   //блок отправки формы при незаполненном phone
   function phoneValidation(phone) {
@@ -189,6 +195,23 @@ function App() {
           currentTown,
           requests,
           setRequests,
+
+          cardRequest,
+          setCardReuest,
+
+          requestOverlay,
+          setRequestOverlay,
+          phoneRequest,
+          mailRequest,
+          townRequest,
+          countRequest,
+          setPhoneRequest,
+          setMailRequest,
+          setTownRequest,
+          setCountRequest,
+
+          createCardRequest,
+
           selectedSpec,
           setSelectedSpec,
           alert,

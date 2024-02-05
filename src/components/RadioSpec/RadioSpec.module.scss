@@ -30,4 +30,10 @@
             border-color: #f19920;
         }
     }
+
+    .selected {
+        color: var(--white);
+        background-color: #e28424;
+        border-color: #e28424;
+    }
 }

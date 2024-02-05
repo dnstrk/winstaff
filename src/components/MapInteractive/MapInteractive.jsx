@@ -6,8 +6,6 @@ const MapInteractive = ({ setRegion, officesAddr, setOfficesAddr }) => {
   const officesData = officeData["Города"]["Город"];
   const officesPropVal = officesData.map((off) => off.ЗначенияСвойства);
 
-  console.log(officesPropVal);
-
   useEffect(() => {
     const regions = document.querySelectorAll("[data-title]");
     //выбор элементов содержащих data-title

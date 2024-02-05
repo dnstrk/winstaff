@@ -19,6 +19,7 @@ const TownOverlay = ({
   const setTownAndQuit = (town) => {
     setCurrentTown(town);
     setTownOverlay(false);
+    setTownSearchValue("");
   };
 
   return (
@@ -62,7 +63,7 @@ const TownOverlay = ({
           <button className={cl.town__selectSearch__btn}>Найти</button>
         </div>
         <div className={cl.town__selectTowns}>
-          {towns.map((town, index) =>
+          {/* {towns.map((town, index) =>
             town.toLowerCase().includes(townSearchValue.toLowerCase()) &&
             townSearchValue.toLowerCase() != "" ? (
               <b
@@ -81,20 +82,20 @@ const TownOverlay = ({
                 {town}
               </p>
             )
-          )}
-          {/* {towns
+          )} */}
+          {towns
             .filter((town) =>
               town.toLowerCase().includes(townSearchValue.toLowerCase())
             )
             .map((town, index) => (
               <p
-                onClick={(e) => setCurrentTown(town)}
+                onClick={(e) => setTownAndQuit(town)}
                 className={cl.town__selectTown}
                 key={index}
               >
                 {town}
               </p>
-            ))} */}
+            ))}
         </div>
       </div>
     </div>

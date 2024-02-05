@@ -181,7 +181,7 @@ const RequestOverlay = ({
               className={cl.requestDrawerAccepted__img}
               width={70}
               height={70}
-              src="/img/requestAccept.svg"
+              src="/img/Accept.svg"
               alt=""
             />
             <h5 className={cl.requestDrawerAccepted__title}>Спасибо!</h5>

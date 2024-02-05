@@ -15,7 +15,7 @@ export default function CardSpec({
         <img className={cl.card__headImg} src={img} alt="" />
         <div className={`${cl.card__headInfo} ${specPage && cl.spec_page}`}>
           <p className={cl.card__headInfo__title}>
-            {home && "Специальность:"} <b>{spec}</b>
+            {home && "Специальность:"} <b className={cl.card__headInfo__title_marked}>{spec}</b>
           </p>
           <span
             className={cl.card__headInfo__subTitle}

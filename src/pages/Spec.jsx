@@ -1,7 +1,27 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import CardSpec from "../components/CardSpec/CardSpec";
+import prices from "../price.json";
+import UserContext from "../UserContext";
 
 const Spec = () => {
+  const { currentTown } = useContext(UserContext);
+
+  const [specs, setSpecs] = useState([]);
+
+  useEffect(() => {
+    setSpecs([]);
+    for (let price of prices) {
+      if (price.Город.includes(currentTown) && price.Цена != 0) {
+        const obj = {
+          Город: price.Город,
+          Специализация: price.СПЕЦИАЛИЗАЦИЯ,
+          Цена: price.Цена,
+        };
+        setSpecs((prev) => [...prev, obj]);
+      }
+    }
+  }, [currentTown]);
+
   return (
     <div className="specialties">
       <div className="container">
@@ -11,114 +31,15 @@ const Spec = () => {
             <span className="specialties__title_marked">и цены</span>
           </h5>
           <div className="specialties__cards">
-            <CardSpec
-              specPage
-              img={"/img/spec1.png"}
-              spec={"Кассир"}
-              subTitle={"от 578 руб/час"}
-            />
-            <CardSpec
-              specPage
-              img={"/img/spec2.png"}
-              spec={"Работник торгового зала"}
-              subTitle={"от 578 руб/час  "}
-            />
-            <CardSpec
-              specPage
-              img={"/img/spec3.png"}
-              spec={"Грузчик"}
-              subTitle={"от 578 руб/час  "}
-            />
-            <CardSpec
-              specPage
-              img={"/img/spec4.png"}
-              spec={"Официант"}
-              subTitle={"от 578 руб/час  "}
-            />
-            <CardSpec
-              specPage
-              img={"/img/spec5.png"}
-              spec={"Промоутер"}
-              subTitle={"от 578 руб/час  "}
-            />
-            <CardSpec
-              specPage
-              img={"/img/spec5.png"}
-              spec={"Горничная"}
-              subTitle={"от 578 руб/час  "}
-            />
-            <CardSpec
-              specPage
-              img={"/img/spec1.png"}
-              spec={"Кассир"}
-              subTitle={"от 578 руб/час"}
-            />
-            <CardSpec
-              specPage
-              img={"/img/spec2.png"}
-              spec={"Работник торгового зала"}
-              subTitle={"от 578 руб/час  "}
-            />
-            <CardSpec
-              specPage
-              img={"/img/spec3.png"}
-              spec={"Грузчик"}
-              subTitle={"от 578 руб/час  "}
-            />
-            <CardSpec
-              specPage
-              img={"/img/spec4.png"}
-              spec={"Официант"}
-              subTitle={"от 578 руб/час  "}
-            />
-            <CardSpec
-              specPage
-              img={"/img/spec5.png"}
-              spec={"Промоутер"}
-              subTitle={"от 578 руб/час  "}
-            />
-            <CardSpec
-              specPage
-              img={"/img/spec5.png"}
-              spec={"Горничная"}
-              subTitle={"от 578 руб/час  "}
-            />
-            <CardSpec
-              specPage
-              img={"/img/spec1.png"}
-              spec={"Кассир"}
-              subTitle={"от 578 руб/час"}
-            />
-            <CardSpec
-              specPage
-              img={"/img/spec2.png"}
-              spec={"Работник торгового зала"}
-              subTitle={"от 578 руб/час  "}
-            />
-            <CardSpec
-              specPage
-              img={"/img/spec3.png"}
-              spec={"Грузчик"}
-              subTitle={"от 578 руб/час  "}
-            />
-            <CardSpec
-              specPage
-              img={"/img/spec4.png"}
-              spec={"Официант"}
-              subTitle={"от 578 руб/час  "}
-            />
-            <CardSpec
-              specPage
-              img={"/img/spec5.png"}
-              spec={"Промоутер"}
-              subTitle={"от 578 руб/час  "}
-            />
-            <CardSpec
-              specPage
-              img={"/img/spec5.png"}
-              spec={"Горничная"}
-              subTitle={"от 578 руб/час  "}
-            />
+            {specs.map((spec, index) => (
+              <CardSpec
+                key={index}
+                specPage
+                img={`/img/${spec.Специализация.split(' ').join('')}.svg`}
+                spec={spec.Специализация}
+                subTitle={`от ${spec.Цена} руб/час`}
+              />
+            ))}
           </div>
         </div>
       </div>

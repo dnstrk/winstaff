@@ -32,6 +32,11 @@
                 max-width: 190px;
                 margin-top: 10px;
                 font-size: 16px;
+
+                .card__headInfo__title_marked {
+                    max-width: 190px;
+                    hyphens: auto;
+                }
             }
 
             .card__headInfo__subTitle {

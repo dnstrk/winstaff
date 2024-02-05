@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.scss";
 import Header from "./components/Header/Header";
 import TownOverlay from "./components/TownOverlay/TownOverlay";
@@ -10,11 +10,19 @@ import Spec from "./pages/Spec";
 import RequestOverlay from "./components/RequestOverlay/RequestOverlay";
 import UserContext from "./UserContext";
 // import data from "./specialties.json";
-import officeData from './offises.json'
+import officeData from "./offises.json";
+import prices from "./price.json";
+import WriteOverlay from "./components/WriteOverlay/WriteOverlay";
 
 function App() {
+  const [townsAll, setTownsAll] = useState([]);
 
-
+  useEffect(() => {
+    for (let towns of prices) {
+      setTownsAll((prev) => [...prev, towns.Город]);
+    }
+  }, []);
+  const towns = new Set(townsAll);
 
   // const [userData, setUserData] = useState();
 
@@ -62,41 +70,36 @@ function App() {
 
   const [alert, setAlert] = useState(false); //алерт при незаполненном поле
   const [requestAccept, setRequestAccept] = useState(false); //отображение окна принятой заявки
+  const [writeAccept, setWriteAccept] = useState(false); //отображение окна принятой заявки
 
   const [currentTown, setCurrentTown] = useState("Москва");
   const [townSearchValue, setTownSearchValue] = useState("");
   const [townOverlay, setTownOverlay] = useState(false); //статус оверлея выбора города
   const [requestOverlay, setRequestOverlay] = useState(false); //статус оверлея заявки
+  const [writeOverlay, setWriteOverlay] = useState(false); //статус оверлея заявки
 
   const [selectedSpec, setSelectedSpec] = useState("");
-
-  const [phoneRequest, setPhoneRequest] = useState("");
-  const [mailRequest, setMailRequest] = useState("");
-  const [townRequest, setTownRequest] = useState("");
-  const [countRequest, setCountRequest] = useState("");
-
-  const [phoneValid, setPhoneValid] = useState(false);
-  const [mailValid, setMailValid] = useState(false);
 
   const [phoneBanner, setPhoneBanner] = useState("");
   const [mailBanner, setMailBanner] = useState("");
   const [townBanner, setTownBanner] = useState("");
   const [countBanner, setCountBanner] = useState("");
 
-  const [requests, setRequests] = useState([]);
+  const [phoneRequest, setPhoneRequest] = useState("");
+  const [mailRequest, setMailRequest] = useState("");
+  const [townRequest, setTownRequest] = useState("");
+  const [countRequest, setCountRequest] = useState("");
 
-  const towns = [
-    "Абакан",
-    "Барнаул",
-    "Волгоград",
-    "Геленджик",
-    "Дзержинск",
-    "Елабуга",
-    "Екатеринбург",
-    "Железнодорожный",
-    "Москва",
-    "Санкт-Петербург",
-  ];
+  const [phoneWrite, setPhoneWrite] = useState("");
+  const [mailWrite, setMailWrite] = useState("");
+  const [textWrite, setTextWrite] = useState("");
+
+  const [phoneValid, setPhoneValid] = useState(false);
+  const [mailValid, setMailValid] = useState(false);
+  const [townValid, setTownValid] = useState(false);
+  const [countValid, setCountValid] = useState(false);
+
+  const [requests, setRequests] = useState([]);
 
   //блок отправки формы при незаполненном phone
   function phoneValidation(phone) {
@@ -145,6 +148,13 @@ function App() {
   }
 
   //проверка на не 0 в countBanner
+  function countValidation(count) {
+    if (count.length == 0 || count == 0) {
+      setCountValid(false);
+    } else {
+      setCountValid(true);
+    }
+  }
   function countValidationMarker(id, count) {
     const inpCount = document.getElementById(`${id}`);
 
@@ -154,6 +164,14 @@ function App() {
       inpCount.style.borderColor = "green";
     }
   }
+  function townValidation(town) {
+    if (town.length == 0) {
+      setTownValid(false);
+    } else {
+      setTownValid(true);
+    }
+  }
+
   function townValidationMarker(id, town) {
     const inpTown = document.getElementById(`${id}`);
 
@@ -164,11 +182,11 @@ function App() {
     }
   }
 
-
   return (
     <div className="App">
       <UserContext.Provider
         value={{
+          currentTown,
           requests,
           setRequests,
           selectedSpec,
@@ -183,12 +201,29 @@ function App() {
           setPhoneValid,
           mailValid,
           setMailValid,
+          townValid,
+          setTownValid,
+          countValid,
+          setCountValid,
           phoneValidation,
           phoneValidationMarker,
+          countValidation,
           countValidationMarker,
           emailValidation,
           emailValidationMarker,
+          townValidation,
           townValidationMarker,
+          writeOverlay,
+          setWriteOverlay,
+
+          phoneWrite,
+          setPhoneWrite,
+          mailWrite,
+          setMailWrite,
+          textWrite,
+          setTextWrite,
+          writeAccept,
+          setWriteAccept,
         }}
       >
         <Header
@@ -199,7 +234,7 @@ function App() {
         <TownOverlay //оверлей выбора города
           currentTown={currentTown}
           setCurrentTown={setCurrentTown}
-          towns={towns}
+          towns={Array.from(towns)}
           townOverlay={townOverlay}
           setTownOverlay={setTownOverlay}
           townSearchValue={townSearchValue}
@@ -217,6 +252,7 @@ function App() {
           countRequest={countRequest}
           setCountRequest={setCountRequest}
         />
+        <WriteOverlay />
         <Routes>
           <Route
             path="/"

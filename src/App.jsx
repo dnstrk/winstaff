@@ -161,8 +161,16 @@ function App() {
         }
     }
 
+    // запрет скролла при открытом окне заказа
+    const body = document.querySelector("body");
+    if (requestOverlay) {
+        body.style.overflow = "hidden";
+    } else {
+        body.style.overflow = "";
+    }
+
     return (
-        <div className="App">
+        <div className={`App`}>
             <UserContext.Provider
                 value={{
                     currentTown,

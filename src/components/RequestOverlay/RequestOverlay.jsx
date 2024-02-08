@@ -288,7 +288,7 @@ const RequestOverlay = () => {
                             <p className={cl.specialists__title}>
                                 {cardRequest
                                     ? "Специалист:"
-                                    : "Выберите специалиста:"}
+                                    : `Доступные специалисты по городу ${currentTown}:`}
                             </p>
 
                             <div className={cl.specialists__radioGroup}>

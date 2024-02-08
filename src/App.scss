@@ -128,14 +128,14 @@
                             transition: 0.2s;
                         }
 
-                        input[type="radio"]:checked + label {
+                        input[type="radio"]:checked+label {
                             color: var(--white);
                             background-color: #e28424;
                             border-color: #e28424;
                         }
 
                         &:hover {
-                            input[type="radio"] + label {
+                            input[type="radio"]+label {
                                 color: var(--white);
                                 background-color: #f19920;
                                 border-color: #f19920;
@@ -508,6 +508,7 @@
                     }
 
                     .clientInfo__contentList__item_mark {
+                        min-width: 20px;
                         width: 20px;
                         height: 20px;
                         border-radius: 50%;
@@ -1461,14 +1462,14 @@
                                 transition: 0.2s;
                             }
 
-                            input[type="radio"]:checked + label {
+                            input[type="radio"]:checked+label {
                                 color: var(--white);
                                 background-color: #e28424;
                                 border-color: #e28424;
                             }
 
                             &:hover {
-                                input[type="radio"] + label {
+                                input[type="radio"]+label {
                                     color: var(--white);
                                     background-color: #f19920;
                                     border-color: #f19920;
@@ -2575,6 +2576,7 @@
         }
     }
 }
+
 @media screen and (max-width: 1240px) {
     .App {
         position: relative;
@@ -2705,14 +2707,14 @@
                                 transition: 0.2s;
                             }
 
-                            input[type="radio"]:checked + label {
+                            input[type="radio"]:checked+label {
                                 color: var(--white);
                                 background-color: #e28424;
                                 border-color: #e28424;
                             }
 
                             &:hover {
-                                input[type="radio"] + label {
+                                input[type="radio"]+label {
                                     color: var(--white);
                                     background-color: #f19920;
                                     border-color: #f19920;
@@ -3315,7 +3317,7 @@
             }
 
             .partners__text {
-                margin-top: 100px;
+                margin-top: 50px;
                 color: #222;
                 font-size: 24px;
                 font-weight: 600;
@@ -3820,6 +3822,7 @@
         }
     }
 }
+
 @media screen and (max-width: 820px) {
     .container {
         max-width: 760px;
@@ -3944,14 +3947,14 @@
                                 transition: 0.2s;
                             }
 
-                            input[type="radio"]:checked + label {
+                            input[type="radio"]:checked+label {
                                 color: var(--white);
                                 background-color: #e28424;
                                 border-color: #e28424;
                             }
 
                             &:hover {
-                                input[type="radio"] + label {
+                                input[type="radio"]+label {
                                     color: var(--white);
                                     background-color: #f19920;
                                     border-color: #f19920;
@@ -4055,6 +4058,7 @@
 
             .banner__img {
                 display: none;
+
                 .banner__imgAbs {
                     position: absolute;
                     content: "";
@@ -4201,7 +4205,7 @@
 
     .section__clientInfo {
         margin-top: 80px;
-        padding-bottom: 30px;
+        padding-bottom: 60px;
         font-family: "Montserrat", sans-serif;
 
         .clientInfo-wrap {
@@ -4210,6 +4214,7 @@
             justify-content: space-between;
 
             .clientInfo__img {
+                display: none;
                 position: relative;
                 width: 640px;
                 height: 660px;
@@ -4288,10 +4293,13 @@
             .clientInfo__content {
                 display: flex;
                 flex-direction: column;
+                align-items: center;
                 gap: 40px;
+                width: 100%;
 
                 .clientInfo__contentTitle {
-                    max-width: 480px;
+                    text-align: center;
+                    max-width: 100%;
                     width: 100%;
                     font-size: 24px;
                     font-weight: 700;
@@ -4300,7 +4308,8 @@
                 .clientInfo__contentList {
                     display: flex;
                     flex-direction: column;
-                    gap: 48px;
+                    gap: 40px;
+                    width: 70%;
 
                     .clientInfo__contentList__item {
                         display: flex;
@@ -4333,7 +4342,7 @@
         .stats-wrap {
             display: flex;
             flex-direction: column;
-            gap: 200px;
+            gap: 100px;
 
             .stats__left {
                 display: flex;
@@ -4448,13 +4457,14 @@
                     display: flex;
                     flex-direction: column;
                     gap: 100px;
+                    width: 60%;
 
                     .stats__rightList__item {
                         position: relative;
                         display: flex;
                         flex-direction: row;
                         align-items: center;
-                        gap: 20px;
+                        gap: 0px;
 
                         .stats__rightList__itemNum {
                             position: relative;
@@ -4537,7 +4547,7 @@
                 display: flex;
                 flex-direction: row;
                 flex-wrap: wrap;
-                gap: 25px;
+                gap: 58px;
 
                 .partners__card {
                     padding: 10px;
@@ -4556,7 +4566,7 @@
             }
 
             .partners__text {
-                margin-top: 100px;
+                margin-top: 50px;
                 color: #222;
                 font-size: 24px;
                 font-weight: 600;
@@ -4574,7 +4584,7 @@
 
     .section__coop {
         padding-top: 50px;
-        padding-bottom: 150px;
+        padding-bottom: 75px;
         font-family: "Montserrat", sans-serif;
         background-color: #f7f6ff;
 
@@ -4594,9 +4604,10 @@
             .coop__content {
                 width: 100%;
 
-                margin-top: 110px;
+                margin-top: 55px;
                 display: flex;
-                flex-direction: row;
+                flex-direction: column;
+                align-items: center;
                 gap: 90px;
 
                 .coop__leftCards {
@@ -4640,27 +4651,28 @@
                     }
 
                     .card1 {
-                        position: relative;
-                        left: 200px;
+                        position: static;
+                        // left: 0px;
                     }
 
                     .card2 {
-                        position: relative;
-                        left: 55px;
+                        position: static;
+                        // left: 0px;
                     }
 
                     .card3 {
-                        position: relative;
-                        left: 43px;
+                        position: static;
+                        // left: 0px;
                     }
 
                     .card4 {
-                        position: relative;
-                        left: 120px;
+                        position: static;
+                        // left: 0px;
                     }
                 }
 
                 .coop__img {
+                    display: none;
                     position: relative;
                     width: 420px;
                     height: 440px;
@@ -4751,7 +4763,7 @@
     .section__map {
         position: static;
         padding-top: 75px;
-        padding-bottom: 250px;
+        padding-bottom: 150px;
         height: 800px;
         font-family: "Montserrat", sans-serif;
 
@@ -4921,7 +4933,8 @@
 
         padding-top: 80px;
         padding-bottom: 350px;
-        font-family: "Montserrat", sans-serif;
+        font-family: "Montserrat",
+        sans-serif;
 
         .aboutWrap {
             display: flex;
@@ -4939,7 +4952,7 @@
                 .about__infoTitle {
                     text-align: center;
                     color: #222;
-                    font-size: 36px;
+                    font-size: 30px;
                     font-weight: 700;
                     letter-spacing: 1.8px;
 
@@ -4984,6 +4997,7 @@
                     border-radius: 50px;
                     background: #fba457;
                     transition: 0.15s;
+
                     &:hover {
                         background: #e28424;
                     }
@@ -5152,14 +5166,14 @@
                                 transition: 0.2s;
                             }
 
-                            input[type="radio"]:checked + label {
+                            input[type="radio"]:checked+label {
                                 color: var(--white);
                                 background-color: #e28424;
                                 border-color: #e28424;
                             }
 
                             &:hover {
-                                input[type="radio"] + label {
+                                input[type="radio"]+label {
                                     color: var(--white);
                                     background-color: #f19920;
                                     border-color: #f19920;
@@ -5263,6 +5277,7 @@
 
             .banner__img {
                 display: none;
+
                 .banner__imgAbs {
                     position: absolute;
                     content: "";
@@ -5375,8 +5390,8 @@
                 gap: 65px;
 
                 .specialists__cardMore {
-                    max-width: 40%;
-                    width: 330px;
+                    max-width: 100%;
+                    width: 350px;
                     padding: 20px;
 
                     display: flex;
@@ -5418,6 +5433,7 @@
             justify-content: space-between;
 
             .clientInfo__img {
+                display: none;
                 position: relative;
                 width: 640px;
                 height: 660px;
@@ -5496,10 +5512,13 @@
             .clientInfo__content {
                 display: flex;
                 flex-direction: column;
+                align-items: center;
                 gap: 40px;
 
                 .clientInfo__contentTitle {
-                    max-width: 480px;
+                    margin: 0 10px;
+                    text-align: center;
+                    max-width: 100%;
                     width: 100%;
                     font-size: 24px;
                     font-weight: 700;
@@ -5540,8 +5559,8 @@
 
         .stats-wrap {
             display: flex;
-            flex-direction: row;
-            gap: 200px;
+            flex-direction: column;
+            gap: 100px;
 
             .stats__left {
                 display: flex;
@@ -5634,8 +5653,7 @@
                 flex-direction: column;
 
                 .stats__rightTitle {
-                    position: relative;
-                    left: -40px;
+                    position: static;
 
                     color: var(--black);
                     font-size: 24px;
@@ -5652,13 +5670,14 @@
                     display: flex;
                     flex-direction: column;
                     gap: 100px;
+                    width: 70%;
 
                     .stats__rightList__item {
                         position: relative;
                         display: flex;
                         flex-direction: row;
                         align-items: center;
-                        gap: 20px;
+                        gap: 10px;
 
                         .stats__rightList__itemNum {
                             position: relative;
@@ -5737,11 +5756,14 @@
             }
 
             .partners__cards {
-                margin-top: 35px;
+                width: 110%;
+                height: 100%;
+                overflow-x: scroll;
+                margin-top: 70px;
                 display: flex;
                 flex-direction: row;
-                flex-wrap: wrap;
-                gap: 25px;
+                flex-wrap: nowrap;
+                gap: 60px;
 
                 .partners__card {
                     padding: 10px;
@@ -5760,7 +5782,8 @@
             }
 
             .partners__text {
-                margin-top: 100px;
+                text-align: center;
+                margin-top: 60px;
                 color: #222;
                 font-size: 24px;
                 font-weight: 600;
@@ -5778,7 +5801,7 @@
 
     .section__coop {
         padding-top: 50px;
-        padding-bottom: 150px;
+        padding-bottom: 75px;
         font-family: "Montserrat", sans-serif;
         background-color: #f7f6ff;
 
@@ -5798,9 +5821,10 @@
             .coop__content {
                 width: 100%;
 
-                margin-top: 110px;
+                margin-top: 55px;
                 display: flex;
-                flex-direction: row;
+                flex-direction: column;
+                align-items: center;
                 gap: 90px;
 
                 .coop__leftCards {
@@ -5844,27 +5868,28 @@
                     }
 
                     .card1 {
-                        position: relative;
-                        left: 200px;
+                        position: static;
+                        // left: 0px;
                     }
 
                     .card2 {
-                        position: relative;
-                        left: 55px;
+                        position: static;
+                        // left: 0px;
                     }
 
                     .card3 {
-                        position: relative;
-                        left: 43px;
+                        position: static;
+                        // left: 0px;
                     }
 
                     .card4 {
-                        position: relative;
-                        left: 120px;
+                        position: static;
+                        // left: 0px;
                     }
                 }
 
                 .coop__img {
+                    display: none;
                     position: relative;
                     width: 420px;
                     height: 440px;
@@ -5955,7 +5980,7 @@
     .section__map {
         position: static;
         padding-top: 75px;
-        padding-bottom: 250px;
+        padding-bottom: 0px;
         height: 800px;
         font-family: "Montserrat", sans-serif;
 
@@ -6098,7 +6123,8 @@
 
         padding-top: 80px;
         padding-bottom: 350px;
-        font-family: "Montserrat", sans-serif;
+        font-family: "Montserrat",
+        sans-serif;
 
         .aboutWrap {
             display: flex;
@@ -6116,7 +6142,7 @@
                 .about__infoTitle {
                     text-align: center;
                     color: #222;
-                    font-size: 36px;
+                    font-size: 30px;
                     font-weight: 700;
                     letter-spacing: 1.8px;
 
@@ -6161,6 +6187,7 @@
                     border-radius: 50px;
                     background: #fba457;
                     transition: 0.15s;
+
                     &:hover {
                         background: #e28424;
                     }
@@ -6209,7 +6236,7 @@
     .container {
         max-width: 375px;
         margin: 0 auto;
-        padding: 10px;
+        padding: 0 10px;
     }
 
     .App {
@@ -6230,26 +6257,22 @@
                 .banner__infoTitle {
                     text-align: center;
                     font-size: 30px;
-                    .banner__infoTitle_marked {
-                    }
+
+                    .banner__infoTitle_marked {}
                 }
 
-                .banner__infoText {
-                }
+                .banner__infoText {}
 
                 .banner__form {
                     .banner__actionInp {
                         flex-direction: column;
 
-                        .banner__actionInp__num {
-                        }
+                        .banner__actionInp__num {}
 
-                        .banner__actionInp__email {
-                        }
+                        .banner__actionInp__email {}
                     }
 
-                    .banner__specText {
-                    }
+                    .banner__specText {}
                 }
             }
 
@@ -6537,6 +6560,7 @@
                 align-items: center;
 
                 .stats__rightTitle {
+                    white-space: wrap;
                     text-align: center;
                     width: 320px;
                     color: var(--black);
@@ -6554,6 +6578,7 @@
                     display: flex;
                     flex-direction: column;
                     gap: 60px;
+                    width: 100%;
 
                     .stats__rightList__item {
                         position: relative;
@@ -6632,12 +6657,12 @@
 
             .partners__title {
                 text-align: center;
-                font-size: 16px;
+                font-size: 24px;
                 font-weight: 600;
             }
 
             .partners__cards {
-                width: 112%;
+                width: 130%;
                 height: 100%;
                 overflow-x: scroll;
                 margin-top: 70px;
@@ -6856,6 +6881,261 @@
                         }
                     }
                 }
+            }
+        }
+    }
+
+    .section__map {
+        position: static;
+        padding-top: 75px;
+        padding-bottom: 0px;
+        height: 800px;
+        font-family: "Montserrat", sans-serif;
+
+        .mapWrap {
+            flex-direction: column;
+            gap: 80px;
+            align-items: center;
+
+            .map__title {
+                text-align: center;
+                font-size: 24px;
+                font-weight: 600;
+                line-height: 180%;
+                letter-spacing: 0.48px;
+            }
+
+            .map__bottom {
+                display: none;
+
+                position: relative;
+                width: 100%;
+                flex-direction: column;
+                gap: 30px;
+
+                .map__bottom__text {
+                    position: relative;
+                    font-size: 16px;
+                    font-weight: 500;
+                    line-height: 180%;
+                    letter-spacing: 0.32px;
+                    padding-left: 30px;
+                    height: 28px;
+
+                    &::before {
+                        position: absolute;
+                        content: "";
+                        width: 20px;
+                        height: 20px;
+                        left: 0;
+                        top: 2.5px;
+                        border-radius: 100px;
+                        background: #fba457;
+                    }
+                }
+
+                .map__bottom__box {
+                    position: relative;
+                    z-index: 10;
+                    visibility: hidden;
+                    opacity: 0;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                    padding: 30px 20px;
+                    max-width: 300px;
+                    height: 100%;
+                    border-radius: 20px;
+                    background: #f2f0fe;
+
+                    transition: 0.1s;
+                    box-shadow: 0px 16px 16px 0px rgba(0, 0, 0, 0.04);
+
+                    .map__bottom__box__closeBtn {
+                        position: absolute;
+                        content: "";
+                        right: 15px;
+                        top: 15px;
+                        width: 16px;
+                        height: 16px;
+
+                        &:hover {
+                            svg {
+                                path {
+                                    transition: 0.2s;
+                                    fill: #a0a0a0;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .visible {
+                    visibility: visible;
+                    opacity: 1;
+                }
+
+                // .map__bottomInfo__box {
+                //     position: relative;
+                //     width: 300px;
+                //     height: 186px;
+                //     left: 0;
+                //     top: 60px;
+                //     border-radius: 20px;
+                //     background: #F2F0FE;
+                //     box-shadow: 0px 16px 16px 0px rgba(0, 0, 0, 0.04);
+                // }
+            }
+        }
+
+        @media (min-width: 768px) {
+            .rf-map .district b {
+                width: 28px;
+                height: 28px;
+                left: 6px;
+                top: 28px;
+            }
+
+            .rf-map .district span {
+                top: 30px;
+                left: 46px;
+                font-size: 20px;
+                font-weight: normal;
+            }
+
+            .rf-map .district-text {
+                left: 30px;
+                top: 80px;
+                width: calc(100% - 60px);
+                height: calc(100% - 130px);
+                font-size: 16px;
+            }
+
+            .rf-map .close-district {
+                width: 60px;
+                height: 60px;
+                font-size: 60px;
+            }
+
+            .rf-map .district-links {
+                display: none;
+            }
+        }
+    }
+
+    .about {
+        .container {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        padding-top: 80px;
+        padding-bottom: 350px;
+        font-family: "Montserrat",
+        sans-serif;
+
+        .aboutWrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 80px;
+
+            .about__info {
+                text-align: justify;
+                max-width: 90%;
+                display: flex;
+                flex-direction: column;
+                gap: 35px;
+
+                .about__infoTitle {
+                    text-align: center;
+                    color: #222;
+                    font-size: 30px;
+                    font-weight: 700;
+                    letter-spacing: 1.8px;
+
+                    .about__infoTitle_marked {
+                        color: #1dbf73;
+                    }
+                }
+
+                .about__infoSubTitle {
+                    color: #000;
+                    font-size: 16px;
+                    font-weight: 500;
+                    letter-spacing: 0.32px;
+                }
+
+                .about__infoText {
+                    color: #000;
+                    font-size: 14px;
+                    font-weight: 400;
+                    letter-spacing: 0.28px;
+                }
+            }
+
+            .about__img {
+                display: none;
+            }
+
+            .about__addrAdaptive {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+
+                .about__textBtn {
+                    margin-top: 20px;
+                    align-self: center;
+                    text-align: center;
+                    width: 200px;
+                    color: var(--white);
+                    font-size: 16px;
+                    font-weight: 700;
+                    padding: 10px;
+                    border-radius: 50px;
+                    background: #fba457;
+                    transition: 0.15s;
+
+                    &:hover {
+                        background: #e28424;
+                    }
+
+                    &:active {
+                        background: #e28424;
+                        transform: scale(99%);
+                    }
+                }
+            }
+        }
+    }
+
+    .specialties {
+        padding-top: 80px;
+        padding-bottom: 380px;
+        font-family: "Montserrat", sans-serif;
+
+        .specialtiesWrap {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+
+            .specialties__title {
+                text-align: center;
+                font-size: 36px;
+                font-weight: 600;
+                letter-spacing: 0.72px;
+
+                .specialties__title_marked {
+                    color: #1dbf73;
+                }
+            }
+
+            .specialties__cards {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 65px;
             }
         }
     }

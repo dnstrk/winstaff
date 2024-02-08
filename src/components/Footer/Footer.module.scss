@@ -26,17 +26,11 @@
             gap: 33px;
 
             .footer__socialLink {
-                transition: .05s;
+                transition: .3s;
 
-                // svg #bg {
-                //     transition: .15s;
-                // }
-
-                // &:hover {
-                //     svg #bg {
-                //         fill: #afafaf;
-                //     }
-                // }
+                &:hover {
+                    opacity: .6;
+                }
 
                 &:active {
                     transform: scale(98%);

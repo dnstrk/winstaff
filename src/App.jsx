@@ -11,276 +11,282 @@ import RequestOverlay from "./components/RequestOverlay/RequestOverlay";
 import UserContext from "./UserContext";
 import prices from "./price.json";
 import WriteOverlay from "./components/WriteOverlay/WriteOverlay";
+import HeaderSub from "./components/HeaderSub/HeaderSub";
 
 function App() {
-  const [townsAll, setTownsAll] = useState([]);
+    const [townsAll, setTownsAll] = useState([]);
 
-  useEffect(() => {
-    for (let towns of prices) {
-      setTownsAll((prev) => [...prev, towns.Город]);
-    }
-  }, []);
-  const towns = new Set(townsAll); // список городов берется из актуального списка специализаций по городам
+    useEffect(() => {
+        for (let towns of prices) {
+            setTownsAll((prev) => [...prev, towns.Город]);
+        }
+    }, []);
+    const towns = new Set(townsAll); // список городов берется из актуального списка специализаций по городам
 
-  const [specs, setSpecs] = useState([]); //массив актуальных по городу специализаций
+    const [specs, setSpecs] = useState([]); //массив актуальных по городу специализаций
 
-  const [cardRequest, setCardReuest] = useState(false); //открытие модалки через карточку специалиста на странице 'специалисты и цены'
-  // const [alert, setAlert] = useState(false); //алерт при незаполненном поле
-  const [requestAccept, setRequestAccept] = useState(false); //отображение окна принятой заявки
-  const [writeAccept, setWriteAccept] = useState(false); //отображение окна принятой заявки
+    const [cardRequest, setCardReuest] = useState(false); //открытие модалки через карточку специалиста на странице 'специалисты и цены'
+    // const [alert, setAlert] = useState(false); //алерт при незаполненном поле
+    const [requestAccept, setRequestAccept] = useState(false); //отображение окна принятой заявки
+    const [writeAccept, setWriteAccept] = useState(false); //отображение окна принятой заявки
 
-  const [currentTown, setCurrentTown] = useState("Москва"); // текущий город должен браться скриптом
-  const [townSearchValue, setTownSearchValue] = useState(""); // значение фильтра в модалке с выбором города
-  const [townOverlay, setTownOverlay] = useState(false); //статус оверлея выбора города
-  const [requestOverlay, setRequestOverlay] = useState(false); //статус оверлея заявки
-  const [writeOverlay, setWriteOverlay] = useState(false); //статус оверлея заявки
+    const [currentTown, setCurrentTown] = useState("Москва"); // текущий город должен браться скриптом
+    const [townSearchValue, setTownSearchValue] = useState(""); // значение фильтра в модалке с выбором города
+    const [townOverlay, setTownOverlay] = useState(false); //статус оверлея выбора города
+    const [requestOverlay, setRequestOverlay] = useState(false); //статус оверлея заявки
+    const [writeOverlay, setWriteOverlay] = useState(false); //статус оверлея заявки
+    const [headerSub, setHeaderSub] = useState(false);
 
-  /*выбранная специальность
+    /*выбранная специальность
       выбор при нажатии на радиокнопку или 
       при нажатии на карточку с конкретной специализацией
     */
-  const [selectedSpec, setSelectedSpec] = useState("");
+    const [selectedSpec, setSelectedSpec] = useState("");
 
-  // стейты формы создания заявки для bannerForm
-  const [phoneBanner, setPhoneBanner] = useState("");
-  const [mailBanner, setMailBanner] = useState("");
-  const [townBanner, setTownBanner] = useState("");
-  const [countBanner, setCountBanner] = useState("");
+    // стейты формы создания заявки для bannerForm
+    const [phoneBanner, setPhoneBanner] = useState("");
+    const [mailBanner, setMailBanner] = useState("");
+    const [townBanner, setTownBanner] = useState("");
+    const [countBanner, setCountBanner] = useState("");
 
-  // стейты формы создания заявки для requestForm
-  const [phoneRequest, setPhoneRequest] = useState("");
-  const [mailRequest, setMailRequest] = useState("");
-  const [townRequest, setTownRequest] = useState("");
-  const [countRequest, setCountRequest] = useState("");
+    // стейты формы создания заявки для requestForm
+    const [phoneRequest, setPhoneRequest] = useState("");
+    const [mailRequest, setMailRequest] = useState("");
+    const [townRequest, setTownRequest] = useState("");
+    const [countRequest, setCountRequest] = useState("");
 
-  // стейты формы создания сообщения
-  const [phoneWrite, setPhoneWrite] = useState("");
-  const [mailWrite, setMailWrite] = useState("");
-  const [textWrite, setTextWrite] = useState("");
+    // стейты формы создания сообщения
+    const [phoneWrite, setPhoneWrite] = useState("");
+    const [mailWrite, setMailWrite] = useState("");
+    const [textWrite, setTextWrite] = useState("");
 
-  // стейты валидации для отправки форм
-  const [phoneValid, setPhoneValid] = useState(false);
-  const [mailValid, setMailValid] = useState(false);
-  const [townValid, setTownValid] = useState(false);
-  const [countValid, setCountValid] = useState(false);
+    // стейты валидации для отправки форм
+    const [phoneValid, setPhoneValid] = useState(false);
+    const [mailValid, setMailValid] = useState(false);
+    const [townValid, setTownValid] = useState(false);
+    const [countValid, setCountValid] = useState(false);
 
-  /* список оформленных заказов, сюда записываются объекты с данными 
+    /* список оформленных заказов, сюда записываются объекты с данными 
     после отправки формы (тестовая часть) */
-  const [requests, setRequests] = useState([]);
+    const [requests, setRequests] = useState([]);
 
-  // обновление актуальных по городу специализаций
-  useEffect(() => {
-    setSpecs([]);
-    for (let price of prices) {
-      if (price.Город.includes(currentTown) && price.Цена !== 0) {
-        setSpecs((prev) => [...prev, price.СПЕЦИАЛИЗАЦИЯ]);
-      }
-    }
-  }, [currentTown]);
+    // обновление актуальных по городу специализаций
+    useEffect(() => {
+        setSpecs([]);
+        for (let price of prices) {
+            if (price.Город.includes(currentTown) && price.Цена !== 0) {
+                setSpecs((prev) => [...prev, price.СПЕЦИАЛИЗАЦИЯ]);
+            }
+        }
+    }, [currentTown]);
 
-  /* открытие модалки на заявку через карточку 
+    /* открытие модалки на заявку через карточку 
     (отображается специальность карточки, по которой произведено нажатие)
     */
-  const createCardRequest = (spec) => {
-    setCardReuest(true);
-    setSelectedSpec(spec);
-    setRequestOverlay(true);
-  };
+    const createCardRequest = (spec) => {
+        setCardReuest(true);
+        setSelectedSpec(spec);
+        setRequestOverlay(true);
+    };
 
-  //блокировка отправки формы при незаполненном phone
-  function phoneValidation(phone) {
-    if (phone.length < 18) {
-      setPhoneValid(false);
+    //блокировка отправки формы при незаполненном phone
+    function phoneValidation(phone) {
+        if (phone.length < 18) {
+            setPhoneValid(false);
+        } else {
+            setPhoneValid(true);
+        }
+    }
+    //маркировка input при незаполненном phone
+    function phoneValidationMarker(id, phone) {
+        const inpPhone = document.getElementById(`${id}`);
+        if (phone.length < 18) {
+            inpPhone.style.borderColor = "red";
+        } else {
+            inpPhone.style.borderColor = "green";
+        }
+    }
+
+    //блокировка отправки формы при незаполненном email
+    function emailValidation(email) {
+        const EMAIL_REGEXP =
+            /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
+        function isEmailValid(value) {
+            return EMAIL_REGEXP.test(value);
+        }
+        if (isEmailValid(email)) {
+            setMailValid(true);
+        } else {
+            setMailValid(false);
+        }
+    }
+    //маркировка input при незаполненном email
+    function emailValidationMarker(id, email) {
+        const inpEmail = document.getElementById(`${id}`);
+        const EMAIL_REGEXP =
+            /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
+
+        function isEmailValid(value) {
+            return EMAIL_REGEXP.test(value);
+        }
+
+        if (isEmailValid(email)) {
+            inpEmail.style.borderColor = "green";
+        } else {
+            inpEmail.style.borderColor = "red";
+        }
+    }
+
+    //проверка на не 0 и заполненность в countBanner для доступа к отправке формы
+    function countValidation(count) {
+        if (count.length == 0 || count == 0) {
+            setCountValid(false);
+        } else {
+            setCountValid(true);
+        }
+    }
+    //проверка на не 0 и заполненность в countBanner и маркировка
+    function countValidationMarker(id, count) {
+        const inpCount = document.getElementById(`${id}`);
+
+        if (count.length == 0 || Number(count) == 0) {
+            inpCount.style.borderColor = "red";
+        } else {
+            inpCount.style.borderColor = "green";
+        }
+    }
+
+    //валидация города на заполненность и доступ к отправке формы
+    function townValidation(town) {
+        if (town.length == 0) {
+            setTownValid(false);
+        } else {
+            setTownValid(true);
+        }
+    }
+    //влидация города на заполненность и маркировка
+    function townValidationMarker(id, town) {
+        const inpTown = document.getElementById(`${id}`);
+
+        if (town.length == 0) {
+            inpTown.style.borderColor = "red";
+        } else {
+            inpTown.style.borderColor = "green";
+        }
+    }
+
+    // запрет скролла при открытом окне заказа
+    const body = document.querySelector("body");
+    if (requestOverlay || townOverlay || writeOverlay) {
+        body.style.overflow = "hidden";
     } else {
-      setPhoneValid(true);
-    }
-  }
-  //маркировка input при незаполненном phone
-  function phoneValidationMarker(id, phone) {
-    const inpPhone = document.getElementById(`${id}`);
-    if (phone.length < 18) {
-      inpPhone.style.borderColor = "red";
-    } else {
-      inpPhone.style.borderColor = "green";
-    }
-  }
-
-  //блокировка отправки формы при незаполненном email
-  function emailValidation(email) {
-    const EMAIL_REGEXP =
-      /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
-    function isEmailValid(value) {
-      return EMAIL_REGEXP.test(value);
-    }
-    if (isEmailValid(email)) {
-      setMailValid(true);
-    } else {
-      setMailValid(false);
-    }
-  }
-  //маркировка input при незаполненном email
-  function emailValidationMarker(id, email) {
-    const inpEmail = document.getElementById(`${id}`);
-    const EMAIL_REGEXP =
-      /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
-
-    function isEmailValid(value) {
-      return EMAIL_REGEXP.test(value);
+        body.style.overflow = "";
     }
 
-    if (isEmailValid(email)) {
-      inpEmail.style.borderColor = "green";
-    } else {
-      inpEmail.style.borderColor = "red";
-    }
-  }
+    return (
+        <div className={`App`}>
+            <UserContext.Provider
+                value={{
+                    headerSub,
+                    setHeaderSub,
 
-  //проверка на не 0 и заполненность в countBanner для доступа к отправке формы
-  function countValidation(count) {
-    if (count.length == 0 || count == 0) {
-      setCountValid(false);
-    } else {
-      setCountValid(true);
-    }
-  }
-  //проверка на не 0 и заполненность в countBanner и маркировка
-  function countValidationMarker(id, count) {
-    const inpCount = document.getElementById(`${id}`);
+                    specs,
 
-    if (count.length == 0 || Number(count) == 0) {
-      inpCount.style.borderColor = "red";
-    } else {
-      inpCount.style.borderColor = "green";
-    }
-  }
+                    currentTown,
+                    setCurrentTown,
+                    townOverlay,
+                    setTownOverlay,
+                    townSearchValue,
+                    setTownSearchValue,
 
-  //валидация города на заполненность и доступ к отправке формы
-  function townValidation(town) {
-    if (town.length == 0) {
-      setTownValid(false);
-    } else {
-      setTownValid(true);
-    }
-  }
-  //влидация города на заполненность и маркировка
-  function townValidationMarker(id, town) {
-    const inpTown = document.getElementById(`${id}`);
+                    requests,
+                    setRequests,
 
-    if (town.length == 0) {
-      inpTown.style.borderColor = "red";
-    } else {
-      inpTown.style.borderColor = "green";
-    }
-  }
+                    phoneBanner,
+                    setPhoneBanner,
+                    mailBanner,
+                    setMailBanner,
+                    townBanner,
+                    setTownBanner,
+                    countBanner,
+                    setCountBanner,
 
-  // запрет скролла при открытом окне заказа
-  const body = document.querySelector("body");
-  if (requestOverlay) {
-    body.style.overflow = "hidden";
-  } else {
-    body.style.overflow = "";
-  }
+                    cardRequest,
+                    setCardReuest,
 
-  return (
-    <div className={`App`}>
-      <UserContext.Provider
-        value={{
-          specs,
+                    phoneRequest,
+                    mailRequest,
+                    townRequest,
+                    countRequest,
+                    setPhoneRequest,
+                    setMailRequest,
+                    setTownRequest,
+                    setCountRequest,
 
-          currentTown,
-          setCurrentTown,
-          townOverlay,
-          setTownOverlay,
-          townSearchValue,
-          setTownSearchValue,
+                    createCardRequest,
 
-          requests,
-          setRequests,
+                    selectedSpec,
+                    setSelectedSpec,
 
-          phoneBanner,
-          setPhoneBanner,
-          mailBanner,
-          setMailBanner,
-          townBanner,
-          setTownBanner,
-          countBanner,
-          setCountBanner,
+                    // <модалка заявки + модалка подтверждения заявки>
+                    requestAccept,
+                    setRequestAccept,
+                    requestOverlay,
+                    setRequestOverlay,
+                    // </модалка заявки + модалка подтверждения заявки>
 
-          cardRequest,
-          setCardReuest,
+                    // <валидации значений полей>
+                    phoneValid,
+                    setPhoneValid,
+                    mailValid,
+                    setMailValid,
+                    townValid,
+                    setTownValid,
+                    countValid,
+                    setCountValid,
+                    phoneValidation,
+                    phoneValidationMarker,
+                    countValidation,
+                    countValidationMarker,
+                    emailValidation,
+                    emailValidationMarker,
+                    townValidation,
+                    townValidationMarker,
+                    // </валидации значений полей>
 
-          phoneRequest,
-          mailRequest,
-          townRequest,
-          countRequest,
-          setPhoneRequest,
-          setMailRequest,
-          setTownRequest,
-          setCountRequest,
+                    // <оверлей отправки сообщения>
+                    writeOverlay,
+                    setWriteOverlay,
 
-          createCardRequest,
+                    phoneWrite,
+                    setPhoneWrite,
+                    mailWrite,
+                    setMailWrite,
+                    textWrite,
+                    setTextWrite,
+                    writeAccept,
+                    setWriteAccept,
+                    //</оверлей отправки сообщения>
+                }}
+            >
+                <Header />
+                <HeaderSub />
+                <TownOverlay //оверлей выбора города
+                    towns={Array.from(towns)}
+                />
+                <RequestOverlay //оверлей заявки на персонал
+                />
+                <WriteOverlay />
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="about" element={<About />} />
+                    <Route path="specialties" element={<Spec />} />
+                </Routes>
 
-          selectedSpec,
-          setSelectedSpec,
-
-          // <модалка заявки + модалка подтверждения заявки>
-          requestAccept,
-          setRequestAccept,
-          requestOverlay,
-          setRequestOverlay,
-          // </модалка заявки + модалка подтверждения заявки>
-
-          // <валидации значений полей>
-          phoneValid,
-          setPhoneValid,
-          mailValid,
-          setMailValid,
-          townValid,
-          setTownValid,
-          countValid,
-          setCountValid,
-          phoneValidation,
-          phoneValidationMarker,
-          countValidation,
-          countValidationMarker,
-          emailValidation,
-          emailValidationMarker,
-          townValidation,
-          townValidationMarker,
-          // </валидации значений полей>
-
-          // <оверлей отправки сообщения>
-          writeOverlay,
-          setWriteOverlay,
-
-          phoneWrite,
-          setPhoneWrite,
-          mailWrite,
-          setMailWrite,
-          textWrite,
-          setTextWrite,
-          writeAccept,
-          setWriteAccept,
-          //</оверлей отправки сообщения>
-        }}
-      >
-        <Header />
-        <TownOverlay //оверлей выбора города
-          towns={Array.from(towns)}
-        />
-        <RequestOverlay //оверлей заявки на персонал
-        />
-        <WriteOverlay />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="about" element={<About />} />
-          <Route path="specialties" element={<Spec />} />
-        </Routes>
-
-        <Footer />
-      </UserContext.Provider>
-    </div>
-  );
+                <Footer />
+            </UserContext.Provider>
+        </div>
+    );
 }
 
 export default App;

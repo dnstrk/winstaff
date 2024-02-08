@@ -1,0 +1,68 @@
+// изменить иконку чата!!!
+
+.headerSub {
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+    height: 50px;
+    background: #f0f0f0;
+    box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.25);
+    transition: 1s;
+
+    top: -50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .header__nav {
+        .header__navList {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 40px;
+
+            font-size: 16px;
+            font-weight: 500;
+
+            .header__navItem {
+                .header__navLink {
+                    display: flex;
+                    align-items: center;
+                    gap: 4px;
+                    position: relative;
+                    transition: 0.3s;
+
+                    &::before {
+                        position: absolute;
+                        content: "";
+                        width: 0;
+                        height: 1px;
+                        left: 0;
+                        bottom: -2px;
+                        background: var(--green);
+
+                        transition: 0.3s;
+                    }
+
+                    &:hover {
+                        color: var(--green);
+
+                        svg {
+                            path {
+                                transition: 0.3s;
+                                fill: var(--green);
+                            }
+                        }
+
+                        &::before {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.visible {
+    top: 48px;
+}

@@ -294,8 +294,8 @@ export default function Home() {
                             </h2>
                             <p className="banner__infoText">
                                 Лидер на рынке аутсорсинга временного персонала.{" "}
-                                <br /> Более <b>54 отделений</b> в нашей
-                                региональной сети.
+                                Более <b>54 отделений</b> в нашей региональной
+                                сети.
                             </p>
                             <form className="banner__form">
                                 <div className="banner__actionInp">
@@ -698,9 +698,9 @@ export default function Home() {
                         <div className="stats__right">
                             <h6 className="stats__rightTitle">
                                 <span className="stats__rightTitle_marked">
-                                    Почему
+                                    Возьмем на себя
                                 </span>{" "}
-                                стоит использовать аутсорс?
+                                заботу о ваших кадрах!
                             </h6>
                             <ul className="stats__rightList">
                                 <li className="stats__rightList__item">

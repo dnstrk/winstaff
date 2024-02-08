@@ -131,6 +131,27 @@ export default function About() {
                             Написать нам
                         </button>
                     </div>
+                    <div className="about__addrAdaptive">
+                        <b className="about__addrAdaptive__title">
+                            Центральный офис в Москве:
+                        </b>
+                        <p className="about__addrAdaptiveText">
+                            <a
+                                href="tel:+7 495 933 40 63"
+                                className="about__addrAdaptiveText_marked"
+                            >
+                                +7 495 933 40 63
+                            </a>
+                            <br />
+                            ул. Краснобогатырская, д. 2, стр. 1
+                        </p>
+                        <button
+                            onClick={(e) => setWriteOverlay(true)}
+                            className="about__textBtn"
+                        >
+                            Написать нам
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>

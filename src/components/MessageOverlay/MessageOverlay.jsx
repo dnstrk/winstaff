@@ -1,12 +1,12 @@
 import React, { useContext, useEffect } from "react";
-import cl from "./WriteOverlay.module.scss";
+import cl from "./MessageOverlay.module.scss";
 import UserContext from "../../UserContext";
 import IMask from "imask";
 
-const WriteOverlay = () => {
+const MessageOverlay = () => {
   const {
-    writeOverlay,
-    setWriteOverlay,
+    messageOverlay,
+    setMessageOverlay,
     phoneWrite,
     setPhoneWrite,
     mailWrite,
@@ -19,8 +19,8 @@ const WriteOverlay = () => {
     phoneValid,
     mailValid,
 
-    writeAccept,
-    setWriteAccept,
+    messageAccept,
+    setMessageAccept,
 
     phoneValidationMarker,
     emailValidationMarker,
@@ -28,17 +28,17 @@ const WriteOverlay = () => {
 
   const closeOverlay = (e) => {
     if (e.target.classList.contains(cl.overlay)) {
-      setWriteOverlay(false);
+      setMessageOverlay(false);
       setTimeout(() => {
-        setWriteAccept(false);
+        setMessageAccept(false);
       }, 500);
     }
   };
 
   const closeOverlayBtn = (e) => {
-    setWriteOverlay(false);
+    setMessageOverlay(false);
     setTimeout(() => {
-      setWriteAccept(false);
+      setMessageAccept(false);
     }, 500);
   };
 
@@ -81,7 +81,7 @@ const WriteOverlay = () => {
 
   const sendForm = () => {
     if (phoneValid && mailValid && textWrite.length > 0) {
-      setWriteAccept(true);
+      setMessageAccept(true);
       setMailWrite("");
       setPhoneWrite("");
       setTextWrite("");
@@ -94,9 +94,9 @@ const WriteOverlay = () => {
   return (
     <div
       onClick={(e) => closeOverlay(e)}
-      className={`${cl.overlay} ${writeOverlay && cl.overlay__visible}`}
+      className={`${cl.overlay} ${messageOverlay && cl.overlay__visible}`}
     >
-      {writeAccept ? (
+      {messageAccept ? (
         <div className={cl.writeDrawerAccepted}>
           <div className={cl.writeDrawerAccepted__head}>
             <h6 className={cl.writeDrawerAccepted__headText}>Написать нам</h6>
@@ -198,4 +198,4 @@ const WriteOverlay = () => {
   );
 };
 
-export default WriteOverlay;
+export default MessageOverlay;

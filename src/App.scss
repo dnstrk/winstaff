@@ -6246,6 +6246,7 @@
     .section__banner {
         margin-top: 0px;
         background: transparent;
+        padding-bottom: 20px;
         // overflow-x: hidden;
 
         .banner-wrap {
@@ -6264,15 +6265,38 @@
                 .banner__infoText {}
 
                 .banner__form {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
                     .banner__actionInp {
+                        width: 85%;
                         flex-direction: column;
+                        gap: 20px;
 
                         .banner__actionInp__num {}
 
                         .banner__actionInp__email {}
                     }
 
-                    .banner__specText {}
+                    .banner__specText {
+                        max-width: 80%;
+                    }
+
+                    .banner__specRadioGroup {
+                        margin-top: 20px;
+                        white-space: nowrap;
+                        display: flex;
+                        flex-direction: row;
+                        flex-wrap: nowrap;
+                        overflow-x: scroll;
+                    }
+
+                    .banner__formBottom {
+                        margin-top: 20px;
+                        display: flex;
+                        width: 85%;
+                        flex-direction: column;
+                    }
                 }
             }
 

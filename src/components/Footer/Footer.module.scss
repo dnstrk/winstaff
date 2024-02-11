@@ -54,6 +54,7 @@
         padding-bottom: 30px;
         font-family: "Montserrat", sans-serif;
         background: #F2F0FE;
+        height: 140px;
 
         .footerWrap {
             display: flex;
@@ -66,7 +67,7 @@
             }
 
             .footer__social {
-                margin-top: 40px;
+                margin-top: 20px;
                 display: flex;
                 flex-direction: row;
                 gap: 33px;
@@ -93,7 +94,7 @@
             .footer__copyright {
                 text-align: center;
                 user-select: none;
-                margin-top: 40px;
+                margin-top: 20px;
                 font-size: 12px;
                 font-weight: 400;
             }

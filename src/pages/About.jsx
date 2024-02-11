@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import UserContext from "../UserContext";
 
 export default function About() {
-    const { setWriteOverlay } = useContext(UserContext);
+    const { setMessageOverlay } = useContext(UserContext);
 
     return (
         <div className="about">
@@ -125,7 +125,7 @@ export default function About() {
                             alt=""
                         />
                         <button
-                            onClick={(e) => setWriteOverlay(true)}
+                            onClick={(e) => setMessageOverlay(true)}
                             className="about__imgAbs about__imgBtn a8"
                         >
                             Написать нам
@@ -146,7 +146,7 @@ export default function About() {
                             ул. Краснобогатырская, д. 2, стр. 1
                         </p>
                         <button
-                            onClick={(e) => setWriteOverlay(true)}
+                            onClick={(e) => setMessageOverlay(true)}
                             className="about__textBtn"
                         >
                             Написать нам

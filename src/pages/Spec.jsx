@@ -4,7 +4,7 @@ import prices from "../price.json";
 import UserContext from "../UserContext";
 
 const Spec = () => {
-  const { currentTown } = useContext(UserContext);
+  const { moveTop, currentTown } = useContext(UserContext);
 
   const [specs, setSpecs] = useState([]);
 
@@ -23,7 +23,7 @@ const Spec = () => {
   }, [currentTown]);
 
   return (
-    <div className="specialties">
+    <div className={`specialties ${moveTop && "moveTop"}`}>
       <div className="container">
         <div className="specialtiesWrap">
           <h5 className="specialties__title">

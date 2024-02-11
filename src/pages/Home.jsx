@@ -9,6 +9,7 @@ import IMask from "imask";
 
 export default function Home() {
   const {
+    moveTop,
     requests,
     setRequests,
     selectedSpec,
@@ -273,9 +274,11 @@ export default function Home() {
     });
   });
 
+  console.log(moveTop);
+
   return (
     <>
-      <section className="section__banner">
+      <section className={`section__banner ${moveTop && "moveTop"}`}>
         <div className="container">
           <div className="banner-wrap">
             <div className="banner__info">
@@ -343,7 +346,9 @@ export default function Home() {
                     // onBlur={(e) => townValidation(townBanner)}
                     onBlur={(e) => {
                       townValidation(townBanner);
-                      townValidationMarker(e.target.id, townBanner);
+                      if (townBanner.length > 0) {
+                        townValidationMarker(e.target.id, townBanner);
+                      }
                     }}
                     onChange={(e) => setTownBanner(e.target.value)}
                     placeholder="Город"
@@ -356,7 +361,9 @@ export default function Home() {
                     value={countBanner}
                     onBlur={(e) => {
                       countValidation(countBanner);
-                      countValidationMarker(e.target.id, countBanner);
+                      if (countBanner.length > 0) {
+                        countValidationMarker(e.target.id, countBanner);
+                      }
                     }}
                     onChange={(e) => setCountBanner(e.target.value)}
                     placeholder="Количество"

@@ -173,12 +173,12 @@
     opacity: 1;
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 480px) {
     .overlay {
 
         .town__select {
             margin-top: 40px;
-            width: 350px;
+            width: 320px;
             height: 500px;
 
 

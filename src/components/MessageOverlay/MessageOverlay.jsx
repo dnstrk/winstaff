@@ -7,12 +7,12 @@ const MessageOverlay = () => {
   const {
     messageOverlay,
     setMessageOverlay,
-    phoneWrite,
-    setPhoneWrite,
-    mailWrite,
-    setMailWrite,
-    textWrite,
-    setTextWrite,
+    phoneMessage,
+    setPhoneMessage,
+    mailMessage,
+    setMailMessage,
+    textMessage,
+    setTextMessage,
     phoneValidation,
     emailValidation,
 
@@ -26,6 +26,7 @@ const MessageOverlay = () => {
     emailValidationMarker,
   } = useContext(UserContext);
 
+  //закрытие модалки по клику вне самой модалки
   const closeOverlay = (e) => {
     if (e.target.classList.contains(cl.overlay)) {
       setMessageOverlay(false);
@@ -35,6 +36,7 @@ const MessageOverlay = () => {
     }
   };
 
+  //закрытие модалки по кнопке
   const closeOverlayBtn = (e) => {
     setMessageOverlay(false);
     setTimeout(() => {
@@ -43,34 +45,34 @@ const MessageOverlay = () => {
   };
 
   useEffect(() => {
-    const inpPhoneWrite = document.getElementById("inpPhoneW");
+    const inpPhone = document.getElementById("inpPhoneW");
     let maskOption = {
       mask: "+{7} (000) 000-00-00",
     };
-    if (inpPhoneWrite) {
-      IMask(inpPhoneWrite, maskOption);
-      inpPhoneWrite.addEventListener("input", () => {
-        if (phoneWrite.length < 18) {
-          inpPhoneWrite.style.borderColor = "red";
+    if (inpPhone) {
+      IMask(inpPhone, maskOption);
+      inpPhone.addEventListener("input", () => {
+        if (phoneMessage.length < 18) {
+          inpPhone.style.borderColor = "red";
         } else {
-          inpPhoneWrite.style.borderColor = "green";
+          inpPhone.style.borderColor = "green";
         }
       });
     }
 
-    const inpEmailWrite = document.getElementById("inpEmailW");
-    if (inpEmailWrite) {
-      inpEmailWrite.addEventListener("input", onInput);
+    const inpEmail = document.getElementById("inpEmailW");
+    if (inpEmail) {
+      inpEmail.addEventListener("input", onInput);
     }
 
     const EMAIL_REGEXP =
       /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
 
     function onInput() {
-      if (isEmailValid(inpEmailWrite.value)) {
-        inpEmailWrite.style.borderColor = "green";
+      if (isEmailValid(inpEmail.value)) {
+        inpEmail.style.borderColor = "green";
       } else {
-        inpEmailWrite.style.borderColor = "red";
+        inpEmail.style.borderColor = "red";
       }
     }
 
@@ -80,14 +82,14 @@ const MessageOverlay = () => {
   });
 
   const sendForm = () => {
-    if (phoneValid && mailValid && textWrite.length > 0) {
+    if (phoneValid && mailValid && textMessage.length > 0) {
       setMessageAccept(true);
-      setMailWrite("");
-      setPhoneWrite("");
-      setTextWrite("");
+      setMailMessage("");
+      setPhoneMessage("");
+      setTextMessage("");
     } else {
-      phoneValidationMarker("inpPhoneW", phoneWrite);
-      emailValidationMarker("inpEmailW", mailWrite);
+      phoneValidationMarker("inpPhoneW", phoneMessage);
+      emailValidationMarker("inpEmailW", mailMessage);
     }
   };
 
@@ -160,18 +162,18 @@ const MessageOverlay = () => {
             <input
               className={`${cl.writeDrawer__contacts_num} ${cl.default__inp}`}
               id="inpPhoneW"
-              value={phoneWrite}
-              onBlur={() => phoneValidation(phoneWrite)}
-              onChange={(e) => setPhoneWrite(e.target.value)}
+              value={phoneMessage}
+              onBlur={() => phoneValidation(phoneMessage)}
+              onChange={(e) => setPhoneMessage(e.target.value)}
               placeholder="Ваш телефон"
               type="text"
             />
             <input
               className={`${cl.writeDrawer__contacts_email} ${cl.default__inp}`}
               id="inpEmailW"
-              value={mailWrite}
-              onBlur={() => emailValidation(mailWrite)}
-              onChange={(e) => setMailWrite(e.target.value)}
+              value={mailMessage}
+              onBlur={() => emailValidation(mailMessage)}
+              onChange={(e) => setMailMessage(e.target.value)}
               placeholder="Ваш e-mail"
               type="text"
             />
@@ -182,8 +184,8 @@ const MessageOverlay = () => {
             id=""
             cols="30"
             rows="10"
-            value={textWrite}
-            onChange={(e) => setTextWrite(e.target.value)}
+            value={textMessage}
+            onChange={(e) => setTextMessage(e.target.value)}
           ></textarea>
           <button
             onClick={(e) => sendForm()}

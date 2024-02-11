@@ -21,6 +21,7 @@ import {
 } from "./sideFuncs";
 
 function App() {
+  // стейт списка городов из файла price.json
   const [townsAll, setTownsAll] = useState([]);
 
   useEffect(() => {
@@ -42,12 +43,14 @@ function App() {
   const [townOverlay, setTownOverlay] = useState(false); //статус оверлея выбора города
   const [requestOverlay, setRequestOverlay] = useState(false); //статус оверлея заявки
   const [messageOverlay, setMessageOverlay] = useState(false); //статус оверлея заявки
-  const [headerSub, setHeaderSub] = useState(false);
+  const [headerSub, setHeaderSub] = useState(false); //меню появляющаяся в медиа
+
+  const [moveTop, setMoveTop] = useState(false);
 
   /*выбранная специальность
       выбор при нажатии на радиокнопку или 
       при нажатии на карточку с конкретной специализацией
-    */
+  */
   const [selectedSpec, setSelectedSpec] = useState("");
 
   // стейты формы создания заявки для bannerForm
@@ -63,9 +66,9 @@ function App() {
   const [countRequest, setCountRequest] = useState("");
 
   // стейты формы создания сообщения
-  const [phoneWrite, setPhoneWrite] = useState("");
-  const [mailWrite, setMailWrite] = useState("");
-  const [textWrite, setTextWrite] = useState("");
+  const [phoneMessage, setPhoneMessage] = useState("");
+  const [mailMessage, setMailMessage] = useState("");
+  const [textMessage, setTextMessage] = useState("");
 
   // стейты валидации для отправки форм
   const [phoneValid, setPhoneValid] = useState(false);
@@ -145,6 +148,9 @@ function App() {
     <div className={`App`}>
       <UserContext.Provider
         value={{
+          moveTop,
+          setMoveTop,
+
           headerSub,
           setHeaderSub,
 
@@ -160,6 +166,7 @@ function App() {
           requests,
           setRequests,
 
+          //<форма заявки в секции banner>
           phoneBanner,
           setPhoneBanner,
           mailBanner,
@@ -168,7 +175,10 @@ function App() {
           setTownBanner,
           countBanner,
           setCountBanner,
+          //</форма заявки в секции banner>
 
+          //<модалка создания заявки>
+          ////модалка с по конкретной специальности
           cardRequest,
           setCardReuest,
 
@@ -182,6 +192,7 @@ function App() {
           setCountRequest,
 
           createCardRequest,
+          //</модалка создания заявки>
 
           selectedSpec,
           setSelectedSpec,
@@ -212,19 +223,19 @@ function App() {
           townValidationMarker,
           // </валидации значений полей>
 
-          // <оверлей отправки сообщения>
+          // <модалка отправки сообщения>
           messageOverlay,
           setMessageOverlay,
 
-          phoneWrite,
-          setPhoneWrite,
-          mailWrite,
-          setMailWrite,
-          textWrite,
-          setTextWrite,
+          phoneMessage,
+          setPhoneMessage,
+          mailMessage,
+          setMailMessage,
+          textMessage,
+          setTextMessage,
           messageAccept,
           setMessageAccept,
-          //</оверлей отправки сообщения>
+          //</модалка отправки сообщения>
         }}
       >
         <Header />

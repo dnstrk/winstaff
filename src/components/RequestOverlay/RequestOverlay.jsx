@@ -51,6 +51,7 @@ const RequestOverlay = () => {
     townValidationMarker,
   } = useContext(UserContext);
 
+  //закрытие модалки по клику вне самой модалки
   const closeOverlay = (e) => {
     if (e.target.classList.contains(cl.overlay)) {
       setRequestOverlay(false);
@@ -62,6 +63,7 @@ const RequestOverlay = () => {
     }
   };
 
+  //закрытие модалки по кнопке
   const closeOverlayBtn = (e) => {
     setRequestOverlay(false);
     setTimeout(() => {
@@ -73,10 +75,6 @@ const RequestOverlay = () => {
 
   // отправка заполненной формы заявки
   const sendForm = () => {
-    console.log(phoneValid)
-    console.log(mailValid)
-    console.log(townValid)
-    console.log(countValid)
     //проверка на отсутствие незаполненных полей
     if (
       phoneValid &&
@@ -110,6 +108,7 @@ const RequestOverlay = () => {
         r.checked = false;
       });
     } else {
+      //чек незаполненных полей
       countValidationMarker("inpCountR", countRequest);
       phoneValidationMarker("inpPhoneR", phoneRequest);
       emailValidationMarker("inpEmailR", mailRequest);
@@ -117,8 +116,9 @@ const RequestOverlay = () => {
     }
   };
 
-  //маска телефона и почты
+  //маска телефона и почты + допуск символов в полях города и кол-ва
   useEffect(() => {
+    //<маска телефона>
     const inpPhoneRequest = document.getElementById("inpPhoneR");
     let maskOption = {
       mask: "+{7} (000) 000-00-00",
@@ -133,7 +133,9 @@ const RequestOverlay = () => {
         }
       });
     }
+    //</маска телефона>
 
+    //<маска почты>
     const inpEmailRequest = document.getElementById("inpEmailR");
     if (inpEmailRequest) {
       inpEmailRequest.addEventListener("input", onInput);
@@ -153,7 +155,9 @@ const RequestOverlay = () => {
     function isEmailValid(value) {
       return EMAIL_REGEXP.test(value);
     }
+    //</маска почты>
 
+    //<маска города>
     const inpTownRequest = document.querySelector("#inpTownR");
     if (inpTownRequest) {
       inpTownRequest.addEventListener("keydown", (event) => {
@@ -165,7 +169,9 @@ const RequestOverlay = () => {
         }
       });
     }
+    //</маска города>
 
+    //<маска кол-ва>
     const inpCountRequest = document.querySelector("#inpCountR");
     if (inpCountRequest) {
       inpCountRequest.addEventListener("keydown", (event) => {
@@ -193,6 +199,7 @@ const RequestOverlay = () => {
       });
     }
   });
+  //</маска кол-ва>
 
   return (
     <div
@@ -335,7 +342,9 @@ const RequestOverlay = () => {
                 value={townRequest}
                 onBlur={(e) => {
                   townValidation(townRequest);
-                  townValidationMarker(e.target.id, townRequest);
+                  if (townRequest.length > 0) {
+                    townValidationMarker(e.target.id, townRequest);
+                  }
                 }}
                 onChange={(e) => setTownRequest(e.target.value)}
                 placeholder="Город"
@@ -347,7 +356,9 @@ const RequestOverlay = () => {
                 value={countRequest}
                 onBlur={(e) => {
                   countValidation(countRequest);
-                  countValidationMarker(e.target.id, countRequest);
+                  if (countRequest.length > 0) {
+                    countValidationMarker(e.target.id, countRequest);
+                  }
                 }}
                 onChange={(e) => setCountRequest(e.target.value)}
                 placeholder="Количество"
@@ -362,12 +373,12 @@ const RequestOverlay = () => {
               </button>
             </div>
             <button
-                onClick={(e) => sendForm()}
-                type="button"
-                className={cl.requestDrawer__foot__sendMedia}
-              >
-                Отправить
-              </button>
+              onClick={(e) => sendForm()}
+              type="button"
+              className={cl.requestDrawer__foot__sendMedia}
+            >
+              Отправить
+            </button>
             {/* {alert && (
               <b className={cl.requestDrawer__alert} style={{ color: "red" }}>
                 Есть незаполненные поля

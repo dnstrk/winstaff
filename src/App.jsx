@@ -45,7 +45,8 @@ function App() {
   const [messageOverlay, setMessageOverlay] = useState(false); //статус оверлея заявки
   const [headerSub, setHeaderSub] = useState(false); //меню появляющаяся в медиа
 
-  const [moveTop, setMoveTop] = useState(false);
+  // сдвиг верха страниц при развороте headerSub
+  const [moveTop, setMoveTop] = useState(false); 
 
   /*выбранная специальность
       выбор при нажатии на радиокнопку или 

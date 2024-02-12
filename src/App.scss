@@ -18,7 +18,6 @@
     background: var(--super-light-gray);
     transition: 1s;
 
-
     .banner-wrap {
         display: flex;
         flex-direction: row;
@@ -130,14 +129,14 @@
                             transition: 0.2s;
                         }
 
-                        input[type="radio"]:checked+label {
+                        input[type="radio"]:checked + label {
                             color: var(--white);
                             background-color: #e28424;
                             border-color: #e28424;
                         }
 
                         &:hover {
-                            input[type="radio"]+label {
+                            input[type="radio"] + label {
                                 color: var(--white);
                                 background-color: #f19920;
                                 border-color: #f19920;
@@ -281,7 +280,7 @@
                 top: 190px;
                 font-size: 14px;
 
-                transition: 2s;
+                transition: 4s;
             }
 
             .s4 {
@@ -299,7 +298,7 @@
                 top: 300px;
                 font-size: 14px;
 
-                transition: 3s;
+                transition: 5s;
             }
 
             .s5 {
@@ -1039,6 +1038,113 @@
             //     box-shadow: 0px 16px 16px 0px rgba(0, 0, 0, 0.04);
             // }
         }
+
+        .map__bottomMedia {
+            display: none;
+            .map__bottomMedia__search {
+                position: relative;
+                .map__bottomMedia__searchInp {
+                    color: var(--dark-gray);
+                    width: 250px;
+                    border-radius: 50px;
+                    background: var(--light-gray);
+                    padding: 15px 50px 15px 20px;
+
+                    transition: 0.2s;
+                    border: 1px solid transparent;
+
+                    &:hover {
+                        border: 0.5px solid #d0cde1;
+                    }
+
+                    &:focus {
+                        border: 0.5px solid #d0cde1;
+                    }
+                }
+
+                .map__bottomMedia__icon {
+                    position: absolute;
+                    content: "";
+                    right: 0;
+                    top: 0;
+                    width: 50px;
+                    height: 50px;
+
+                    .map__bottomMedia__iconPath1 {
+                        position: absolute;
+                        width: 2px;
+                        height: 14px;
+                        top: 20px;
+                        left: 10px;
+                        background: var(--green);
+                        transform: rotate(-45deg);
+
+                        transition: 0.3s;
+                    }
+                    .map__bottomMedia__iconPath2 {
+                        position: absolute;
+                        width: 2px;
+                        height: 14px;
+                        top: 20px;
+                        right: 28px;
+                        background: var(--green);
+                        transform: rotate(45deg);
+
+                        transition: 0.3s;
+                    }
+                }
+
+                .btn__open {
+                    .map__bottomMedia__iconPath1 {
+                        transform: rotate(-135deg);
+                    }
+                    .map__bottomMedia__iconPath2 {
+                        transform: rotate(135deg);
+                    }
+                }
+
+                .map__bottomMedia__searchDropDown {
+                    // visibility: hidden;
+                    // opacity: 0;
+                    position: absolute;
+                    content: "";
+                    left: 4%;
+                    top: 110%;
+                    width: 80%;
+                    max-height: 180px;
+                    overflow-y: scroll;
+                    height: fit-content;
+                    background: var(--light-gray);
+                    border-radius: 20px;
+                    padding: 20px;
+
+                    -webkit-transform: scaleY(0);
+                    -ms-transform: scaleY(0);
+                    transform: scaleY(0);
+                    -webkit-transform-origin: 0 0;
+                    -ms-transform-origin: 0 0;
+                    transform-origin: 0 0;
+                    transition: 0.5s;
+
+                    .map__bottomMedia__searchDropDown__item {
+                        padding: 6px 0;
+                        transition: 0.3s;
+
+                        &:hover {
+                            color: var(--green);
+                        }
+                    }
+                }
+                .open {
+                    -webkit-transform: scaleY(1);
+                    -ms-transform: scaleY(1);
+                    transform: scaleY(1);
+
+                    // visibility: visible;
+                    // opacity: 1;
+                }
+            }
+        }
     }
 
     @media (min-width: 768px) {
@@ -1108,7 +1214,6 @@
     padding-bottom: 350px;
     font-family: "Montserrat", sans-serif;
     transition: 1s;
-
 
     .aboutWrap {
         display: flex;
@@ -1261,7 +1366,6 @@
     padding-bottom: 380px;
     font-family: "Montserrat", sans-serif;
     transition: 1s;
-
 
     .specialtiesWrap {
         display: flex;
@@ -1468,14 +1572,14 @@
                                 transition: 0.2s;
                             }
 
-                            input[type="radio"]:checked+label {
+                            input[type="radio"]:checked + label {
                                 color: var(--white);
                                 background-color: #e28424;
                                 border-color: #e28424;
                             }
 
                             &:hover {
-                                input[type="radio"]+label {
+                                input[type="radio"] + label {
                                     color: var(--white);
                                     background-color: #f19920;
                                     border-color: #f19920;
@@ -2713,14 +2817,14 @@
                                 transition: 0.2s;
                             }
 
-                            input[type="radio"]:checked+label {
+                            input[type="radio"]:checked + label {
                                 color: var(--white);
                                 background-color: #e28424;
                                 border-color: #e28424;
                             }
 
                             &:hover {
-                                input[type="radio"]+label {
+                                input[type="radio"] + label {
                                     color: var(--white);
                                     background-color: #f19920;
                                     border-color: #f19920;
@@ -3836,6 +3940,10 @@
         padding: 0 15px;
     }
 
+    .moveTop {
+        transform: translateY(40px);
+    }
+
     .section__banner {
         padding-top: 80px;
         padding-bottom: 60px;
@@ -3953,14 +4061,14 @@
                                 transition: 0.2s;
                             }
 
-                            input[type="radio"]:checked+label {
+                            input[type="radio"]:checked + label {
                                 color: var(--white);
                                 background-color: #e28424;
                                 border-color: #e28424;
                             }
 
                             &:hover {
-                                input[type="radio"]+label {
+                                input[type="radio"] + label {
                                     color: var(--white);
                                     background-color: #f19920;
                                     border-color: #f19920;
@@ -4939,8 +5047,7 @@
 
         padding-top: 80px;
         padding-bottom: 350px;
-        font-family: "Montserrat",
-        sans-serif;
+        font-family: "Montserrat", sans-serif;
 
         .aboutWrap {
             display: flex;
@@ -5172,14 +5279,14 @@
                                 transition: 0.2s;
                             }
 
-                            input[type="radio"]:checked+label {
+                            input[type="radio"]:checked + label {
                                 color: var(--white);
                                 background-color: #e28424;
                                 border-color: #e28424;
                             }
 
                             &:hover {
-                                input[type="radio"]+label {
+                                input[type="radio"] + label {
                                     color: var(--white);
                                     background-color: #f19920;
                                     border-color: #f19920;
@@ -6129,8 +6236,7 @@
 
         padding-top: 80px;
         padding-bottom: 350px;
-        font-family: "Montserrat",
-        sans-serif;
+        font-family: "Montserrat", sans-serif;
 
         .aboutWrap {
             display: flex;
@@ -6269,10 +6375,12 @@
                     text-align: center;
                     font-size: 30px;
 
-                    .banner__infoTitle_marked {}
+                    .banner__infoTitle_marked {
+                    }
                 }
 
-                .banner__infoText {}
+                .banner__infoText {
+                }
 
                 .banner__form {
                     display: flex;
@@ -6284,9 +6392,11 @@
                         flex-direction: column;
                         gap: 20px;
 
-                        .banner__actionInp__num {}
+                        .banner__actionInp__num {
+                        }
 
-                        .banner__actionInp__email {}
+                        .banner__actionInp__email {
+                        }
                     }
 
                     .banner__specText {
@@ -6307,6 +6417,10 @@
                         display: flex;
                         width: 85%;
                         flex-direction: column;
+
+                        .banner__formBottom__btnSend {
+                            width: 60%;
+                        }
                     }
                 }
             }
@@ -6721,11 +6835,11 @@
                     }
 
                     &:first-child {
-                        margin-left: 75px;
+                        margin-left: 130px;
                     }
 
                     &:last-child {
-                        margin-right: 75px;
+                        margin-right: 130px;
                     }
                 }
             }
@@ -7021,6 +7135,10 @@
                 //     box-shadow: 0px 16px 16px 0px rgba(0, 0, 0, 0.04);
                 // }
             }
+
+            .map__bottomMedia {
+                display: block;
+            }
         }
 
         @media (min-width: 768px) {
@@ -7067,8 +7185,7 @@
 
         padding-top: 80px;
         padding-bottom: 350px;
-        font-family: "Montserrat",
-        sans-serif;
+        font-family: "Montserrat", sans-serif;
 
         .aboutWrap {
             display: flex;

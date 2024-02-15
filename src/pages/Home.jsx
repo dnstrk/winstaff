@@ -6,6 +6,7 @@ import UserContext from "../UserContext";
 import { Link } from "react-router-dom";
 // import IMask from "imask/holder";
 import IMask from "imask";
+import axios from "axios";
 
 export default function Home() {
     const {
@@ -36,6 +37,8 @@ export default function Home() {
         emailValidationMarker,
         townValidation,
         townValidationMarker,
+
+        sendRequestForm,
     } = useContext(UserContext);
 
     //тест dropdown
@@ -133,61 +136,61 @@ export default function Home() {
     //>
 
     // отправка формы с раздела banner
-    const sendForm = () => {
-        if (
-            selectedSpec.length > 0 &&
-            phoneValid &&
-            mailValid &&
-            townValid &&
-            countValid
-        ) {
-            const obj = {
-                id: requests.length,
-                phone: phoneBanner,
-                email: mailBanner,
-                town: townBanner,
-                count: countBanner,
-                specialisation: selectedSpec,
-            };
+    // const sendForm = () => {
+    //     if (
+    //         selectedSpec.length > 0 &&
+    //         phoneValid &&
+    //         mailValid &&
+    //         townValid &&
+    //         countValid
+    //     ) {
+    //         const obj = {
+    //             id: requests.length,
+    //             phone: phoneBanner,
+    //             email: mailBanner,
+    //             town: townBanner,
+    //             count: countBanner,
+    //             specialisation: selectedSpec,
+    //         };
 
-            setRequests((prev) => [...prev, obj]);
-            setRequestAccept(true); // установка флага для модалки об успехе
-            setRequestOverlay(true); // аналог верхнего
+    //         setRequests((prev) => [...prev, obj]);
+    //         setRequestAccept(true); // установка флага для модалки об успехе
+    //         setRequestOverlay(true); // аналог верхнего
 
-            //сброс всех значений после отправки формы
-            setPhoneBanner("");
-            setMailBanner("");
-            setTownBanner("");
-            setCountBanner("");
-            setSelectedSpec("");
+    //         //сброс всех значений после отправки формы
+    //         setPhoneBanner("");
+    //         setMailBanner("");
+    //         setTownBanner("");
+    //         setCountBanner("");
+    //         setSelectedSpec("");
 
-            //сброс валидации phone поля
-            const inpPhoneBanner = document.getElementById("inpPhoneB");
-            inpPhoneBanner.style.borderColor = "transparent";
+    //         //сброс валидации phone поля
+    //         const inpPhoneBanner = document.getElementById("inpPhoneB");
+    //         inpPhoneBanner.style.borderColor = "transparent";
 
-            //сброс валидации email поля
-            const inpEmailBanner = document.getElementById("inpEmailB");
-            inpEmailBanner.style.borderColor = "transparent";
+    //         //сброс валидации email поля
+    //         const inpEmailBanner = document.getElementById("inpEmailB");
+    //         inpEmailBanner.style.borderColor = "transparent";
 
-            //сброс валидации count поля
-            const inpTownBanner = document.getElementById("inpTownB");
-            inpTownBanner.style.borderColor = "transparent";
-            //сброс валидации count поля
-            const inpCountBanner = document.getElementById("inpCountB");
-            inpCountBanner.style.borderColor = "transparent";
+    //         //сброс валидации count поля
+    //         const inpTownBanner = document.getElementById("inpTownB");
+    //         inpTownBanner.style.borderColor = "transparent";
+    //         //сброс валидации count поля
+    //         const inpCountBanner = document.getElementById("inpCountB");
+    //         inpCountBanner.style.borderColor = "transparent";
 
-            const radio = document.getElementsByName("radio");
-            radio.forEach((r) => {
-                r.checked = false;
-            });
-        } else {
-            // проверка на заполненность полей
-            countValidationMarker("inpCountB", countBanner);
-            phoneValidationMarker("inpPhoneB", phoneBanner);
-            emailValidationMarker("inpEmailB", mailBanner);
-            townValidationMarker("inpTownB", townBanner);
-        }
-    };
+    //         const radio = document.getElementsByName("radio");
+    //         radio.forEach((r) => {
+    //             r.checked = false;
+    //         });
+    //     } else {
+    //         // проверка на заполненность полей
+    //         countValidationMarker("inpCountB", countBanner);
+    //         phoneValidationMarker("inpPhoneB", phoneBanner);
+    //         emailValidationMarker("inpEmailB", mailBanner);
+    //         townValidationMarker("inpTownB", townBanner);
+    //     }
+    // };
 
     //только числовой ввод в countBanner и текстовый в townBanner
     useEffect(() => {
@@ -235,18 +238,17 @@ export default function Home() {
     //маска телефона и почты
     useEffect(() => {
         const inpPhone = document.getElementById("inpPhoneB");
-        let maskOption = {
-            mask: "+{7} (000) 000-00-00",
-        };
-        IMask(inpPhone, maskOption);
-
         inpPhone.addEventListener("input", () => {
-            if (phoneBanner.length < 18) {
+            if (phoneBanner.length < 17) {
                 inpPhone.style.borderColor = "red";
             } else {
                 inpPhone.style.borderColor = "green";
             }
         });
+        let maskOption = {
+            mask: "+{7} (000) 000-00-00",
+        };
+        IMask(inpPhone, maskOption);
 
         const inpEmail = document.getElementById("inpEmailB");
         inpEmail.addEventListener("input", onInput);
@@ -288,13 +290,46 @@ export default function Home() {
     // вывод регионов с удалением дублей
     useEffect(() => {
         const regionsPaths = document.querySelectorAll("[data-title]");
-        const newregionsPaths = new Set(regionsPaths)
+        const newregionsPaths = new Set(regionsPaths);
         newregionsPaths.forEach((reg) =>
             setRegions((prev) => [...prev, reg.dataset.title])
         );
     }, []);
 
-    console.log(regions)
+    function sendForm() {
+        let formData = new FormData(); //formdata object
+
+        formData.append("phone", phoneBanner); //append the values with key, value pair
+        formData.append("mail", mailBanner);
+        formData.append("spec", selectedSpec);
+        formData.append("town", townBanner);
+        formData.append("count", countBanner);
+
+        const config = {
+            headers: { "content-type": "multipart/form-data" },
+        };
+
+        axios
+            .post("http://uldalex.beget.tech/send.php", formData, config)
+            .then((response) => {
+                console.log(response);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+
+        // fetch("http://test1.ru/", {
+        //     method: "POST",
+        //     headers: {
+        //         "Content-Type": "multipart/form-data",
+        //     },
+        //     // body: JSON.stringify(obj),
+        //     // body: JSON.stringify({ key1: "1", key2: "2" }),
+        //     body: JSON.stringify(data),
+        // })
+        //     .then((response) => response.text())
+        //     .then((response) => console.log(response));
+    }
 
     return (
         <>
@@ -318,13 +353,17 @@ export default function Home() {
                                 <div className="banner__actionInp">
                                     <input
                                         className="banner__actionInp__num"
+                                        name="inpPhoneB"
                                         id="inpPhoneB"
                                         type="text"
                                         value={phoneBanner}
-                                        onBlur={() =>
-                                            phoneValidation(phoneBanner)
-                                        }
-                                        // onBlur={(e) => testBlur(e)}
+                                        onBlur={() => {
+                                            phoneValidation(phoneBanner);
+                                            phoneValidationMarker(
+                                                "inpPhoneB",
+                                                phoneBanner
+                                            );
+                                        }}
                                         onChange={(e) =>
                                             setPhoneBanner(e.target.value)
                                         }
@@ -332,6 +371,7 @@ export default function Home() {
                                     />
                                     <input
                                         className="banner__actionInp__email"
+                                        name="inpEmailB"
                                         id="inpEmailB"
                                         type="text"
                                         value={mailBanner}
@@ -399,6 +439,7 @@ export default function Home() {
                                     <input
                                         className="banner__formBottom__inpTown"
                                         type="text"
+                                        name="inpTownB"
                                         id="inpTownB"
                                         value={townBanner}
                                         // onBlur={(e) => townValidation(townBanner)}
@@ -415,11 +456,11 @@ export default function Home() {
                                             setTownBanner(e.target.value)
                                         }
                                         placeholder="Город"
-                                        name=""
                                     />
                                     <input
                                         className="banner__formBottom__inpCount"
                                         type="text"
+                                        name="inpCountB"
                                         id="inpCountB"
                                         value={countBanner}
                                         onBlur={(e) => {
@@ -435,10 +476,25 @@ export default function Home() {
                                             setCountBanner(e.target.value)
                                         }
                                         placeholder="Количество"
-                                        name=""
                                     />
                                     <button
-                                        onClick={(e) => sendForm()}
+                                        // onClick={clickHandler}
+                                        onClick={() =>
+                                            sendRequestForm(
+                                                "http://uldalex.beget.tech/send.php",
+                                                phoneBanner,
+                                                mailBanner,
+                                                selectedSpec,
+                                                townBanner,
+                                                countBanner,
+                                                "B",
+                                                setPhoneBanner,
+                                                setMailBanner,
+                                                setSelectedSpec,
+                                                setTownBanner,
+                                                setCountBanner
+                                            )
+                                        }
                                         type="button"
                                         className="banner__formBottom__btnSend"
                                     >

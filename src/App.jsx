@@ -192,6 +192,9 @@ function App() {
                     });
             }, [3000]);
 
+            setRequestAccept(true);
+            setRequestOverlay(true);
+
             console.log("correct");
 
             setPhone("");

@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from "react";
 import cl from "./MessageOverlay.module.scss";
 import UserContext from "../../UserContext";
 import IMask from "imask";
+import axios from "axios";
 
 const MessageOverlay = () => {
   const {
@@ -45,7 +46,7 @@ const MessageOverlay = () => {
   };
 
   useEffect(() => {
-    const inpPhone = document.getElementById("inpPhoneW");
+    const inpPhone = document.getElementById("inpPhoneM");
     let maskOption = {
       mask: "+{7} (000) 000-00-00",
     };
@@ -60,7 +61,7 @@ const MessageOverlay = () => {
       });
     }
 
-    const inpEmail = document.getElementById("inpEmailW");
+    const inpEmail = document.getElementById("inpEmailM");
     if (inpEmail) {
       inpEmail.addEventListener("input", onInput);
     }
@@ -81,17 +82,48 @@ const MessageOverlay = () => {
     }
   });
 
-  const sendForm = () => {
-    if (phoneValid && mailValid && textMessage.length > 0) {
+  const sendMess = () => {
+    if (phoneValid && mailValid) {
+      let formData = new FormData(); //formdata object
+
+      formData.append("phone", phoneMessage); //append the values with key, value pair
+      formData.append("mail", mailMessage);
+      formData.append("text", textMessage);
+
+      const config = {
+        headers: { "content-type": "multipart/form-data" },
+      };
+
+      axios
+        .post("http://uldalex.beget.tech/send.php", formData, config)
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+
       setMessageAccept(true);
       setMailMessage("");
       setPhoneMessage("");
       setTextMessage("");
     } else {
-      phoneValidationMarker("inpPhoneW", phoneMessage);
-      emailValidationMarker("inpEmailW", mailMessage);
+      phoneValidationMarker("inpPhoneM", phoneMessage);
+      emailValidationMarker("inpEmailM", mailMessage);
     }
   };
+
+  // const sendForm = () => {
+  //   if (phoneValid && mailValid && textMessage.length > 0) {
+  //     setMessageAccept(true);
+  //     setMailMessage("");
+  //     setPhoneMessage("");
+  //     setTextMessage("");
+  //   } else {
+  //     phoneValidationMarker("inpPhoneW", phoneMessage);
+  //     emailValidationMarker("inpEmailW", mailMessage);
+  //   }
+  // };
 
   return (
     <div
@@ -161,7 +193,7 @@ const MessageOverlay = () => {
           <div className={cl.writeDrawer__contacts}>
             <input
               className={`${cl.writeDrawer__contacts_num} ${cl.default__inp}`}
-              id="inpPhoneW"
+              id="inpPhoneM"
               value={phoneMessage}
               onBlur={() => phoneValidation(phoneMessage)}
               onChange={(e) => setPhoneMessage(e.target.value)}
@@ -170,7 +202,7 @@ const MessageOverlay = () => {
             />
             <input
               className={`${cl.writeDrawer__contacts_email} ${cl.default__inp}`}
-              id="inpEmailW"
+              id="inpEmailM"
               value={mailMessage}
               onBlur={() => emailValidation(mailMessage)}
               onChange={(e) => setMailMessage(e.target.value)}
@@ -188,7 +220,7 @@ const MessageOverlay = () => {
             onChange={(e) => setTextMessage(e.target.value)}
           ></textarea>
           <button
-            onClick={(e) => sendForm()}
+            onClick={(e) => sendMess()}
             type="button"
             className={cl.writeDrawer__foot__send}
           >

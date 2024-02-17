@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./MapInteractive.scss";
 import officeData from "../../offises.json";
 
-const MapInteractive = ({ setRegion, officesAddr, setOfficesAddr }) => {
+const MapInteractive = ({ setRegion, setOfficesAddr, path, setPath }) => {
   const officesData = officeData["Города"]["Город"];
   const officesPropVal = officesData.map((off) => off.ЗначенияСвойства);
 
@@ -15,7 +15,9 @@ const MapInteractive = ({ setRegion, officesAddr, setOfficesAddr }) => {
       };
 
       region.onclick = () => {
+        // setRegion(region.dataset.title)
         setOfficesAddr([]); //очистка адресов прошлого региона
+        setPath(region); // фиксация выбранного path из карты
         for (var i = 0; i < officesPropVal.length; i++) {
           // проверка на то, что data-title включает в себя значение jsona с ИД UF_REGION_DADATA
           if (region.dataset.title.includes(officesPropVal[i][7].Значение)) {

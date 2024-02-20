@@ -68,55 +68,43 @@ const RequestOverlay = () => {
     //закрытие модалки по кнопке
     const closeOverlayBtn = (e) => {
         setRequestOverlay(false);
+        setPhoneRequest("");
+        setMailRequest("");
+        setTownRequest("");
+        setCountRequest("");
+        setSelectedSpec("");
+        //сброс валидации phone поля
+        const inpPhoneBanner = document.getElementById(
+            `inpPhoneR`
+        );
+        inpPhoneBanner.style.borderColor = "transparent";
+
+        //сброс валидации email поля
+        const inpEmailBanner = document.getElementById(
+            `inpEmailR`
+        );
+        inpEmailBanner.style.borderColor = "transparent";
+
+        //сброс валидации count поля
+        const inpTownBanner = document.getElementById(`inpTownR`);
+        inpTownBanner.style.borderColor = "transparent";
+
+        //сброс валидации count поля
+        const inpCountBanner = document.getElementById(
+            `inpCountR`
+        );
+        inpCountBanner.style.borderColor = "transparent";
+
+        const radio = document.getElementsByName("radio");
+        radio.forEach((r) => {
+            r.checked = false;
+        });
         setTimeout(() => {
             setSelectedSpec("");
             setRequestAccept(false);
             setCardReuest(false);
         }, 500);
     };
-
-    // отправка заполненной формы заявки
-    // const sendForm = () => {
-    //     //проверка на отсутствие незаполненных полей
-    //     if (
-    //         phoneValid &&
-    //         mailValid &&
-    //         countValid &&
-    //         townValid &&
-    //         selectedSpec.length > 0
-    //     ) {
-    //         // формирование объекта исходя из заполненных значений полей
-    //         const obj = {
-    //             id: requests.length,
-    //             phone: phoneRequest,
-    //             email: mailRequest,
-    //             town: townRequest,
-    //             count: countRequest,
-    //             specialisation: selectedSpec,
-    //         };
-    //         // добавление заявки в общий пул
-    //         setRequests((prev) => [...prev, obj]);
-    //         // открытие экрана принятия заявки
-    //         setRequestAccept(true);
-    //         // сброс всех заполненных значений
-    //         setPhoneRequest("");
-    //         setMailRequest("");
-    //         setTownRequest("");
-    //         setCountRequest("");
-    //         setSelectedSpec("");
-    //         // снятие check на радиокнопках
-    //         const radio = document.getElementsByName("radio");
-    //         radio.forEach((r) => {
-    //             r.checked = false;
-    //         });
-    //     } else {
-    //         //чек незаполненных полей
-    //         countValidationMarker("inpCountR", countRequest);
-    //         phoneValidationMarker("inpPhoneR", phoneRequest);
-    //         emailValidationMarker("inpEmailR", mailRequest);
-    //         townValidationMarker("inpTownR", townRequest);
-    //     }
-    // };
 
     //маска телефона и почты + допуск символов в полях города и кол-ва
     useEffect(() => {

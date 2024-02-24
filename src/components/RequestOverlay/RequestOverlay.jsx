@@ -10,6 +10,7 @@ import RadioSpec from "../RadioSpec/RadioSpec";
 import UserContext from "../../UserContext";
 import IMask from "imask";
 import prices from "../../price.json";
+import { Link } from "react-router-dom";
 
 const RequestOverlay = () => {
     const {
@@ -74,15 +75,11 @@ const RequestOverlay = () => {
         setCountRequest("");
         setSelectedSpec("");
         //сброс валидации phone поля
-        const inpPhoneBanner = document.getElementById(
-            `inpPhoneR`
-        );
+        const inpPhoneBanner = document.getElementById(`inpPhoneR`);
         inpPhoneBanner.style.borderColor = "transparent";
 
         //сброс валидации email поля
-        const inpEmailBanner = document.getElementById(
-            `inpEmailR`
-        );
+        const inpEmailBanner = document.getElementById(`inpEmailR`);
         inpEmailBanner.style.borderColor = "transparent";
 
         //сброс валидации count поля
@@ -90,9 +87,7 @@ const RequestOverlay = () => {
         inpTownBanner.style.borderColor = "transparent";
 
         //сброс валидации count поля
-        const inpCountBanner = document.getElementById(
-            `inpCountR`
-        );
+        const inpCountBanner = document.getElementById(`inpCountR`);
         inpCountBanner.style.borderColor = "transparent";
 
         const radio = document.getElementsByName("radio");
@@ -108,21 +103,16 @@ const RequestOverlay = () => {
 
     //маска телефона и почты + допуск символов в полях города и кол-ва
     useEffect(() => {
-        //<маска телефона>
         const inpPhoneRequest = document.getElementById("inpPhoneR");
         let maskOption = {
             mask: "+{7} (000) 000-00-00",
         };
-        if (inpPhoneRequest) {
-            IMask(inpPhoneRequest, maskOption);
-            inpPhoneRequest.addEventListener("input", () => {
-                if (phoneRequest.length < 18) {
-                    inpPhoneRequest.style.borderColor = "red";
-                } else {
-                    inpPhoneRequest.style.borderColor = "green";
-                }
-            });
-        }
+        IMask(inpPhoneRequest, maskOption);
+
+        //закрытие модалки по кнопке
+
+        //маска телефона и почты + допуск символов в полях города и кол-ва
+
         //</маска телефона>
 
         //<маска почты>
@@ -190,6 +180,10 @@ const RequestOverlay = () => {
         }
     });
     //</маска кол-ва>
+
+    useEffect(() => {
+        setTownRequest(currentTown);
+    }, []);
 
     return (
         <div
@@ -398,6 +392,12 @@ const RequestOverlay = () => {
                             >
                                 Отправить
                             </button>
+                            <p className={cl.personalAgreement}>
+                                Нажимая на кнопку вы соглашаетесь на обработку{" "}
+                                <Link className={cl.personalAgreement__link} to="personal-agreement" target="_blank">
+                                    персональных данных
+                                </Link>
+                            </p>
                         </div>
                         <button
                             onClick={() =>

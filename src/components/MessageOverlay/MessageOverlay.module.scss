@@ -26,14 +26,14 @@
     top: 0;
     width: 100%;
     height: 100%;
-    background: rgba(176, 170, 208, 0.30);
+    background: rgba(176, 170, 208, 0.3);
     backdrop-filter: blur(5px);
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    transition: .3s;
+    transition: 0.3s;
 
     z-index: 100;
 
@@ -46,9 +46,9 @@
 
         padding: 20px 30px;
         border-radius: 6px;
-        background: #FFF;
+        background: #fff;
 
-        font-family: 'Montserrat', sans-serif;
+        font-family: "Montserrat", sans-serif;
 
         .writeDrawer__head {
             display: flex;
@@ -68,11 +68,10 @@
                 cursor: pointer;
                 user-select: none;
 
-
                 &:hover {
                     svg {
                         path {
-                            transition: .2s;
+                            transition: 0.2s;
                             fill: #ff3b3b;
                         }
                     }
@@ -81,7 +80,7 @@
                 &:focus {
                     svg {
                         path {
-                            transition: .2s;
+                            transition: 0.2s;
                             fill: #ff3b3b;
                         }
                     }
@@ -95,8 +94,6 @@
             display: flex;
             flex-direction: row;
             gap: 30px;
-
-
         }
 
         .writeDrawer__text {
@@ -109,7 +106,7 @@
 
             font-size: 16px;
             font-weight: 500;
-            font-family: 'Montserrat', sans-serif;
+            font-family: "Montserrat", sans-serif;
 
             transition: 0.2s;
             border: 1px solid transparent;
@@ -123,29 +120,47 @@
             }
         }
 
-        .writeDrawer__foot__send {
+        .writeDrawer__foot {
             margin-top: 20px;
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            align-items: center;
 
-            align-self: end;
-            width: fit-content;
-            padding: 15px 50px;
-            color: var(--white);
-            font-weight: 700;
-            text-align: center;
-            border-radius: 50px;
-            background: var(--orange, #fba457);
+            .writeDrawer__foot__personalAgreement {
+                text-align: center;
+                font-size: 14px;
+                max-width: 60%;
+                .writeDrawer__foot__personalAgreement__link {
+                    font-weight: 700;
+                    transition: 0.15s;
 
-            transition: 0.1s;
-
-            &:hover {
-                background: #f19920;
+                    &:hover {
+                        color: var(--green);
+                    }
+                }
             }
 
-            &:active {
-                transform: scale(99%);
+            .writeDrawer__foot__send {
+                width: fit-content;
+                padding: 15px 50px;
+                color: var(--white);
+                font-weight: 700;
+                text-align: center;
+                border-radius: 50px;
+                background: var(--orange, #fba457);
+
+                transition: 0.1s;
+
+                &:hover {
+                    background: #f19920;
+                }
+
+                &:active {
+                    transform: scale(99%);
+                }
             }
         }
-
     }
 
     //onClick={(e) => setRequestOverlay(true)}
@@ -161,9 +176,9 @@
 
         padding: 20px 30px;
         border-radius: 6px;
-        background: #FFF;
+        background: #fff;
 
-        font-family: 'Montserrat', sans-serif;
+        font-family: "Montserrat", sans-serif;
 
         .writeDrawerAccepted__head {
             width: 100%;
@@ -187,7 +202,7 @@
                 &:hover {
                     svg {
                         path {
-                            transition: .2s;
+                            transition: 0.2s;
                             fill: #ff3b3b;
                         }
                     }
@@ -196,14 +211,13 @@
                 &:focus {
                     svg {
                         path {
-                            transition: .2s;
+                            transition: 0.2s;
                             fill: #ff3b3b;
                         }
                     }
                 }
             }
         }
-
 
         .writeDrawerAccepted__title {
             font-size: 20px;
@@ -226,14 +240,14 @@
         top: 0;
         width: 100%;
         height: 100%;
-        background: rgba(176, 170, 208, 0.30);
+        background: rgba(176, 170, 208, 0.3);
         backdrop-filter: blur(5px);
 
         display: flex;
         justify-content: center;
         align-items: center;
 
-        transition: .3s;
+        transition: 0.3s;
 
         z-index: 100;
 
@@ -246,9 +260,9 @@
 
             padding: 20px 30px;
             border-radius: 6px;
-            background: #FFF;
+            background: #fff;
 
-            font-family: 'Montserrat', sans-serif;
+            font-family: "Montserrat", sans-serif;
 
             .writeDrawer__head {
                 display: flex;
@@ -268,11 +282,10 @@
                     cursor: pointer;
                     user-select: none;
 
-
                     &:hover {
                         svg {
                             path {
-                                transition: .2s;
+                                transition: 0.2s;
                                 fill: #ff3b3b;
                             }
                         }
@@ -281,7 +294,7 @@
                     &:focus {
                         svg {
                             path {
-                                transition: .2s;
+                                transition: 0.2s;
                                 fill: #ff3b3b;
                             }
                         }
@@ -295,8 +308,6 @@
                 display: flex;
                 flex-direction: row;
                 gap: 30px;
-
-
             }
 
             .writeDrawer__text {
@@ -309,7 +320,7 @@
 
                 font-size: 16px;
                 font-weight: 500;
-                font-family: 'Montserrat', sans-serif;
+                font-family: "Montserrat", sans-serif;
 
                 transition: 0.2s;
                 border: 1px solid transparent;
@@ -323,29 +334,34 @@
                 }
             }
 
-            .writeDrawer__foot__send {
-                margin-top: 20px;
-
-                align-self: end;
-                width: fit-content;
-                padding: 15px 50px;
-                color: var(--white);
-                font-weight: 700;
-                text-align: center;
-                border-radius: 50px;
-                background: var(--orange, #fba457);
-
-                transition: 0.1s;
-
-                &:hover {
-                    background: #f19920;
+            .writeDrawer__foot {
+                flex-direction: column;
+                gap: 10px;
+                .writeDrawer__foot__personalAgreement {
+                    font-size: 12px;
                 }
+                .writeDrawer__foot__send {
+                    margin-top: 0px;
 
-                &:active {
-                    transform: scale(99%);
+                    width: fit-content;
+                    padding: 15px 50px;
+                    color: var(--white);
+                    font-weight: 700;
+                    text-align: center;
+                    border-radius: 50px;
+                    background: var(--orange, #fba457);
+
+                    transition: 0.1s;
+
+                    &:hover {
+                        background: #f19920;
+                    }
+
+                    &:active {
+                        transform: scale(99%);
+                    }
                 }
             }
-
         }
 
         //onClick={(e) => setRequestOverlay(true)}
@@ -361,9 +377,9 @@
 
             padding: 20px 30px;
             border-radius: 6px;
-            background: #FFF;
+            background: #fff;
 
-            font-family: 'Montserrat', sans-serif;
+            font-family: "Montserrat", sans-serif;
 
             .writeDrawerAccepted__head {
                 width: 100%;
@@ -387,7 +403,7 @@
                     &:hover {
                         svg {
                             path {
-                                transition: .2s;
+                                transition: 0.2s;
                                 fill: #ff3b3b;
                             }
                         }
@@ -396,14 +412,13 @@
                     &:focus {
                         svg {
                             path {
-                                transition: .2s;
+                                transition: 0.2s;
                                 fill: #ff3b3b;
                             }
                         }
                     }
                 }
             }
-
 
             .writeDrawerAccepted__title {
                 font-size: 20px;
@@ -416,7 +431,6 @@
             }
         }
     }
-
 }
 
 @media screen and (max-width: 480px) {
@@ -425,16 +439,16 @@
         border-radius: 50px;
         background: var(--light-gray);
         padding: 15px 20px;
-    
+
         font-weight: 500;
-    
+
         transition: 0.2s;
         border: 1px solid transparent;
-    
+
         &:hover {
             border: 0.5px solid #d0cde1;
         }
-    
+
         &:focus {
             border: 0.5px solid #d0cde1;
         }
@@ -448,14 +462,14 @@
         top: 0;
         width: 100%;
         height: 100%;
-        background: rgba(176, 170, 208, 0.30);
+        background: rgba(176, 170, 208, 0.3);
         backdrop-filter: blur(5px);
 
         display: flex;
         justify-content: center;
         align-items: center;
 
-        transition: .3s;
+        transition: 0.3s;
 
         z-index: 100;
 
@@ -468,9 +482,9 @@
 
             padding: 20px 30px;
             border-radius: 6px;
-            background: #FFF;
+            background: #fff;
 
-            font-family: 'Montserrat', sans-serif;
+            font-family: "Montserrat", sans-serif;
 
             .writeDrawer__head {
                 display: flex;
@@ -490,11 +504,10 @@
                     cursor: pointer;
                     user-select: none;
 
-
                     &:hover {
                         svg {
                             path {
-                                transition: .2s;
+                                transition: 0.2s;
                                 fill: #ff3b3b;
                             }
                         }
@@ -503,7 +516,7 @@
                     &:focus {
                         svg {
                             path {
-                                transition: .2s;
+                                transition: 0.2s;
                                 fill: #ff3b3b;
                             }
                         }
@@ -517,8 +530,6 @@
                 display: flex;
                 flex-direction: column;
                 gap: 10px;
-
-
             }
 
             .writeDrawer__text {
@@ -531,7 +542,7 @@
 
                 font-size: 16px;
                 font-weight: 500;
-                font-family: 'Montserrat', sans-serif;
+                font-family: "Montserrat", sans-serif;
 
                 transition: 0.2s;
                 border: 1px solid transparent;
@@ -567,7 +578,6 @@
                     transform: scale(99%);
                 }
             }
-
         }
 
         //onClick={(e) => setRequestOverlay(true)}
@@ -583,9 +593,9 @@
 
             padding: 20px 30px;
             border-radius: 6px;
-            background: #FFF;
+            background: #fff;
 
-            font-family: 'Montserrat', sans-serif;
+            font-family: "Montserrat", sans-serif;
 
             .writeDrawerAccepted__head {
                 width: 100%;
@@ -609,7 +619,7 @@
                     &:hover {
                         svg {
                             path {
-                                transition: .2s;
+                                transition: 0.2s;
                                 fill: #ff3b3b;
                             }
                         }
@@ -618,14 +628,13 @@
                     &:focus {
                         svg {
                             path {
-                                transition: .2s;
+                                transition: 0.2s;
                                 fill: #ff3b3b;
                             }
                         }
                     }
                 }
             }
-
 
             .writeDrawerAccepted__title {
                 font-size: 20px;
@@ -638,7 +647,6 @@
             }
         }
     }
-
 }
 
 .overlay__visible {

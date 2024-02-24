@@ -20,6 +20,7 @@ import {
     scrollDisable,
 } from "./sideFuncs";
 import axios from "axios";
+import PersonalAgreement from "./pages/PersonalAgreement";
 
 function App() {
     // стейт списка городов из файла price.json
@@ -243,6 +244,14 @@ function App() {
         }
     }
 
+    console.log(navigator.geolocation.getCurrentPosition(showPosition));
+    function showPosition(position) {
+        var lat = position.coords.latitude;
+        var lon = position.coords.longitude;
+        console.log(lat + " " + lon);
+    }
+    
+
     return (
         <div className={`App`}>
             <UserContext.Provider
@@ -352,6 +361,7 @@ function App() {
                     <Route path="/" element={<Home />} />
                     <Route path="about" element={<About />} />
                     <Route path="specialties" element={<Spec />} />
+                    <Route path="personal-agreement" element={<PersonalAgreement />} />
                 </Routes>
 
                 <Footer />

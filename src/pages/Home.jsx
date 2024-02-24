@@ -4,12 +4,12 @@ import MapInteractive from "../components/MapInteractive/MapInteractive";
 import RadioSpec from "../components/RadioSpec/RadioSpec";
 import UserContext from "../UserContext";
 import { Link } from "react-router-dom";
-// import IMask from "imask/holder";
 import IMask from "imask";
-import axios from "axios";
+import officeData from "../offises.json";
 
 export default function Home() {
     const {
+        currentTown,
         moveTop,
         requests,
         setRequests,
@@ -40,6 +40,8 @@ export default function Home() {
 
         sendRequestForm,
     } = useContext(UserContext);
+    //выбранный path на карте
+    const [path, setPath] = useState();
 
     //тест dropdown
     const [dropMap, setDropMap] = useState(false);
@@ -47,28 +49,20 @@ export default function Home() {
     const [regionFilter, setRegionFilter] = useState("");
 
     //< динамически меняющиеся регионы
-    const [region, setRegion] = useState("Нажмите на регион для выбора офиса");
+    const [region, setRegion] = useState("Выберите регион");
+    const [regionMedia, setRegionMedia] = useState("Выберите регион");
     //>
 
     //< отображение офисов у карты
     const [officesAddr, setOfficesAddr] = useState([]);
+    const [officesAddrMedia, setOfficesAddrMedia] = useState([]);
     //>
 
     //< закрытие окна с адресами офисов
-    useEffect(() => {
-        const closeOfficesInfo = document.querySelector(
-            ".map__bottom__box__closeBtn"
-        );
-        const regions = document.querySelectorAll("[data-title]");
-
-        closeOfficesInfo.addEventListener("click", () => {
-            setOfficesAddr([]);
-            regions.forEach((region) =>
-                region.classList.remove("rf-clickMarked")
-            );
-        });
-    });
-    //>
+    function closeOfficesInfo() {
+        setOfficesAddr([]);
+        path.classList.remove("rf-clickMarked");
+    }
 
     //< паралакс для кружков
     useEffect(() => {
@@ -134,63 +128,6 @@ export default function Home() {
         scrolledEl.forEach((el) => observer.observe(el));
     });
     //>
-
-    // отправка формы с раздела banner
-    // const sendForm = () => {
-    //     if (
-    //         selectedSpec.length > 0 &&
-    //         phoneValid &&
-    //         mailValid &&
-    //         townValid &&
-    //         countValid
-    //     ) {
-    //         const obj = {
-    //             id: requests.length,
-    //             phone: phoneBanner,
-    //             email: mailBanner,
-    //             town: townBanner,
-    //             count: countBanner,
-    //             specialisation: selectedSpec,
-    //         };
-
-    //         setRequests((prev) => [...prev, obj]);
-    //         setRequestAccept(true); // установка флага для модалки об успехе
-    //         setRequestOverlay(true); // аналог верхнего
-
-    //         //сброс всех значений после отправки формы
-    //         setPhoneBanner("");
-    //         setMailBanner("");
-    //         setTownBanner("");
-    //         setCountBanner("");
-    //         setSelectedSpec("");
-
-    //         //сброс валидации phone поля
-    //         const inpPhoneBanner = document.getElementById("inpPhoneB");
-    //         inpPhoneBanner.style.borderColor = "transparent";
-
-    //         //сброс валидации email поля
-    //         const inpEmailBanner = document.getElementById("inpEmailB");
-    //         inpEmailBanner.style.borderColor = "transparent";
-
-    //         //сброс валидации count поля
-    //         const inpTownBanner = document.getElementById("inpTownB");
-    //         inpTownBanner.style.borderColor = "transparent";
-    //         //сброс валидации count поля
-    //         const inpCountBanner = document.getElementById("inpCountB");
-    //         inpCountBanner.style.borderColor = "transparent";
-
-    //         const radio = document.getElementsByName("radio");
-    //         radio.forEach((r) => {
-    //             r.checked = false;
-    //         });
-    //     } else {
-    //         // проверка на заполненность полей
-    //         countValidationMarker("inpCountB", countBanner);
-    //         phoneValidationMarker("inpPhoneB", phoneBanner);
-    //         emailValidationMarker("inpEmailB", mailBanner);
-    //         townValidationMarker("inpTownB", townBanner);
-    //     }
-    // };
 
     //только числовой ввод в countBanner и текстовый в townBanner
     useEffect(() => {
@@ -296,40 +233,26 @@ export default function Home() {
         );
     }, []);
 
-    function sendForm() {
-        let formData = new FormData(); //formdata object
+    const officesData = officeData["Города"]["Город"];
+    const officesPropVal = officesData.map((off) => off.ЗначенияСвойства);
 
-        formData.append("phone", phoneBanner); //append the values with key, value pair
-        formData.append("mail", mailBanner);
-        formData.append("spec", selectedSpec);
-        formData.append("town", townBanner);
-        formData.append("count", countBanner);
+    useEffect(() => {
+        setOfficesAddrMedia([]); //очистка адресов прошлого региона
 
-        const config = {
-            headers: { "content-type": "multipart/form-data" },
-        };
+        for (var i = 0; i < officesPropVal.length; i++) {
+            // проверка на то, что data-title включает в себя значение jsona с ИД UF_REGION_DADATA
+            if (regionMedia.includes(officesPropVal[i][7].Значение)) {
+                if (officesPropVal[i][1].Значение.length > 0) {
+                    const addr = officesPropVal[i][1].Значение; //сохранение значения из json с ИД UF_ADDRESS_TITLE
+                    setOfficesAddrMedia((prev) => [...prev, addr]); // запись всех адресов
+                }
+            }
+        }
+    }, [regionMedia]);
 
-        axios
-            .post("http://uldalex.beget.tech/send.php", formData, config)
-            .then((response) => {
-                console.log(response);
-            })
-            .catch((error) => {
-                console.log(error);
-            });
-
-        // fetch("http://test1.ru/", {
-        //     method: "POST",
-        //     headers: {
-        //         "Content-Type": "multipart/form-data",
-        //     },
-        //     // body: JSON.stringify(obj),
-        //     // body: JSON.stringify({ key1: "1", key2: "2" }),
-        //     body: JSON.stringify(data),
-        // })
-        //     .then((response) => response.text())
-        //     .then((response) => console.log(response));
-    }
+    useEffect(() => {
+        setTownBanner(currentTown);
+    }, [currentTown]);
 
     return (
         <>
@@ -778,7 +701,7 @@ export default function Home() {
                                 onClick={(e) => setRequestOverlay(true)}
                                 className="stats__leftBtn"
                             >
-                                Использовать преимущества
+                                Заказать персонал
                             </button>
                         </div>
                         <div className="stats__right">
@@ -820,7 +743,7 @@ export default function Home() {
                                 onClick={(e) => setRequestOverlay(true)}
                                 className="stats__rightBtn"
                             >
-                                Использовать преимущества
+                                Заказать персонал
                             </button>
                         </div>
                     </div>
@@ -1037,7 +960,10 @@ export default function Home() {
                                     officesAddr.length > 0 ? "visible" : null
                                 }`}
                             >
-                                <button className="map__bottom__box__closeBtn">
+                                <button
+                                    className="map__bottom__box__closeBtn"
+                                    onClick={(e) => closeOfficesInfo()}
+                                >
                                     <svg
                                         width="16"
                                         height="16"
@@ -1061,6 +987,8 @@ export default function Home() {
                                 setRegion={setRegion}
                                 officesAddr={officesAddr}
                                 setOfficesAddr={setOfficesAddr}
+                                path={path}
+                                setPath={setPath}
                             />
                         </div>
                         <div className="map__bottomMedia">
@@ -1075,7 +1003,13 @@ export default function Home() {
                                     }
                                 />
                                 <div
-                                    onClick={() => setDropMap(!dropMap)}
+                                    onClick={() => {
+                                        setDropMap(!dropMap);
+                                        if (dropMap === false) {
+                                            setRegionFilter("");
+                                            setRegionMedia("Выберите регион");
+                                        }
+                                    }}
                                     className={`map__bottomMedia__icon ${
                                         dropMap && "btn__open"
                                     }`}
@@ -1103,12 +1037,55 @@ export default function Home() {
                                                 onClick={() => {
                                                     setRegionFilter(reg);
                                                     setDropMap(!dropMap);
+                                                    setRegionMedia(reg);
                                                 }}
                                             >
                                                 {reg}
                                             </li>
                                         ))}
                                 </ul>
+                                <p className="map__bottomMedia__text">
+                                    {regionMedia}
+                                </p>
+                                <div
+                                    // если нет адресов-окно не отображается
+                                    className={`map__bottomMedia__box ${
+                                        officesAddrMedia.length > 0
+                                            ? "visible"
+                                            : null
+                                    }`}
+                                >
+                                    <button
+                                        className="map__bottomMedia__box__closeBtn"
+                                        onClick={() => {
+                                            setOfficesAddrMedia([]);
+                                            setRegionFilter("");
+                                            setRegionMedia("Выберите регион");
+                                        }}
+                                    >
+                                        <svg
+                                            width="16"
+                                            height="16"
+                                            viewBox="0 0 20 20"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path
+                                                d="M11.414 10.0001L17.707 3.70708C17.8025 3.61483 17.8787 3.50449 17.9311 3.38249C17.9835 3.26048 18.0111 3.12926 18.0122 2.99648C18.0134 2.8637 17.9881 2.73202 17.9378 2.60913C17.8875 2.48623 17.8132 2.37458 17.7194 2.28069C17.6255 2.18679 17.5138 2.11254 17.3909 2.06226C17.268 2.01198 17.1363 1.98668 17.0036 1.98783C16.8708 1.98898 16.7396 2.01657 16.6176 2.06898C16.4956 2.12139 16.3852 2.19757 16.293 2.29308L9.99996 8.58608L3.70696 2.29308C3.51836 2.11092 3.26575 2.01013 3.00356 2.01241C2.74136 2.01469 2.49055 2.11985 2.30514 2.30526C2.11973 2.49067 2.01456 2.74148 2.01229 3.00368C2.01001 3.26588 2.1108 3.51848 2.29296 3.70708L8.58596 10.0001L2.29296 16.2931C2.19745 16.3853 2.12127 16.4957 2.06886 16.6177C2.01645 16.7397 1.98886 16.8709 1.98771 17.0037C1.98655 17.1365 2.01186 17.2681 2.06214 17.391C2.11242 17.5139 2.18667 17.6256 2.28056 17.7195C2.37446 17.8134 2.48611 17.8876 2.60901 17.9379C2.7319 17.9882 2.86358 18.0135 2.99636 18.0123C3.12914 18.0112 3.26036 17.9836 3.38236 17.9312C3.50437 17.8788 3.61471 17.8026 3.70696 17.7071L9.99996 11.4141L16.293 17.7071C16.4324 17.8479 16.6107 17.944 16.8049 17.9831C16.9992 18.0222 17.2008 18.0026 17.3839 17.9268C17.567 17.8509 17.7233 17.7223 17.8331 17.5573C17.9428 17.3922 18.0009 17.1983 18 17.0001C18 16.8688 17.9741 16.7387 17.9238 16.6174C17.8736 16.4961 17.7999 16.3859 17.707 16.2931L11.414 10.0001Z"
+                                                fill="#656084"
+                                            />
+                                        </svg>
+                                    </button>
+                                    {/* выводимые адреса офисов при клике  на регион*/}
+                                    {officesAddrMedia.map((office, index) => (
+                                        <p
+                                            className="map__bottomMedia__box__addr"
+                                            key={index}
+                                        >
+                                            {office}
+                                        </p>
+                                    ))}
+                                </div>
                             </div>
                         </div>
                     </div>

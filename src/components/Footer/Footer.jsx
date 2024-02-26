@@ -4,38 +4,40 @@ import cl from "./Footer.module.scss";
 const Footer = () => {
     return (
         <footer className={cl.footer}>
-            <div className="container">
+            <div className={cl.container}>
                 <div className={cl.footerWrap}>
-                    <h5 className={cl.footer__title}>Где нас найти</h5>
-                    <div className={cl.footer__social}>
-                        <a className={cl.footer__socialLink}>
-                            <img
-                                className={cl.footer__socialLink__img}
-                                src="/img/tg.svg"
-                                alt="Telegram icon"
-                            />
-                        </a>
-                        <a className={cl.footer__socialLink}>
-                            <img
-                                className={cl.footer__socialLink__img}
-                                src="/img/wa.svg"
-                                alt="WhatsApp icon"
-                            />
-                        </a>
-                        <a className={cl.footer__socialLink}>
-                            <img
-                                className={cl.footer__socialLink__img}
-                                src="/img/vk.svg"
-                                alt="Vkontakte icon"
-                            />
-                        </a>
-                        <a className={cl.footer__socialLink}>
-                            <img
-                                className={cl.footer__socialLink__img}
-                                src="/img/ok.svg"
-                                alt="Odnoklassniki icon"
-                            />
-                        </a>
+                    <h5 className={cl.footer__title}>ООО «Винстафф»</h5>
+                    <div className={cl.footer__info}>
+                        <div className={cl.footer__infoContacts}>
+                            <div className={cl.footer__infoContacts_num}>
+                                <span>Телефон:</span>
+                                <a
+                                    className={cl.footer__infoContacts_link}
+                                    href="tel:+7(903) 192-83-98"
+                                >
+                                    +7(903) 192-83-98
+                                </a>
+                            </div>
+                            <div className={cl.footer__infoContacts_email}>
+                                <span>Email:</span>
+                                <a
+                                    className={cl.footer__infoContacts_link}
+                                    href="mailto:info@win-staff.ru"
+                                >
+                                    info@win-staff.ru
+                                </a>
+                            </div>
+                        </div>
+                        <div className={cl.footer__infoAddr}>
+                            <span className={cl.footer__infoAddr_title}>
+                                Адрес:
+                            </span>
+                            <p className={cl.footer__infoAddr_place}>
+                                117393, г. Москва, муниципальный округ
+                                Обручевский вн. тер. г., Профсоюзная ул., д. 66,
+                                стр. 1, офис 301
+                            </p>
+                        </div>
                     </div>
                     <p className={cl.footer__copyright}>
                         Copyright @ 1998-2024 | Win-Staff – Win-staff.ru Все

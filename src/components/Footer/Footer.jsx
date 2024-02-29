@@ -15,7 +15,7 @@ const Footer = () => {
                                     className={cl.footer__infoContacts_link}
                                     href="tel:+7(903) 192-83-98"
                                 >
-                                    +7(903) 192-83-98
+                                    <b>+7(903) 192-83-98</b>
                                 </a>
                             </div>
                             <div className={cl.footer__infoContacts_email}>
@@ -24,7 +24,7 @@ const Footer = () => {
                                     className={cl.footer__infoContacts_link}
                                     href="mailto:info@win-staff.ru"
                                 >
-                                    info@win-staff.ru
+                                    <b>info@win-staff.ru</b>
                                 </a>
                             </div>
                         </div>
@@ -33,7 +33,7 @@ const Footer = () => {
                                 Адрес:
                             </span>
                             <p className={cl.footer__infoAddr_place}>
-                                117393, г. Москва, муниципальный округ
+                                117393, г. Москва,<br /> муниципальный округ
                                 Обручевский вн. тер. г., Профсоюзная ул., д. 66,
                                 стр. 1, офис 301
                             </p>

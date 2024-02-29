@@ -68,12 +68,15 @@ const RequestOverlay = () => {
 
     //закрытие модалки по кнопке
     const closeOverlayBtn = (e) => {
-        setRequestOverlay(false);
-        setPhoneRequest("");
-        setMailRequest("");
-        setTownRequest("");
-        setCountRequest("");
-        setSelectedSpec("");
+        setTimeout(() => {
+            setRequestOverlay(false);
+            setPhoneRequest("");
+            setMailRequest("");
+            setTownRequest("");
+            setCountRequest("");
+            setSelectedSpec("");
+        }, 500);
+
         //сброс валидации phone поля
         const inpPhoneBanner = document.getElementById(`inpPhoneR`);
         inpPhoneBanner.style.borderColor = "transparent";
@@ -394,7 +397,11 @@ const RequestOverlay = () => {
                             </button>
                             <p className={cl.personalAgreement}>
                                 Нажимая на кнопку вы соглашаетесь на обработку{" "}
-                                <Link className={cl.personalAgreement__link} to="personal-agreement" target="_blank">
+                                <Link
+                                    className={cl.personalAgreement__link}
+                                    to="personal-agreement"
+                                    target="_blank"
+                                >
                                     персональных данных
                                 </Link>
                             </p>

@@ -3,50 +3,97 @@ import "./MapInteractive.scss";
 import officeData from "../../offises.json";
 
 const MapInteractive = ({ setRegion, setOfficesAddr, path, setPath }) => {
+    //весь этот блок предназначен для приведения json к адекватному виду
     const officesData = officeData["Города"]["Город"];
     const officesPropVal = officesData.map((off) => off.ЗначенияСвойства);
+    const [officesState, setOfficesState] = useState([]); //таблица с удаленными пустыми адресами
+    const [officesAllState, setOfficesAllState] = useState([]); //таблица с пустыми адресами
+    const [officesEmptyState, setOfficesEmptyState] = useState([]); //таблица с пустыми адресами
+
+    useEffect(() => {
+        officesPropVal.forEach((off) => {
+            if (off[1].Значение.length > 0) {
+                const obj = { region: off[7].Значение, addr: off[1].Значение };
+                setOfficesState((prev) => [...prev, obj]);
+            }
+        });
+        officesPropVal.forEach((off) => {
+            if (off[1].Значение.length == 0) {
+                const obj = { region: off[7].Значение, addr: off[1].Значение };
+                setOfficesEmptyState((prev) => [...prev, obj]);
+            }
+        });
+        officesPropVal.forEach((off) => {
+            const obj = { region: off[7].Значение, addr: off[1].Значение };
+            setOfficesAllState((prev) => [...prev, obj]);
+        });
+    }, []);
+    //
+
+    // console.log(officesAllState)
+    // console.log(officesEmptyState)
+
+    useEffect(() => {
+        // const regions = document.querySelectorAll("[data-title]");
+        // regions.forEach((region) => {
+        //     for (var i = 0; i < officesAllState.length; i++) {
+        //         if (
+        //             region.dataset.title.includes(officesAllState[i].region) &&
+        //             officesAllState[i].addr.length == 0
+        //         ) {
+        //           console.log(region.dataset.title)
+        //         }
+        //     }
+        // });
+    });
 
     useEffect(() => {
         const regions = document.querySelectorAll("[data-title]");
+
+        // const regionsDisabled = document.querySelectorAll(".rf-empty");
+        // console.log(regionsDisabled);
+        // regionsDisabled.forEach(reg=>{
+        //     reg.classList.add("rf-disabled")
+        // })
+
         //выбор элементов содержащих data-title
         const hover = (region) => {
             region.onmousemove = (e) => {
-                setRegion(region.dataset.title); //динамическое изменение региона
+                if (region.classList.value.includes("rf-empty")) {
+                    e.preventDefault();
+                } else {
+                    setRegion(region.dataset.title); //динамическое изменение региона
+                }
             };
 
-            region.onclick = () => {
-                // setRegion(region.dataset.title)
-                console.log(region.dataset.title);
-                setOfficesAddr([]); //очистка адресов прошлого региона
-                setPath(region); // фиксация выбранного path из карты
-                for (var i = 0; i < officesPropVal.length; i++) {
-                    // проверка на то, что data-title включает в себя значение jsona с ИД UF_REGION_DADATA
-                    if (
-                        region.dataset.title.includes(
-                            officesPropVal[i][7].Значение
-                        )
-                    ) {
-                        if (officesPropVal[i][1].Значение.length > 0) {
-                            const addr = officesPropVal[i][1].Значение; //сохранение значения из json с ИД UF_ADDRESS_TITLE
-                            setOfficesAddr((prev) => [...prev, addr]); // запись всех адресов
+            region.onclick = (e) => {
+                if (region.classList.value.includes("rf-empty")) {
+                    e.preventDefault();
+                } else {
+                    console.log(region.dataset.title);
+                    setOfficesAddr([]); //очистка адресов прошлого региона
+                    setPath(region); // фиксация выбранного path из карты
+                    for (var i = 0; i < officesState.length; i++) {
+                        if (
+                            region.dataset.title.includes(
+                                officesState[i].region
+                            )
+                        ) {
+                            const addr = officesState[i].addr;
+                            setOfficesAddr((prev) => [...prev, addr]);
                         }
                     }
+                    regions.forEach((region) => {
+                        region.classList.remove("rf-clickMarked"); //снятие зеленой окраски
+                    });
+                    region.classList.add("rf-clickMarked");
+                    //установка зеленой окраски для выбранного
                 }
-                regions.forEach((region) => {
-                    region.classList.remove("rf-clickMarked"); //снятие зеленой окраски
-                });
-                region.classList.add("rf-clickMarked");
-                //установка зеленой окраски для выбранного
             };
         };
 
         regions.forEach((region) => hover(region));
     });
-
-    useEffect(() => {
-        // const regions = document.querySelectorAll("[data-title]");
-        
-    }, []);
 
     return (
         <div className="map__mapImg">
@@ -64,6 +111,7 @@ const MapInteractive = ({ setRegion, setOfficesAddr, path, setPath }) => {
                 >
                     <path
                         data-title="Республика Крым"
+                        className="rf-empty"
                         data-code="RU-CR"
                         d="M1.6,328.6H4l1.2,0.8l1.5,0.2v-0.9l1.3-0.2l0.8,1.3h3.3l0.1-1.1
         l1.2,0.3v2.1l1.4,1.3l-0.8,2l1.6,1.6v2.9l0.4,1.1l-0.5,1.3l-0.8,1.1l1.2,1.2l0.5,1.2l2,0.6l2.1,0.3l2.5,4.2l-1.5,0.2l-1.3,1.3
@@ -81,6 +129,7 @@ const MapInteractive = ({ setRegion, setOfficesAddr, path, setPath }) => {
                     />
                     <path
                         data-title="Псковская область"
+                        className="rf-empty"
                         data-code="RU-PSK"
                         d="M75.6,243l1.7,2.1l0.8-2.2h1.8l0.8-1.3l0.7-1.5l0.3-2.7l1.1-1.1
         l0.2-1.6l2-1.6l-1.1-1.1l1-1l1.1-0.6v-1.8l1.1-0.6l1.3-1.3l1.7-0.8l0.6-1.8l-1.3-1l-0.4-1l0.9-0.9v-1.6l1-1l2.1-0.2l-0.5-2.5
@@ -128,6 +177,7 @@ const MapInteractive = ({ setRegion, setOfficesAddr, path, setPath }) => {
                     />
                     <path
                         data-title="Карачаево-Черкесская Республика"
+                        className="rf-empty"
                         data-code="RU-KC"
                         d="M39.7,397.4l-1.9-0.9l-2.8-1.9l-0.9-3l-1.9-2.9l-0.6-2.5l1.5-1.5
         l1.8-0.3l1.3-1.3h1.3l0.7,1.5l1.1,1.6h2.5l1.9-2.4l1.5,0.5v2l1.4,1l0.3,1.6l0.7,1h-2.2l-0.6,1.1l1,1l0.7,1.1l-0.7,1.6l-1.8,0.7
@@ -135,6 +185,7 @@ const MapInteractive = ({ setRegion, setOfficesAddr, path, setPath }) => {
                     />
                     <path
                         data-title="Республика Северная Осетия — Алания"
+                        className="rf-empty"
                         data-code="RU-SE"
                         d="M44.2,406.3l0.5,4.1l1.8,1.8l2.8,0.4l1.6,1.6l0.4,1.3l1.2-2h1.9
         l0.2-1.3l-0.6-2l0.6-3l1.7-0.7l2.6,0.1l-0.5-2.2l-2.4-2.2l-1,0.8v1.5l-0.9,0.9l-2.3,0.1l-0.8,0.8l-1.3-1h-1.6L47,406l-1.1-0.2
@@ -142,12 +193,14 @@ const MapInteractive = ({ setRegion, setOfficesAddr, path, setPath }) => {
                     />
                     <path
                         data-title="Республика Ингушетия"
+                        className="rf-empty"
                         data-code="RU-IN"
                         d="M58.7,411.5l-1.2,2.6l-1.5,2.4l-1.9,1.4l-0.6-2.3l-2.2-0.3l1.2-2
         h1.9l0.2-1.3l-0.6-2l0.6-3l1.7-0.7l0.9,1.7l2,1.6L58.7,411.5"
                     />
                     <path
                         data-title="Республика Дагестан"
+                        className="rf-empty"
                         data-code="RU-DA"
                         d="M77.1,405.7l-1.3,1.3v2.1l1.3,1.3l0.8,2.4l-0.6,2.4l-0.6,2.2
         l-1.5,1.5v0.9L74,421l-2.8,4.6v3.5l0.8,4.3l-0.5,3.3l0.3,4.1l-3,1.4l-2-0.9l-2.9,1l-2.8-0.6l-0.4-2.4l-1.4-4.2l-0.3-3l-2-1.4V429
@@ -156,6 +209,7 @@ const MapInteractive = ({ setRegion, setOfficesAddr, path, setPath }) => {
                     />
                     <path
                         data-title="Республика Калмыкия"
+                        className="rf-empty"
                         data-code="RU-KL"
                         d="M78.7,406.2l2.7-0.8h2.4l2.2-2.5l1.8-0.8v-1.8l-1.4-1l-1.7,0
         l-0.4-1l4.1-2.9v-1.2l-0.8-0.8v-1.5l-0.9-1.2l1-1l1.4,0.6l0.2,1h0.9l0.2-1.6l2.7,0.2l0.8-2l-1.3-1.3l0.9-3.2l1.5-0.8l0.3-1.5
@@ -209,6 +263,7 @@ const MapInteractive = ({ setRegion, setOfficesAddr, path, setPath }) => {
                     />
                     <path
                         data-title="Республика Алтай"
+                        className="rf-empty"
                         data-code="RU-AL"
                         d="M396.3,452.3l-3,0.7l-2.1,2.1l-3.8-0.1l-3.2,1.8l-1.6,1.6
         l-3.7-0.6l-1.1-1.9l-1.4-2.5l-0.7-2.6l-2,2l-3.3,1.3l-3-1L364,452v-3l-2.7-1.6l-1-2.3l-2.2-1.4l-0.5-3l2.5-0.2v-2.2l-1.1-1.1
@@ -228,6 +283,7 @@ const MapInteractive = ({ setRegion, setOfficesAddr, path, setPath }) => {
                     />
                     <path
                         data-title="Республика Тыва"
+                        className="rf-empty"
                         data-code="RU-TY"
                         d="M457.9,424.1l-2,2l-1.6,3.2l-1.7,1.7l-0.5,3.3l1.6,1.9v2.8
         l2.2,2.2v3l-3,2l-2.9,2.9h-2.4h-3.7l-3.4-0.9l-3.5,0.6l-2.5-0.8l-3.7-1.3l-2-2l-2.4-2.4l-2.9-0.9l-3.4,1.4l-2.2-2.2l-2.7-1.2
@@ -238,6 +294,7 @@ const MapInteractive = ({ setRegion, setOfficesAddr, path, setPath }) => {
                     />
                     <path
                         data-title="Амурская область"
+                        className="rf-empty"
                         data-code="RU-AMU"
                         d="M675.1,379.6l-1.5,1.5l-2.9-0.8l-2.4-0.6l-3.7,0.5h-3.4l-1.4,1.4
         L656,383l-3.8-0.8l-1.6-3.1l-1.8-1.8c0,0-2.2-1.3-2.2-1.8c0-0.5-2.4-2.4-2.4-2.4l-3-0.5l-1.3-3l-2.9-2.3l-2-2l-2.8-0.8l-1-2.7
@@ -254,6 +311,7 @@ const MapInteractive = ({ setRegion, setOfficesAddr, path, setPath }) => {
                     />
                     <path
                         data-title="Еврейская автономная область"
+                        className="rf-empty"
                         data-code="RU-YEV"
                         d="M703.4,368.4l-3,1.6l-0.8,2.5l-2,3.3l-2.3,2.9l1,3.2l-2.7,2.2
         l-2.7,1.5l-2.3,0.8l-0.6,2.3h-2.4l-2.4-1.4l-1.8-0.6v-2.9l-2-1.8l-1.6-1.6l-0.3-2.8l0.6-1.5l-0.6-2l1.2-0.5l1.3,0.3l1.3-2.1l1.2-1.2
@@ -273,6 +331,7 @@ const MapInteractive = ({ setRegion, setOfficesAddr, path, setPath }) => {
                     />
                     <path
                         data-title="Магаданская область"
+                        className="rf-empty"
                         data-code="RU-MAG"
                         d="M713.7,143l1.6,1.6v4.1l1.3,3l0.3,4.8l-0.9,2.9l-1-2.5l-2.3-1.1
         l0,3.2l-1.9-1.9l-1.3-1.3l-1-2.2l-3.5-3.3l1,2.8l-1,3h-3.4v2l-1.1,4.2l-1.4,1.6l0.1,5.6l2.3,1.5l-0.4,3.5l2.3,3.5v3.8l0.7,5l2.1,2.1
@@ -351,7 +410,11 @@ const MapInteractive = ({ setRegion, setOfficesAddr, path, setPath }) => {
             l-1.1-1.5l-0.7-2.7l-1-2.1L206.3,204.1"
                         />
                     </g>
-                    <g data-title="Сахалинская область" data-code="RU-SAK">
+                    <g
+                        data-title="Сахалинская область"
+                        className="rf-empty"
+                        data-code="RU-SAK"
+                    >
                         <path
                             d="M705.1,284.6l-0.9,0.2l-0.7-1.9v-1.6l2.8,0.8l1.4,0.7l0.8,1.8
             l1.5,1.5l2.7,0.5l0.7,1.8l3.1,2h1.6l1.3,1.9l1.1,3l1.7,1.7l3.2,3.3l2.1,0.5l2.9,1.1l2.7,2.4l3.7,2.1l2.4,2.1l3.2,1.6l2.7,1.6
@@ -377,7 +440,11 @@ const MapInteractive = ({ setRegion, setOfficesAddr, path, setPath }) => {
                         />
                         <path d="M806.9,288.7v2.4v2h1.5l-0.4-1.9V290v-1.4L806.9,288.7" />
                     </g>
-                    <g data-title="Камчатский край" data-code="RU-KAM">
+                    <g
+                        data-title="Камчатский край"
+                        className="rf-empty"
+                        data-code="RU-KAM"
+                    >
                         <path
                             d="M745.7,210.4c0,0,1.1,2.5,1.6,3l3.4,2.3l3.5,1.9l5.4,1.6l2.5,0.5
             l2.3,1.5l1.4,1.9l4.8,2.5l4.2,1.8l4.4,2l2.3,2.3h2.5l1.8,1.8l2.3,1.2h3.7l1.4,1.9v-2.5l-0.6-3.4l-1.3-5.3l-0.5-4.1l-2.4-2.3
@@ -411,6 +478,7 @@ const MapInteractive = ({ setRegion, setOfficesAddr, path, setPath }) => {
                     </g>
                     <g
                         data-title="Чукотский автономный округ"
+                        className="rf-empty"
                         data-code="RU-CHU"
                     >
                         <path
@@ -438,6 +506,7 @@ const MapInteractive = ({ setRegion, setOfficesAddr, path, setPath }) => {
                     </g>
                     <path
                         data-title="Калининградская область"
+                        className="rf-empty"
                         data-code="RU-KGD"
                         d="M21.6,195.1l2,0.4l1.7-0.5l0.6-1.2l1.5,0.2l1.4,1.4l0.1,2l1.2,0.4
         l0.2,1.5l1.8,0.3l0.4-1.4l-1-1l0.8-0.8l0.5,0.5l1.7,1.4v2.2l-0.2,1.9l1,1.6l1,0.7l0.4,2.5l-0.9,1.9l-4.2,2.1l-6.4-7.6L21.6,195.1"
@@ -452,6 +521,7 @@ const MapInteractive = ({ setRegion, setOfficesAddr, path, setPath }) => {
                     />
                     <path
                         data-title="Новгородская область"
+                        className="rf-empty"
                         data-code="RU-NGR"
                         d="M118.4,243.7l0.9-0.9l0.3-1.9l-1.6-2.6l-1.8-0.7l0.5-1.1l0.8-1.6
         l-0.7-1.9l-0.3-1.9l-1-1l-1.5-0.5l0.8-1.6v-1.5l-1.6-0.7l-0.2-1.5l-1.8-0.1l-1.1,1.1l-1.4-1.7l0.4-3.3l-1.1-0.3l-1.3-1.3l-1.2,1
@@ -488,6 +558,7 @@ const MapInteractive = ({ setRegion, setOfficesAddr, path, setPath }) => {
                     />
                     <g
                         data-title="Ненецкий автономный округ"
+                        className="rf-empty"
                         data-code="RU-NEN"
                     >
                         <path
@@ -511,6 +582,7 @@ const MapInteractive = ({ setRegion, setOfficesAddr, path, setPath }) => {
                     </g>
                     <g
                         data-title="Ямало-Ненецкий автономный округ"
+                        className="rf-empty"
                         data-code="RU-YAN"
                     >
                         <path
@@ -594,13 +666,15 @@ const MapInteractive = ({ setRegion, setOfficesAddr, path, setPath }) => {
                     />
                     <path
                         data-title="Чеченская Республика"
+                        className="rf-empty"
                         data-code="RU-CE"
                         d="M66.8,408.9l1.3,1.8l2.6,0.2l0.2,2.9l-1.3,0.4l-2.3,1.3l-2.2,2.7
         l-0.8,3l-2.1-1.2l-1.3,1l-2.1-0.2l-1.4,1.1l-2.2,0.3L56,420l-1.9-2l1.9-1.4l1.5-2.4l1.2-2.6l0.5-1.9l-2-1.6l-0.9-1.7l2.6,0.1
         l1.3-0.4l0.8-1l0.9-0.1v0.9l1,1h2.1L66.8,408.9"
                     />
                     <path
-                        data-title="Кабардино-Балкарская Республика     "
+                        data-title="Кабардино-Балкарская Республика"
+                        className="rf-empty"
                         data-code="RU-KB"
                         d="M39.7,397.4l1.5-0.6l1.5-1.5l1.2,0.1l1.8-0.7l2,0.6l1.9,0.4
         l0.5,1.5l2.3,2.3l1.8-0.4l1,1l1.4,1l-0.5,1l-1,0.8v1.5l-0.9,0.9l-2.3,0.1l-0.8,0.8l-1.1-1h-1.8L47,406l-1.1-0.2l-1.7,0.6l-1.8-1.6
@@ -617,6 +691,7 @@ const MapInteractive = ({ setRegion, setOfficesAddr, path, setPath }) => {
                     />
                     <path
                         data-title="Вологодская область"
+                        className="rf-empty"
                         data-code="RU-VLG"
                         d="M124.2,249.7v-2.5l0.7-2.1l-1.8-0.6l-2,0.4l-2.6-1.2l0.9-0.9
         l0.3-1.9l-1.6-2.6l-1.8-0.7l1.3-2.7l1.4-1.4l2.4,0.4l0.8-1.1l1.6-0.4l1.6-2.1l0.7-1.7l1.1-2.2l2.9-1.6l1.9-2.7l1.4,0.8l2.3-1.3
@@ -638,6 +713,7 @@ const MapInteractive = ({ setRegion, setOfficesAddr, path, setPath }) => {
                     />
                     <path
                         data-title="Астраханская область"
+                        className="rf-empty"
                         data-code="RU-AST"
                         d="M101.9,369l-0.9-2.6l-1.5-1.5l-1.8,1.2l-2.6-0.1l-1.3-1.3l-3,0.8
         l-0.9,2.3l0.7,2.5l1.5,1l-0.8,4l0.2,2.4l1.2,1.6l2.8,0.1l-0.7,3.1l-1.5,0.8l-0.9,3.2l1.3,1.3l-0.8,2l-2.7-0.2l-0.2,1.6h-0.9l-0.2-1
@@ -734,6 +810,7 @@ const MapInteractive = ({ setRegion, setOfficesAddr, path, setPath }) => {
                     />
                     <path
                         data-title="Республика Башкортостан"
+                        className="rf-empty"
                         data-code="RU-BA"
                         d="M215.4,340.4l-1.6,1.6l-1.5-2.2h-1.8l-2.9-2.1l-1.6-2.3l-1.4,0.6
         l-1.6-0.6l-1-3.4l-2.1-0.4l-1.1-2.3h-2.6l-2.6-2.1v-1.5l-1.6-0.6l-1.3,1.3l-4.9,1.4l-0.8,0.8l1.1,1.6v1.7l-2.6,2h-1.9l-1.5,0.7
@@ -752,6 +829,7 @@ const MapInteractive = ({ setRegion, setOfficesAddr, path, setPath }) => {
                     />
                     <path
                         data-title="Костромская область"
+                        className="rf-empty"
                         data-code="RU-KOS"
                         d="M172.1,275.3l1.5-1.7l-2.9-2.6l-1.6,2.4l-2.8-0.7l-1.2,1.2
         l-1.7-2.5l-4.7-2.4l-0.9-2.4l-2.5-2.5l-3.3-0.6l-1.7-3.6l-2.6,1.2l-2.8-1.2l-3.1,0.8l-2.8,1.2v2.2l-3.3,0.1l-0.8,1.8h-1.7l-2.4,2.6
@@ -784,6 +862,7 @@ const MapInteractive = ({ setRegion, setOfficesAddr, path, setPath }) => {
                     />
                     <path
                         data-title="Чувашская Республика"
+                        className="rf-empty"
                         data-code="RU-CU"
                         d="M140.6,312.8l-0.7-1.5l1.1-1.8l2.3-2v-3.1l3.7-2.1l2.2,1.1h4.7
         l0.3,2.3l1.4,1.4l-0.7,2l1.4,2.7l-3.1,0.8l-2.9,1.7v3.1l-2.4,0.9l-2.2-0.9l-2.5,1L140,316l-0.6-1.3L140.6,312.8"
@@ -808,6 +887,7 @@ const MapInteractive = ({ setRegion, setOfficesAddr, path, setPath }) => {
                     />
                     <path
                         data-title="Республика Татарстан"
+                        className="rf-empty"
                         data-code="RU-TA"
                         d="M184.8,328.7l1.1,1.6v1.7l-2.6,2h-1.9l-1.5,0.7l-0.8-0.8l-1.3,0.7
         l0.4,1.7v1.1l0.8,0.8l-2.6,2.6H175l-1.4,2.7l-1.5,0.6l-1.5-1.4l1.5-1.5l-2.1-2.1h-2.1l-0.9-2.1l0.6-1.6l-3.1-2.7h-2l-1.5,1.5
@@ -817,6 +897,7 @@ const MapInteractive = ({ setRegion, setOfficesAddr, path, setPath }) => {
                     />
                     <path
                         data-title="Удмуртская Республика"
+                        className="rf-empty"
                         data-code="RU-UD"
                         d="M175.1,315.1l3.7-3.7v-3.7l2.3-2.4l1.2,1.2h2.2l1.6-1.6l0.7-2.2
         l1.4-2.4l2.3-1.7l3,2.9l2.6-0.1l0.1,2.6h2.2l-0.6,2.8l-0.1,3.2l-1.6,2.8l-0.4,3.1l-1.4,3.2l-4.1,2.1v1.4l1.6,2.5l-1.3,1.3l-4.9,1.4
@@ -824,6 +905,7 @@ const MapInteractive = ({ setRegion, setOfficesAddr, path, setPath }) => {
                     />
                     <path
                         data-title="Республика Коми"
+                        className="rf-empty"
                         data-code="RU-KO"
                         d="M296.1,228h-1.5l-2.5,2.2l-2.2,0.1l-1,2.4l-3.4-0.6l-0.9,1.5
         l-1.5,1.5l-1.5,0.8l-2.9,1l-2.4,0.6l-2.9-1.5l-1.5,0.3l-1.7-1.5l-3.4-1.3l-3.4-2.2l-2.5-1l-4.1-1.6l-2-2l-2.5-0.3l-4-2.6l-2-2
@@ -865,6 +947,7 @@ const MapInteractive = ({ setRegion, setOfficesAddr, path, setPath }) => {
                     />
                     <path
                         data-title="Забайкальский край"
+                        className="rf-empty"
                         data-code="RU-ZAB"
                         d="M597.7,392.1l0.8-5.4l1-2.2l-1-4.1l-1.8-1.8l-1.6-1.6l-2,1.6
         l-1.4-1.8l1-2.5l1.4-4.2l2-2l4-2.3l-1.8-3.2l-0.8-1.6h-2.2l-0.6-2.7l-1.1-1.6l1.9-1.1v-0.9h-1l-1.7-1.8l-1.4-0.2l0.3-3.2l-0.8-1.5
@@ -920,6 +1003,7 @@ const MapInteractive = ({ setRegion, setOfficesAddr, path, setPath }) => {
                     />
                     <path
                         data-title="Ханты-Мансийский автономный округ - Югра"
+                        className="rf-empty"
                         data-code="RU-KHM"
                         d="M273.4,251.3l-0.3,4.2l0.5,3.4l-1,3.1l-2.3,2.3l1.2,1.2l2.2,2.2
         l2.5,2.5l3.4-0.8l2.7,1.1l2.7-1.1l2.9,1.5l2.9,2.5l-2.2,2.2l1.9,2.2l3.4,0.6l1.8-1.8l1.9,1.9l1.4-1.4h3.4l3,3l0.7,3.4v2.2l2.9,2.9
@@ -1017,6 +1101,7 @@ const MapInteractive = ({ setRegion, setOfficesAddr, path, setPath }) => {
                     />
                     <path
                         data-title="Кемеровская область"
+                        className="rf-empty"
                         data-code="RU-KEM"
                         d="M389.7,378.7l-0.4-2l0.6-2.7l-2.4,1l-2.7,2.7l-1.4-1.4l-2.8,1.5
         l-2.3-1h-2.7l-4.3,3.8H367l-2.6,1.3l0.4,4.2l0.9,1.8l0.7,3.8l-0.5,5.4l1.6,2.4l1.5,2.9h2.3l1.6,3.1l1.4,1.4l0.5,2.4l2,1.2h1.9
@@ -1034,13 +1119,18 @@ const MapInteractive = ({ setRegion, setOfficesAddr, path, setPath }) => {
                     />
                     <path
                         data-title="Республика Адыгея"
+                        className="rf-empty"
                         data-code="RU-AD"
                         d="M32.7,366.7l-0.8-1.2l-1.4-1.4l-0.7,0.3v1.2l0.6,1.1l2.7,2.8h1.3
         l0.4-0.5l1.4,0.9l0.7,1.7l-0.8,0.8l-1.4-0.1l-0.8,1.5h-1.2v2.1l0.5,1.2l-0.3,1H30l-1-0.5l-1.1,1.1l1.9,2.4l0.7,1.3l0.6-0.6l1.3-0.2
         v-1l0.9-0.8l1.4-1.4l1.3-1.9l1.1-1.1l1.2-0.5l0.5,1.7l0.7-1.4v-2.8v-1.8l-0.9-0.6l-0.8-0.8l-1.1-0.6l-0.4-1.4l-1.6-0.5l-0.7,0.3
         L32.7,366.7"
                     />
-                    <g data-title="Республика Саха (Якутия)" data-code="RU-SA">
+                    <g
+                        data-title="Республика Саха (Якутия)"
+                        className="rf-empty"
+                        data-code="RU-SA"
+                    >
                         <path
                             d="M638.5,97.5l-2.4,2.4v1.8l1.2,1.2h-2.5l-2.3,1.8l-3.2,1.4
             l-3.5-3.5l-1.7-1.7l-3.5,0.2l-4.2,0.6l-2.4,2.9l-2.7,2.7l-3.2,4.7v3.7l-2.5,3.2l-2.4,2.4l-2.7,0.1l-2.4-1.3l-3.4,1.9
@@ -1117,6 +1207,7 @@ const MapInteractive = ({ setRegion, setOfficesAddr, path, setPath }) => {
                     />
                     <path
                         data-title="Республика Карелия"
+                        className="rf-empty"
                         data-code="RU-KR"
                         d="M114.9,194.1v3.7l1.4,4.7l4.8,13.8l3,1.4l1.8,3.4l1.4,5.3l2.9-1.6
         l1.9-2.7l1.4,0.8l2.3-1.3l2.1-0.7l2.1,0.4l1.8,0.8l2.1-0.4l1.6,1l0.1,1.1l1.8,2l1-1.1l0.9-0.2l2.5-2.5l0.4-2l-0.3-1.7l2.1-0.6l1-2.6
@@ -1146,6 +1237,7 @@ const MapInteractive = ({ setRegion, setOfficesAddr, path, setPath }) => {
                     <path
                         data-code="RU-HR"
                         data-title="Херсонская область"
+                        className="rf-empty"
                         d="M17.3,337.4 17.9,336.4 18.2,335.5 18.6,335 19.3,334.3 20.1,334.2 21.9,334.6 23.2,333.9 26,330.6
         27.4,325 25.9,322.4 25.2,321.4 24.4,319.8 23.8,319.1 23.6,318.3 23,317.5 21.9,316.9 21.8,316 20.5,316.3 19.7,316.9 18.7,318
         17.7,317.8 16.9,318 17,318.9 17.3,319.7 16.4,319.9 16.2,319.1 15.5,319.7 15.1,319.8 14,319.1 13.8,317.9 13.4,318.4 12.7,317.2
@@ -1158,6 +1250,7 @@ const MapInteractive = ({ setRegion, setOfficesAddr, path, setPath }) => {
                     <path
                         data-code="RU-ZP"
                         data-title="Запорожская область"
+                        className="rf-empty"
                         d="M31.9,339.7 32.4,339.5 33.3,339.3 33.7,339.2 34.6,339 36,338.9 37.4,338.8 42.1,335.3 41,330.5
         39.8,329.4 38.7,328.7 38,327.9 38.3,326.9 38.5,325.9 38.8,325.4 38.2,324.6 38,324.1 37.9,323.2 37.4,323.4 36.9,323.1
         36.3,322.7 36.2,322.2 35.6,322 35,321.2 33.9,320.4 33.7,319.6 33.3,320.2 33.1,320.7 32.3,321.3 31.9,321.9 31.4,322 31.3,323
@@ -1171,6 +1264,7 @@ const MapInteractive = ({ setRegion, setOfficesAddr, path, setPath }) => {
                     <path
                         data-code="RU-DON"
                         data-title="Донецкая Народная Республика"
+                        className="rf-empty"
                         d="M52.5,340.8 51.4,341.3 50.8,341.5 50.6,341.6 50.3,341.7 49.2,341.2 47.9,340.7 47.5,340.9 46.5,341.3
         45.8,341.7 45.1,342 43.7,343.5 42.9,342.2 42.5,342.7 41.2,343 42,342.4 40.7,341.3 39.8,341.1 39.2,340.7 38.3,340.4 37.3,340.3
         36.3,340 35.2,339.3 35.5,338.8 36.4,338.5 36.6,337.6 36.5,337.1 36.8,336.1 37.9,335.4 38.5,335.7 39.1,336.1 40.1,336.3
@@ -1182,6 +1276,7 @@ const MapInteractive = ({ setRegion, setOfficesAddr, path, setPath }) => {
                     <path
                         data-code="RU-LUG"
                         data-title="Луганская Народная Республика"
+                        className="rf-empty"
                         d="M53,339.9 52.3,341 52.8,341.3 53.4,342.2 54.9,342.8 55.1,343.7 57.5,346.3 60.3,343.5 60.5,343.3
         60.9,343.1 61.2,343 61.6,342.7 62.2,342.4 61.7,339.6 62,339.2 62.3,338.9 62.7,338.6 63,338.2 63.5,337.8 63.8,337.9 65.3,338.1
         65.2,336.1 65.7,336 66.5,335.9 66.9,335.9 67.3,335.8 67.6,335.8 67.9,335.8 68.2,335.7 68.4,335.7 68.7,335.6 69.9,335.5

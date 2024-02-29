@@ -244,11 +244,10 @@ function App() {
         }
     }
 
-    console.log(navigator.geolocation.getCurrentPosition(showPosition));
     function showPosition(position) {
         var lat = position.coords.latitude;
         var lon = position.coords.longitude;
-        console.log(lat + " " + lon);
+        // console.log(lat + " " + lon);
     }
     
 

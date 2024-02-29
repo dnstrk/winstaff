@@ -86,8 +86,13 @@
 }
 
 .rf-map .rf-empty {
-    fill: #ff5227;
+    fill: #D0CDE1;
+    pointer-events: none;
+
 }
+// .rf-map .rf-disabled {
+//     pointer-events: none;
+// }
 
 
 .rf-map [data-code]:hover {

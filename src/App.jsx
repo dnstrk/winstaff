@@ -44,8 +44,8 @@ function App() {
     const [townSearchValue, setTownSearchValue] = useState(""); // значение фильтра в модалке с выбором города
     const [townOverlay, setTownOverlay] = useState(false); //статус оверлея выбора города
     const [requestOverlay, setRequestOverlay] = useState(false); //статус оверлея заявки
-    const [messageOverlay, setMessageOverlay] = useState(false); //статус оверлея заявки
-    const [headerSub, setHeaderSub] = useState(false); //меню появляющаяся в медиа
+    const [messageOverlay, setMessageOverlay] = useState(false); //статус оверлея сообщения
+    const [headerSub, setHeaderSub] = useState(false); //меню появляющееся в медиа
 
     // сдвиг верха страниц при развороте headerSub
     const [moveTop, setMoveTop] = useState(false);
@@ -53,7 +53,7 @@ function App() {
     /*выбранная специальность
       выбор при нажатии на радиокнопку или 
       при нажатии на карточку с конкретной специализацией
-  */
+    */
     const [selectedSpec, setSelectedSpec] = useState("");
 
     // стейты формы создания заявки для bannerForm

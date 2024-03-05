@@ -186,7 +186,7 @@ const RequestOverlay = () => {
 
     useEffect(() => {
         setTownRequest(currentTown);
-    }, []);
+    }, [currentTown]);
 
     return (
         <div

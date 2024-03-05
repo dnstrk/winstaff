@@ -18,6 +18,8 @@
     }
 }
 
+
+
 .overlay {
     opacity: 0;
     visibility: hidden;
@@ -36,6 +38,12 @@
     transition: .2s;
 
     z-index: 100;
+
+    ::-webkit-scrollbar {
+        -webkit-appearance: none;
+        width: 0;
+        height: 0;
+    }
 
     .requestDrawer {
         width: 700px;
@@ -121,6 +129,7 @@
                 // align-content: center;
                 flex-wrap: wrap;
                 gap: 14px;
+                
 
                 .specialists__radioGroup__btn {
                     input[type="radio"] {

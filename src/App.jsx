@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
+import { Suspense, lazy, useEffect, useState } from "react";
 import "./App.scss";
 import Header from "./components/Header/Header";
 import TownOverlay from "./components/TownOverlay/TownOverlay";
 import Footer from "./components/Footer/Footer";
 import Home from "./pages/Home";
-import { Route, Routes } from "react-router";
+import { Route, Routes, useLocation } from "react-router";
 import About from "./pages/About";
 import Spec from "./pages/Spec";
 import RequestOverlay from "./components/RequestOverlay/RequestOverlay";
@@ -21,6 +21,9 @@ import {
 } from "./sideFuncs";
 import axios from "axios";
 import PersonalAgreement from "./pages/PersonalAgreement";
+import { ScrollRestoration } from "react-router-dom";
+
+// const RequestOverlay = lazy(()=> import('./components/RequestOverlay/RequestOverlay'))
 
 function App() {
     // стейт списка городов из файла price.json
@@ -32,6 +35,8 @@ function App() {
         }
     }, []);
     const towns = new Set(townsAll); // список городов берется из актуального списка специализаций по городам
+
+    const { pathname } = useLocation(); // контроль адреса страницы, для поднятия страницы ввкрх при переходе по ссылке
 
     const [specs, setSpecs] = useState([]); //массив актуальных по городу специализаций
 
@@ -249,7 +254,10 @@ function App() {
         var lon = position.coords.longitude;
         // console.log(lat + " " + lon);
     }
-    
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
 
     return (
         <div className={`App`}>
@@ -353,6 +361,9 @@ function App() {
                 <TownOverlay //оверлей выбора города
                     towns={Array.from(towns)}
                 />
+                {/* <Suspense>
+                    {requestOverlay && <RequestOverlay/>}
+                </Suspense> */}
                 <RequestOverlay //оверлей заявки на персонал
                 />
                 <MessageOverlay />
@@ -360,7 +371,10 @@ function App() {
                     <Route path="/" element={<Home />} />
                     <Route path="about" element={<About />} />
                     <Route path="specialties" element={<Spec />} />
-                    <Route path="personal-agreement" element={<PersonalAgreement />} />
+                    <Route
+                        path="personal-agreement"
+                        element={<PersonalAgreement />}
+                    />
                 </Routes>
 
                 <Footer />

@@ -41,7 +41,7 @@ const Spec = () => {
                                 specPage
                                 img={`/img/${spec.Специализация
                                     .split(" ")
-                                    .join("")}.svg`}
+                                    .join("")}.png`}
                                 spec={spec.Специализация}
                                 subTitle={`от ${spec.Цена} руб/час`}
                             />

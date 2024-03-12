@@ -3,7 +3,7 @@ import CardSpec from "../components/CardSpec/CardSpec";
 import MapInteractive from "../components/MapInteractive/MapInteractive";
 import RadioSpec from "../components/RadioSpec/RadioSpec";
 import UserContext from "../UserContext";
-import { Link } from "react-router-dom";
+import { Link, ScrollRestoration} from "react-router-dom";
 import IMask from "imask";
 import officeData from "../offises.json";
 
@@ -185,7 +185,9 @@ export default function Home() {
         let maskOption = {
             mask: "+{7} (000) 000-00-00",
         };
-        IMask(inpPhone, maskOption);
+        if(inpPhone) {
+            IMask(inpPhone, maskOption);
+        }
 
         const inpEmail = document.getElementById("inpEmailB");
         inpEmail.addEventListener("input", onInput);
@@ -253,6 +255,8 @@ export default function Home() {
     useEffect(() => {
         setTownBanner(currentTown);
     }, [currentTown]);
+
+    
 
     return (
         <>
@@ -496,7 +500,7 @@ export default function Home() {
                         <div className="specialists__cards">
                             <CardSpec
                                 home
-                                img={"/img/Кассир.svg"}
+                                img={"/img/Кассир.png"}
                                 spec={"Кассир"}
                                 subTitle={"< 1014 кассиров"}
                                 text={
@@ -505,7 +509,7 @@ export default function Home() {
                             />
                             <CardSpec
                                 home
-                                img={"/img/Работникторговогозала.svg"}
+                                img={"/img/Работникторговогозала.png"}
                                 spec={"Работник торгового зала"}
                                 subTitle={"< 2598 сотрудников  "}
                                 text={
@@ -514,7 +518,7 @@ export default function Home() {
                             />
                             <CardSpec
                                 home
-                                img={"/img/Грузчик.svg"}
+                                img={"/img/Грузчик.png"}
                                 spec={"Грузчик"}
                                 subTitle={"< 786 грузчиков  "}
                                 text={
@@ -523,7 +527,7 @@ export default function Home() {
                             />
                             <CardSpec
                                 home
-                                img={"/img/Официант.svg"}
+                                img={"/img/Официант.png"}
                                 spec={"Официант"}
                                 subTitle={"~ 218 официантов  "}
                                 text={
@@ -532,7 +536,7 @@ export default function Home() {
                             />
                             <CardSpec
                                 home
-                                img={"/img/Промоутер.svg"}
+                                img={"/img/Промоутер.png"}
                                 spec={"Промоутер"}
                                 subTitle={"~ 115 промоутеров"}
                                 text={

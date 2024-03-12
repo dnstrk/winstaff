@@ -3,6 +3,8 @@ import UserContext from "../UserContext";
 
 export default function About() {
   const { moveTop, setMessageOverlay } = useContext(UserContext);
+  window.scrollTo(0,0)
+
 
   return (
     <div className={`about ${moveTop && "moveTop"}`}>

@@ -69,39 +69,45 @@ const RequestOverlay = () => {
     //закрытие модалки по кнопке
     const closeOverlayBtn = (e) => {
         setTimeout(() => {
-            setRequestOverlay(false);
             setPhoneRequest("");
             setMailRequest("");
             setTownRequest("");
             setCountRequest("");
             setSelectedSpec("");
-        }, 500);
+            setRequestAccept(false);
+            setCardReuest(false);
+        }, 1500);
+        setRequestOverlay(false);
+
 
         //сброс валидации phone поля
         const inpPhoneBanner = document.getElementById(`inpPhoneR`);
-        inpPhoneBanner.style.borderColor = "transparent";
+        if (inpPhoneBanner) {
+            inpPhoneBanner.style.borderColor = "transparent";
+        }
 
         //сброс валидации email поля
         const inpEmailBanner = document.getElementById(`inpEmailR`);
-        inpEmailBanner.style.borderColor = "transparent";
+        if (inpEmailBanner) {
+            inpEmailBanner.style.borderColor = "transparent";
+        }
 
         //сброс валидации count поля
         const inpTownBanner = document.getElementById(`inpTownR`);
-        inpTownBanner.style.borderColor = "transparent";
+        if (inpTownBanner) {
+            inpTownBanner.style.borderColor = "transparent";
+        }
 
         //сброс валидации count поля
         const inpCountBanner = document.getElementById(`inpCountR`);
-        inpCountBanner.style.borderColor = "transparent";
+        if (inpCountBanner) {
+            inpCountBanner.style.borderColor = "transparent";
+        }
 
         const radio = document.getElementsByName("radio");
         radio.forEach((r) => {
             r.checked = false;
         });
-        setTimeout(() => {
-            setSelectedSpec("");
-            setRequestAccept(false);
-            setCardReuest(false);
-        }, 500);
     };
 
     //маска телефона и почты + допуск символов в полях города и кол-ва
@@ -110,7 +116,9 @@ const RequestOverlay = () => {
         let maskOption = {
             mask: "+{7} (000) 000-00-00",
         };
-        IMask(inpPhoneRequest, maskOption);
+        if (inpPhoneRequest) {
+            IMask(inpPhoneRequest, maskOption);
+        }
 
         //закрытие модалки по кнопке
 
@@ -186,7 +194,7 @@ const RequestOverlay = () => {
 
     useEffect(() => {
         setTownRequest(currentTown);
-    }, [currentTown]);
+    }, [currentTown, requestOverlay]);
 
     return (
         <div

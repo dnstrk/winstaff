@@ -259,6 +259,12 @@ function App() {
         window.scrollTo(0, 0);
     }, [pathname]);
 
+    useEffect(() => {
+        setTownRequest(currentTown);
+        setTownBanner(currentTown);
+        setTownValid(true);
+    }, [currentTown, requestOverlay]);
+
     return (
         <div className={`App`}>
             <UserContext.Provider

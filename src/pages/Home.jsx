@@ -252,9 +252,9 @@ export default function Home() {
         }
     }, [regionMedia]);
 
-    useEffect(() => {
-        setTownBanner(currentTown);
-    }, [currentTown]);
+    // useEffect(() => {
+    //     setTownBanner(currentTown);
+    // }, [currentTown]);
 
     
 

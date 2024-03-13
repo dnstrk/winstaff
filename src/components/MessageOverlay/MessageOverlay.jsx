@@ -84,7 +84,7 @@ const MessageOverlay = () => {
     });
 
     const sendMess = () => {
-        if (phoneValid && mailValid) {
+        if (phoneValid && mailValid && textMessage.length > 0) {
             let formData = new FormData(); //formdata object
 
             formData.append("phone", phoneMessage); //append the values with key, value pair

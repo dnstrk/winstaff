@@ -42,6 +42,7 @@ const RequestOverlay = () => {
         mailValid,
         countValid,
         townValid,
+        setTownValid,
         phoneValidation,
         emailValidation,
         townValidation,
@@ -192,9 +193,10 @@ const RequestOverlay = () => {
     });
     //</маска кол-ва>
 
-    useEffect(() => {
-        setTownRequest(currentTown);
-    }, [currentTown, requestOverlay]);
+    // useEffect(() => {
+    //     setTownRequest(currentTown);
+        
+    // }, [currentTown, requestOverlay]);
 
     return (
         <div
@@ -318,7 +320,7 @@ const RequestOverlay = () => {
                                     specs.map((spec, index) => (
                                         <RadioSpec
                                             key={index}
-                                            radio={10 + index}
+                                            radio={11 + index}
                                             specialisation={spec}
                                         />
                                     ))

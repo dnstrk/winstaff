@@ -3,7 +3,7 @@ import CardSpec from "../components/CardSpec/CardSpec";
 import MapInteractive from "../components/MapInteractive/MapInteractive";
 import RadioSpec from "../components/RadioSpec/RadioSpec";
 import UserContext from "../UserContext";
-import { Link, ScrollRestoration} from "react-router-dom";
+import { Link, ScrollRestoration } from "react-router-dom";
 import IMask from "imask";
 import officeData from "../offises.json";
 
@@ -185,7 +185,7 @@ export default function Home() {
         let maskOption = {
             mask: "+{7} (000) 000-00-00",
         };
-        if(inpPhone) {
+        if (inpPhone) {
             IMask(inpPhone, maskOption);
         }
 
@@ -256,8 +256,6 @@ export default function Home() {
     //     setTownBanner(currentTown);
     // }, [currentTown]);
 
-    
-
     return (
         <>
             <section className={`section__banner ${moveTop && "moveTop"}`}>
@@ -286,10 +284,11 @@ export default function Home() {
                                         value={phoneBanner}
                                         onBlur={() => {
                                             phoneValidation(phoneBanner);
-                                            phoneValidationMarker(
-                                                "inpPhoneB",
-                                                phoneBanner
-                                            );
+                                            phoneBanner.length > 0 &&
+                                                phoneValidationMarker(
+                                                    "inpPhoneB",
+                                                    phoneBanner
+                                                );
                                         }}
                                         onChange={(e) =>
                                             setPhoneBanner(e.target.value)
@@ -302,9 +301,14 @@ export default function Home() {
                                         id="inpEmailB"
                                         type="text"
                                         value={mailBanner}
-                                        onBlur={() =>
-                                            emailValidation(mailBanner)
-                                        }
+                                        onBlur={() => {
+                                            emailValidation(mailBanner);
+                                            mailBanner.length > 0 &&
+                                                emailValidationMarker(
+                                                    "inpEmailB",
+                                                    mailBanner
+                                                );
+                                        }}
                                         onChange={(e) =>
                                             setMailBanner(e.target.value)
                                         }
@@ -408,7 +412,7 @@ export default function Home() {
                                         // onClick={clickHandler}
                                         onClick={() =>
                                             sendRequestForm(
-                                                "http://uldalex.beget.tech/send.php",
+                                                "send.php",
                                                 phoneBanner,
                                                 mailBanner,
                                                 selectedSpec,
@@ -501,6 +505,7 @@ export default function Home() {
                             <CardSpec
                                 home
                                 img={"/img/Кассир.png"}
+                                alt={'Кассир'}
                                 spec={"Кассир"}
                                 subTitle={"< 1014 кассиров"}
                                 text={
@@ -510,6 +515,7 @@ export default function Home() {
                             <CardSpec
                                 home
                                 img={"/img/Работникторговогозала.png"}
+                                alt={"Работник торгового зала"}
                                 spec={"Работник торгового зала"}
                                 subTitle={"< 2598 сотрудников  "}
                                 text={
@@ -519,6 +525,7 @@ export default function Home() {
                             <CardSpec
                                 home
                                 img={"/img/Грузчик.png"}
+                                alt={"Грузчик"}
                                 spec={"Грузчик"}
                                 subTitle={"< 786 грузчиков  "}
                                 text={
@@ -528,6 +535,7 @@ export default function Home() {
                             <CardSpec
                                 home
                                 img={"/img/Официант.png"}
+                                alt={"Официант"}
                                 spec={"Официант"}
                                 subTitle={"~ 218 официантов  "}
                                 text={
@@ -537,6 +545,7 @@ export default function Home() {
                             <CardSpec
                                 home
                                 img={"/img/Промоутер.png"}
+                                alt={"Промоутер"}
                                 spec={"Промоутер"}
                                 subTitle={"~ 115 промоутеров"}
                                 text={
@@ -761,64 +770,64 @@ export default function Home() {
                         </h6>
                         <div className="partners__cards">
                             <div className="partners__card">
-                                <img src="/img/partner1-min.png" alt="" />
+                                <img src="/img/partner1-min.png" alt="Мираторг" />
                             </div>
                             <div className="partners__card">
-                                <img src="/img/partner2-min.png" alt="" />
+                                <img src="/img/partner2-min.png" alt="Твой дом" />
                             </div>
                             <div className="partners__card">
-                                <img src="/img/partner3-min.png" alt="" />
+                                <img src="/img/partner3-min.png" alt="Metro" />
                             </div>
                             <div className="partners__card">
-                                <img src="/img/partner4-min.png" alt="" />
+                                <img src="/img/partner4-min.png" alt="Ашан" />
                             </div>
                             <div className="partners__card">
-                                <img src="/img/partner5-min.png" alt="" />
+                                <img src="/img/partner5-min.png" alt="Globus" />
                             </div>
                             <div className="partners__card">
-                                <img src="/img/partner6-min.png" alt="" />
+                                <img src="/img/partner6-min.png" alt="Каждый день" />
                             </div>
                             <div className="partners__card">
-                                <img src="/img/partner7-min.png" alt="" />
+                                <img src="/img/partner7-min.png" alt="Бабаевский" />
                             </div>
                             <div className="partners__card">
-                                <img src="/img/partner8-min.png" alt="" />
+                                <img src="/img/partner8-min.png" alt="OBI" />
                             </div>
                             <div className="partners__card">
-                                <img src="/img/partner9-min.png" alt="" />
+                                <img src="/img/partner9-min.png" alt="Седьмой континент" />
                             </div>
                             <div className="partners__card">
-                                <img src="/img/partner10-min.png" alt="" />
+                                <img src="/img/partner10-min.png" alt="ECCO" />
                             </div>
                             <div className="partners__card">
-                                <img src="/img/partner11-min.png" alt="" />
+                                <img src="/img/partner11-min.png" alt="castorama" />
                             </div>
                             <div className="partners__card">
-                                <img src="/img/partner12-min.png" alt="" />
+                                <img src="/img/partner12-min.png" alt="Дикси" />
                             </div>
                             <div className="partners__card">
-                                <img src="/img/partner13-min.png" alt="" />
+                                <img src="/img/partner13-min.png" alt="Красный Октябрь" />
                             </div>
                             <div className="partners__card">
-                                <img src="/img/partner14-min.png" alt="" />
+                                <img src="/img/partner14-min.png" alt="MGL" />
                             </div>
                             <div className="partners__card">
-                                <img src="/img/partner15-min.png" alt="" />
+                                <img src="/img/partner15-min.png" alt="Карусель" />
                             </div>
                             <div className="partners__card">
-                                <img src="/img/partner16-min.png" alt="" />
+                                <img src="/img/partner16-min.png" alt="Русский шоколад" />
                             </div>
                             <div className="partners__card">
-                                <img src="/img/partner17-min.png" alt="" />
+                                <img src="/img/partner17-min.png" alt="Selgros" />
                             </div>
                             <div className="partners__card">
-                                <img src="/img/partner18-min.png" alt="" />
+                                <img src="/img/partner18-min.png" alt="Faberlic" />
                             </div>
                             <div className="partners__card">
                                 <img src="/img/partner19-min.png" alt="" />
                             </div>
                             <div className="partners__card">
-                                <img src="/img/partner20-min.png" alt="" />
+                                <img src="/img/partner20-min.png" alt="Перекресток" />
                             </div>
                         </div>
                         <p className="partners__text">

@@ -18,6 +18,7 @@ import {
     countValidationMarker,
     townValidationMarker,
     scrollDisable,
+    messageValidationMarker,
 } from "./sideFuncs";
 import axios from "axios";
 import PersonalAgreement from "./pages/PersonalAgreement";
@@ -153,7 +154,7 @@ function App() {
     }, [requestOverlay, townOverlay, messageOverlay]);
 
     function sendRequestForm(
-        url = "http://uldalex.beget.tech/send.php",
+        url = "send.php",
         phone,
         mail,
         spec,
@@ -342,6 +343,8 @@ function App() {
                     emailValidationMarker,
                     townValidation,
                     townValidationMarker,
+
+                    messageValidationMarker,
                     // </валидации значений полей>
 
                     // <модалка отправки сообщения>

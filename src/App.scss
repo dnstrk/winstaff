@@ -813,6 +813,8 @@
                         left: -20px;
                         width: 92px;
                         height: 87px;
+
+                        transition: 0.2s;
                     }
 
                     .coop_cardText {
@@ -826,6 +828,19 @@
                         right: -80px;
                         top: 14px;
                         z-index: 11;
+                        transition: 0.2s;
+                    }
+
+                    transition: 0.2s;
+                    &:hover {
+                        .coop_cardImg {
+                            position: relative;
+                            top: -26px;
+                            left: -22px;
+                        }
+                        .coop_cardBackImg {
+                            right: -84px;
+                        }
                     }
                 }
 
@@ -1501,7 +1516,6 @@
             }
 
             .sub {
-
                 padding-left: 20px;
             }
         }
@@ -6568,10 +6582,13 @@
                 flex-wrap: nowrap;
 
                 .specialists__cardMore {
-                    max-width: 305px;
-                    width: 305px;
-                    height: 140px;
-                    padding: 20px;
+                    max-width: 100%;
+                    width: 350px;
+                    height: 60px;
+                    // padding-top: 20px;
+                    // padding-bottom: 20px;
+                    padding-left: 0px;
+                    padding-right: 0px;
 
                     display: flex;
                     justify-content: center;

@@ -26,6 +26,7 @@ const MessageOverlay = () => {
 
         phoneValidationMarker,
         emailValidationMarker,
+        messageValidationMarker,
     } = useContext(UserContext);
 
     //закрытие модалки по клику вне самой модалки
@@ -96,7 +97,7 @@ const MessageOverlay = () => {
             };
 
             axios
-                .post("http://uldalex.beget.tech/send.php", formData, config)
+                .post("send.php", formData, config)
                 .then((response) => {
                     console.log(response);
                 })
@@ -111,20 +112,12 @@ const MessageOverlay = () => {
         } else {
             phoneValidationMarker("inpPhoneM", phoneMessage);
             emailValidationMarker("inpEmailM", mailMessage);
+            messageValidationMarker("inpMessM", textMessage)
         }
     };
 
-    // const sendForm = () => {
-    //   if (phoneValid && mailValid && textMessage.length > 0) {
-    //     setMessageAccept(true);
-    //     setMailMessage("");
-    //     setPhoneMessage("");
-    //     setTextMessage("");
-    //   } else {
-    //     phoneValidationMarker("inpPhoneW", phoneMessage);
-    //     emailValidationMarker("inpEmailW", mailMessage);
-    //   }
-    // };
+
+
 
     return (
         <div
@@ -200,7 +193,14 @@ const MessageOverlay = () => {
                             className={`${cl.writeDrawer__contacts_num} ${cl.default__inp}`}
                             id="inpPhoneM"
                             value={phoneMessage}
-                            onBlur={() => phoneValidation(phoneMessage)}
+                            onBlur={() => {
+                                phoneValidation(phoneMessage);
+                                phoneMessage.length > 0 &&
+                                    phoneValidationMarker(
+                                        "inpPhoneM",
+                                        phoneMessage
+                                    );
+                            }}
                             onChange={(e) => setPhoneMessage(e.target.value)}
                             placeholder="Ваш телефон"
                             type="text"
@@ -209,7 +209,14 @@ const MessageOverlay = () => {
                             className={`${cl.writeDrawer__contacts_email} ${cl.default__inp}`}
                             id="inpEmailM"
                             value={mailMessage}
-                            onBlur={() => emailValidation(mailMessage)}
+                            onBlur={() => {
+                                emailValidation(mailMessage);
+                                mailMessage.length > 0 &&
+                                    emailValidationMarker(
+                                        "inpEmailM",
+                                        mailMessage
+                                    );
+                            }}
                             onChange={(e) => setMailMessage(e.target.value)}
                             placeholder="Ваш e-mail"
                             type="text"
@@ -218,10 +225,17 @@ const MessageOverlay = () => {
                     <textarea
                         className={cl.writeDrawer__text}
                         placeholder="Ваше сообщение"
-                        id=""
+                        id="inpMessM"
                         cols="30"
                         rows="10"
                         value={textMessage}
+                        onBlur={() => {
+                            textMessage.length > 0 &&
+                                messageValidationMarker(
+                                    "inpMessM",
+                                    textMessage
+                                );
+                        }}
                         onChange={(e) => setTextMessage(e.target.value)}
                     ></textarea>
                     <div className={cl.writeDrawer__foot}>
@@ -235,7 +249,9 @@ const MessageOverlay = () => {
                         <p className={cl.writeDrawer__foot__personalAgreement}>
                             Нажимая на кнопку вы соглашаетесь на обработку{" "}
                             <Link
-                                className={cl.writeDrawer__foot__personalAgreement__link}
+                                className={
+                                    cl.writeDrawer__foot__personalAgreement__link
+                                }
                                 to="personal-agreement"
                                 target="_blank"
                             >

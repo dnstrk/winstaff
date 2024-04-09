@@ -80,7 +80,6 @@ const RequestOverlay = () => {
         }, 1500);
         setRequestOverlay(false);
 
-
         //сброс валидации phone поля
         const inpPhoneBanner = document.getElementById(`inpPhoneR`);
         if (inpPhoneBanner) {
@@ -195,7 +194,7 @@ const RequestOverlay = () => {
 
     // useEffect(() => {
     //     setTownRequest(currentTown);
-        
+
     // }, [currentTown, requestOverlay]);
 
     return (
@@ -281,10 +280,11 @@ const RequestOverlay = () => {
                                 value={phoneRequest}
                                 onBlur={() => {
                                     phoneValidation(phoneRequest);
-                                    phoneValidationMarker(
-                                        "inpPhoneR",
-                                        phoneRequest
-                                    );
+                                    phoneRequest.length > 0 &&
+                                        phoneValidationMarker(
+                                            "inpPhoneR",
+                                            phoneRequest
+                                        );
                                 }}
                                 onChange={(e) =>
                                     setPhoneRequest(e.target.value)
@@ -296,7 +296,14 @@ const RequestOverlay = () => {
                                 className={`${cl.requestDrawer__contacts_email} ${cl.default__inp}`}
                                 id="inpEmailR"
                                 value={mailRequest}
-                                onBlur={() => emailValidation(mailRequest)}
+                                onBlur={() => {
+                                    emailValidation(mailRequest);
+                                    mailRequest.length > 0 &&
+                                        emailValidationMarker(
+                                            "inpEmailR",
+                                            mailRequest
+                                        );
+                                }}
                                 onChange={(e) => setMailRequest(e.target.value)}
                                 placeholder="Ваш e-mail"
                                 type="text"
@@ -386,7 +393,7 @@ const RequestOverlay = () => {
                             <button
                                 onClick={() =>
                                     sendRequestForm(
-                                        "http://uldalex.beget.tech/send.php",
+                                        "send.php",
                                         phoneRequest,
                                         mailRequest,
                                         selectedSpec,
@@ -419,7 +426,7 @@ const RequestOverlay = () => {
                         <button
                             onClick={() =>
                                 sendRequestForm(
-                                    "http://uldalex.beget.tech/send.php",
+                                    "send.php",
                                     phoneRequest,
                                     mailRequest,
                                     selectedSpec,

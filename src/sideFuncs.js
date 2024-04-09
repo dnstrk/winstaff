@@ -1,11 +1,15 @@
 //маркировка input при незаполненном phone
 export function phoneValidationMarker(id, phone) {
     const inpPhone = document.getElementById(`${id}`);
-    if (phone.length < 18) {
-        inpPhone.style.borderColor = "red";
-    } else {
-        inpPhone.style.borderColor = "green";
-    }
+    // if (phone.length > 0) {
+        if (phone.length < 18) {
+            inpPhone.style.borderColor = "red";
+        } else {
+            inpPhone.style.borderColor = "green";
+        }
+    // } else {
+        // inpPhone.style.borderColor = "";
+    // }
 }
 
 //маркировка input при незаполненном email
@@ -18,11 +22,15 @@ export function emailValidationMarker(id, email) {
         return EMAIL_REGEXP.test(value);
     }
 
-    if (isEmailValid(email)) {
-        inpEmail.style.borderColor = "green";
-    } else {
-        inpEmail.style.borderColor = "red";
-    }
+    // if (email.length > 0) {
+        if (isEmailValid(email)) {
+            inpEmail.style.borderColor = "green";
+        } else {
+            inpEmail.style.borderColor = "red";
+        }
+    // } else {
+        // inpEmail.style.borderColor = "";
+    // }
 }
 
 //влидация города на заполненность и маркировка
@@ -38,6 +46,16 @@ export function townValidationMarker(id, town) {
 
 //проверка на не 0 и заполненность в countBanner и маркировка
 export function countValidationMarker(id, count) {
+    const inpCount = document.getElementById(`${id}`);
+
+    if (count.length == 0 || Number(count) == 0) {
+        inpCount.style.borderColor = "red";
+    } else {
+        inpCount.style.borderColor = "green";
+    }
+}
+
+export function messageValidationMarker(id, count) {
     const inpCount = document.getElementById(`${id}`);
 
     if (count.length == 0 || Number(count) == 0) {

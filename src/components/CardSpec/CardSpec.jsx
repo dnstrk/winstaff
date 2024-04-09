@@ -6,6 +6,7 @@ export default function CardSpec({
     home = false, //  карточки используются на странице home и 
     specPage = false,
     img,
+    alt,
     spec,
     subTitle,
     text,
@@ -14,7 +15,7 @@ export default function CardSpec({
     return (
         <div className={cl.specialists__card}>
             <div className={cl.card__head}>
-                <img className={cl.card__headImg} src={img} alt="" />
+                <img className={cl.card__headImg} src={img} alt={alt} />
                 <div
                     // окраска выбранной кнопки специализации при выборе через конкретную карточку
                     className={`${cl.card__headInfo} ${

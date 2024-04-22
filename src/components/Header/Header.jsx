@@ -13,6 +13,7 @@ const Header = () => {
     setMessageOverlay,
     moveTop,
     setMoveTop,
+    siteNum,
   } = useContext(UserContext);
 
   return (
@@ -44,7 +45,7 @@ const Header = () => {
                 </Link>
               </li>
               <li className={cl.header__navItem}>
-                <a className={cl.header__navLink} href="tel:">
+                <a className={cl.header__navLink} href={`tel:${siteNum}`}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -57,7 +58,7 @@ const Header = () => {
                       fill="#272C3E"
                     />
                   </svg>
-                  <b>+7 903 192-83-98</b>
+                  <b>{siteNum}</b>
                 </a>
               </li>
             </ul>

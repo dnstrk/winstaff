@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import cl from "./Footer.module.scss";
+import UserContext from "../../UserContext";
 
 const Footer = () => {
+    const {siteNum, siteMail} = useContext(UserContext)
+
     return (
         <footer className={cl.footer}>
             <div className={cl.container}>
@@ -13,18 +16,18 @@ const Footer = () => {
                                 <span>Телефон:</span>
                                 <a
                                     className={cl.footer__infoContacts_link}
-                                    href="tel:+7(903) 192-83-98"
+                                    href={`tel:${siteNum}`}
                                 >
-                                    <b>+7(903) 192-83-98</b>
+                                    <b>{siteNum}</b>
                                 </a>
                             </div>
                             <div className={cl.footer__infoContacts_email}>
                                 <span>Email:</span>
                                 <a
                                     className={cl.footer__infoContacts_link}
-                                    href="mailto:info@win-staff.ru"
+                                    href={`mailto:${siteMail}`}
                                 >
-                                    <b>info@win-staff.ru</b>
+                                    <b>{siteMail}</b>
                                 </a>
                             </div>
                         </div>

@@ -35,7 +35,7 @@
                 font-weight: 700;
 
                 .banner__infoTitle_marked {
-                    color: var(--green);
+                    color: var(--orange);
                 }
             }
 
@@ -1301,7 +1301,7 @@
 
 .about {
     padding-top: 120px;
-    padding-bottom: 350px;
+    padding-bottom: 550px;
     font-family: "Montserrat", sans-serif;
     transition: 1s;
 
@@ -1314,7 +1314,7 @@
             max-width: 640px;
             display: flex;
             flex-direction: column;
-            gap: 35px;
+            gap: 5px;
 
             .about__infoTitle {
                 color: #222;
@@ -1518,6 +1518,97 @@
             .sub {
                 padding-left: 20px;
             }
+        }
+    }
+}
+
+.admin {
+    padding-top: 150px;
+    font-family: "Montserrat", sans-serif;
+    
+    .container {
+        max-width: 350px;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    .adminAuth__wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .admin__wrapTitle {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .admin__wrapLogin {
+            padding: 0 40px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .admin__wrapPass {
+            padding: 0 40px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+    .adminLogon__wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .adminLogon__wrapTitle {
+            text-align: center;
+        }
+        .adminLogon__wrapNum {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
+        }
+        .adminLogon__wrapMail {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
+        }
+    }
+
+    .adm_input {
+        max-width: 150px;
+        border: 1px solid #c2c2c2;
+        padding: 4px 6px;
+        border-radius: 5px;
+
+        &:focus {
+            border-color: var(--black);
+        }
+    }
+
+    .adm_btn {
+        align-self: center;
+        width: fit-content;
+        padding: 4px 10px;
+        border: 1px solid var(--orange);
+        border-radius: 10px;
+        transition: background-color .2s linear, color .2s linear,transform .05s linear;
+
+        &:hover {
+            background-color: var(--orange);
+            color: var(--white);
+        }
+        &:active {
+            transform: scale(98%);
+        }
+        &:focus {
+            transform: scale(101%);
         }
     }
 }
@@ -2643,7 +2734,7 @@
 
     .about {
         padding-top: 120px;
-        padding-bottom: 350px;
+        padding-bottom: 550px;
         font-family: "Montserrat", sans-serif;
 
         .aboutWrap {
@@ -2655,7 +2746,7 @@
                 max-width: 640px;
                 display: flex;
                 flex-direction: column;
-                gap: 35px;
+                gap: 5px;
 
                 .about__infoTitle {
                     color: #222;
@@ -3889,19 +3980,21 @@
 
     .about {
         padding-top: 120px;
-        padding-bottom: 350px;
+        padding-bottom: 250px;
         font-family: "Montserrat", sans-serif;
 
         .aboutWrap {
             display: flex;
-            flex-direction: row;
-            gap: 0;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
 
             .about__info {
                 max-width: 640px;
                 display: flex;
                 flex-direction: column;
-                gap: 35px;
+                gap: 5px;
 
                 .about__infoTitle {
                     color: #222;
@@ -3930,9 +4023,8 @@
             }
 
             .about__img {
-                width: 600px;
-                height: 600px;
-                position: relative;
+                display: none;
+
 
                 &::before {
                     position: absolute;
@@ -4019,6 +4111,35 @@
                     left: 180px;
                     bottom: -220px;
 
+                    transition: 0.15s;
+
+                    &:hover {
+                        background: #e28424;
+                    }
+
+                    &:active {
+                        background: #e28424;
+                        transform: scale(99%);
+                    }
+                }
+            }
+
+            .about__addrAdaptive {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+
+                .about__textBtn {
+                    margin-top: 20px;
+                    align-self: center;
+                    text-align: center;
+                    width: 200px;
+                    color: var(--white);
+                    font-size: 16px;
+                    font-weight: 700;
+                    padding: 10px;
+                    border-radius: 50px;
+                    background: #fba457;
                     transition: 0.15s;
 
                     &:hover {
@@ -5177,7 +5298,7 @@
         }
 
         padding-top: 80px;
-        padding-bottom: 350px;
+        padding-bottom: 250px;
         font-family: "Montserrat", sans-serif;
 
         .aboutWrap {
@@ -5191,7 +5312,7 @@
                 max-width: 90%;
                 display: flex;
                 flex-direction: column;
-                gap: 35px;
+                gap: 5px;
 
                 .about__infoTitle {
                     text-align: center;
@@ -6366,7 +6487,7 @@
         }
 
         padding-top: 80px;
-        padding-bottom: 350px;
+        padding-bottom: 250px;
         font-family: "Montserrat", sans-serif;
 
         .aboutWrap {
@@ -6380,7 +6501,7 @@
                 max-width: 90%;
                 display: flex;
                 flex-direction: column;
-                gap: 35px;
+                gap: 5px;
 
                 .about__infoTitle {
                     text-align: center;
@@ -7332,7 +7453,7 @@
                 max-width: 90%;
                 display: flex;
                 flex-direction: column;
-                gap: 35px;
+                gap: 5px;
 
                 .about__infoTitle {
                     text-align: center;

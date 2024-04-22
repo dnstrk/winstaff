@@ -2,13 +2,13 @@
 export function phoneValidationMarker(id, phone) {
     const inpPhone = document.getElementById(`${id}`);
     // if (phone.length > 0) {
-        if (phone.length < 18) {
-            inpPhone.style.borderColor = "red";
-        } else {
-            inpPhone.style.borderColor = "green";
-        }
+    if (phone.length < 18) {
+        inpPhone.style.borderColor = "red";
+    } else {
+        inpPhone.style.borderColor = "green";
+    }
     // } else {
-        // inpPhone.style.borderColor = "";
+    // inpPhone.style.borderColor = "";
     // }
 }
 
@@ -23,13 +23,13 @@ export function emailValidationMarker(id, email) {
     }
 
     // if (email.length > 0) {
-        if (isEmailValid(email)) {
-            inpEmail.style.borderColor = "green";
-        } else {
-            inpEmail.style.borderColor = "red";
-        }
+    if (isEmailValid(email)) {
+        inpEmail.style.borderColor = "green";
+    } else {
+        inpEmail.style.borderColor = "red";
+    }
     // } else {
-        // inpEmail.style.borderColor = "";
+    // inpEmail.style.borderColor = "";
     // }
 }
 
@@ -73,3 +73,5 @@ export function scrollDisable(request, town, mess) {
         body.style.overflow = "";
     }
 }
+
+export const admPwd = "w8T$dHOEuKM{W$";

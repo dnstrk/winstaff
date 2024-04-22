@@ -1,4 +1,4 @@
-import { Suspense, lazy, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.scss";
 import Header from "./components/Header/Header";
 import TownOverlay from "./components/TownOverlay/TownOverlay";
@@ -22,7 +22,6 @@ import {
 } from "./sideFuncs";
 import axios from "axios";
 import PersonalAgreement from "./pages/PersonalAgreement";
-import { ScrollRestoration } from "react-router-dom";
 
 // const RequestOverlay = lazy(()=> import('./components/RequestOverlay/RequestOverlay'))
 
@@ -38,6 +37,29 @@ function App() {
     const towns = new Set(townsAll); // список городов берется из актуального списка специализаций по городам
 
     const { pathname } = useLocation(); // контроль адреса страницы, для поднятия страницы ввкрх при переходе по ссылке
+
+    //изменение значений телефона и почты сайта
+    const [siteNum, setSiteNum] = useState(() => {
+        const storedValueNum = localStorage.getItem("siteNum");
+        return storedValueNum ? JSON.parse(storedValueNum) : "+7 903 192-83-98";
+    });
+    useEffect(() => {
+        localStorage.setItem("siteNum", JSON.stringify(siteNum));
+    }, [siteNum]);
+    const [siteMail, setSiteMail] = useState(() => {
+        const storedValueMail = localStorage.getItem("siteMail");
+        return storedValueMail
+            ? JSON.parse(storedValueMail)
+            : "info@win-staff.ru";
+    });
+    useEffect(() => {
+        localStorage.setItem("siteMail", JSON.stringify(siteMail));
+    }, [siteMail]);
+    //
+
+    const [isAdmin, setIsAdmin] = useState(false);
+    const [loginInp, setLoginInp] = useState("");
+    const [loginPwd, setLoginPwd] = useState("");
 
     const [specs, setSpecs] = useState([]); //массив актуальных по городу специализаций
 
@@ -270,6 +292,17 @@ function App() {
         <div className={`App`}>
             <UserContext.Provider
                 value={{
+                    isAdmin,
+                    setIsAdmin,
+                    loginInp,
+                    setLoginInp,
+                    loginPwd,
+                    setLoginPwd,
+                    siteNum,
+                    setSiteNum,
+                    siteMail,
+                    setSiteMail,
+
                     moveTop,
                     setMoveTop,
 
@@ -384,6 +417,7 @@ function App() {
                         path="personal-agreement"
                         element={<PersonalAgreement />}
                     />
+                    {/* <Route path="admin" element={<Admin />} /> */}
                 </Routes>
 
                 <Footer />

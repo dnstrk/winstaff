@@ -70,7 +70,6 @@ const MapInteractive = ({ setRegion, setOfficesAddr, path, setPath }) => {
                 if (region.classList.value.includes("rf-empty")) {
                     e.preventDefault();
                 } else {
-                    console.log(region.dataset.title);
                     setOfficesAddr([]); //очистка адресов прошлого региона
                     setPath(region); // фиксация выбранного path из карты
                     for (var i = 0; i < officesState.length; i++) {

@@ -214,7 +214,6 @@ function App() {
             townValid &&
             countValid
         ) {
-            console.log("true");
             let formData = new FormData(); //formdata object
 
             formData.append("phone", phone); //append the values with key, value pair
@@ -242,7 +241,6 @@ function App() {
             setRequestAccept(true);
             setRequestOverlay(true);
 
-            console.log("correct");
 
             setPhone("");
             setMail("");
@@ -287,8 +285,6 @@ function App() {
                 r.checked = false;
             });
         } else {
-            console.log("incorrect");
-
             phoneValidationMarker(`inpPhone${idLetter}`, phone);
             emailValidationMarker(`inpEmail${idLetter}`, mail);
             nameValidationMarker(`inpName${idLetter}`, name);

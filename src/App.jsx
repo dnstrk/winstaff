@@ -4,6 +4,7 @@ import Header from "./components/Header/Header";
 import TownOverlay from "./components/TownOverlay/TownOverlay";
 import Footer from "./components/Footer/Footer";
 import Home from "./pages/Home";
+import Admin from "./pages/Admin";
 import { Route, Routes, useLocation } from "react-router";
 import About from "./pages/About";
 import Spec from "./pages/Spec";
@@ -15,6 +16,7 @@ import HeaderSub from "./components/HeaderSub/HeaderSub";
 import {
     phoneValidationMarker,
     emailValidationMarker,
+    nameValidationMarker,
     countValidationMarker,
     townValidationMarker,
     scrollDisable,
@@ -39,23 +41,22 @@ function App() {
     const { pathname } = useLocation(); // контроль адреса страницы, для поднятия страницы ввкрх при переходе по ссылке
 
     //изменение значений телефона и почты сайта
-    const [siteNum, setSiteNum] = useState(() => {
-        const storedValueNum = localStorage.getItem("siteNum");
-        return storedValueNum ? JSON.parse(storedValueNum) : "+7 903 192-83-98";
-    });
-    useEffect(() => {
-        localStorage.setItem("siteNum", JSON.stringify(siteNum));
-    }, [siteNum]);
-    const [siteMail, setSiteMail] = useState(() => {
-        const storedValueMail = localStorage.getItem("siteMail");
-        return storedValueMail
-            ? JSON.parse(storedValueMail)
-            : "info@win-staff.ru";
-    });
-    useEffect(() => {
-        localStorage.setItem("siteMail", JSON.stringify(siteMail));
-    }, [siteMail]);
+    const [siteNum, setSiteNum] = useState("+7 903 192-83-98");
+
+    const [siteMail, setSiteMail] = useState("info@win-staff.ru");
     //
+
+    async function fetchData() {
+        // const data = await axios.get("https://wintest.msto.ru:5000/readFile");
+        const { data } = await axios.get("http://localhost:5000/readFile");
+        // const { data } = await axios.get("http://172.16.30.133:5000/readFile");
+        setSiteNum(data.winNum);
+        setSiteMail(data.winMail);
+    }
+    
+    // useEffect(() => {
+    //     fetchData();
+    // }, []);
 
     const [isAdmin, setIsAdmin] = useState(false);
     const [loginInp, setLoginInp] = useState("");
@@ -87,12 +88,14 @@ function App() {
     // стейты формы создания заявки для bannerForm
     const [phoneBanner, setPhoneBanner] = useState("");
     const [mailBanner, setMailBanner] = useState("");
+    const [nameBanner, setNameBanner] = useState("");
     const [townBanner, setTownBanner] = useState("");
     const [countBanner, setCountBanner] = useState("");
 
     // стейты формы создания заявки для requestForm
     const [phoneRequest, setPhoneRequest] = useState("");
     const [mailRequest, setMailRequest] = useState("");
+    const [nameRequest, setNameRequest] = useState("");
     const [townRequest, setTownRequest] = useState("");
     const [countRequest, setCountRequest] = useState("");
 
@@ -104,6 +107,7 @@ function App() {
     // стейты валидации для отправки форм
     const [phoneValid, setPhoneValid] = useState(false);
     const [mailValid, setMailValid] = useState(false);
+    const [nameValid, setNameValid] = useState(false);
     const [townValid, setTownValid] = useState(false);
     const [countValid, setCountValid] = useState(false);
 
@@ -171,6 +175,15 @@ function App() {
         }
     }
 
+    //валидация города на заполненность и доступ к отправке формы
+    function nameValidation(name) {
+        if (name.length == 0) {
+            setNameValid(false);
+        } else {
+            setNameValid(true);
+        }
+    }
+
     useEffect(() => {
         scrollDisable(requestOverlay, townOverlay, messageOverlay);
     }, [requestOverlay, townOverlay, messageOverlay]);
@@ -179,6 +192,7 @@ function App() {
         url = "send.php",
         phone,
         mail,
+        name,
         spec,
         town,
         count,
@@ -187,6 +201,7 @@ function App() {
 
         setPhone,
         setMail,
+        setName,
         setSpec,
         setTown,
         setCount
@@ -195,13 +210,16 @@ function App() {
             selectedSpec.length > 0 &&
             phoneValid &&
             mailValid &&
+            nameValid &&
             townValid &&
             countValid
         ) {
+            console.log("true");
             let formData = new FormData(); //formdata object
 
             formData.append("phone", phone); //append the values with key, value pair
             formData.append("mail", mail);
+            formData.append("name", name);
             formData.append("spec", spec);
             formData.append("town", town);
             formData.append("count", count);
@@ -228,6 +246,7 @@ function App() {
 
             setPhone("");
             setMail("");
+            setName("");
             setSpec("");
             setTown("");
             setCount("");
@@ -245,6 +264,11 @@ function App() {
             );
             inpEmailBanner.style.borderColor = "transparent";
             setMailValid(false);
+
+            //сброс валидации email поля
+            const inpNameBanner = document.getElementById(`inpName${idLetter}`);
+            inpNameBanner.style.borderColor = "transparent";
+            // setMailValid(false);
 
             //сброс валидации count поля
             const inpTownBanner = document.getElementById(`inpTown${idLetter}`);
@@ -267,16 +291,17 @@ function App() {
 
             phoneValidationMarker(`inpPhone${idLetter}`, phone);
             emailValidationMarker(`inpEmail${idLetter}`, mail);
+            nameValidationMarker(`inpName${idLetter}`, name);
             townValidationMarker(`inpTown${idLetter}`, town);
             countValidationMarker(`inpCount${idLetter}`, count);
         }
     }
 
-    function showPosition(position) {
-        var lat = position.coords.latitude;
-        var lon = position.coords.longitude;
-        // console.log(lat + " " + lon);
-    }
+    // function showPosition(position) {
+    //     var lat = position.coords.latitude;
+    //     var lon = position.coords.longitude;
+    //     // console.log(lat + " " + lon);
+    // }
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -303,6 +328,8 @@ function App() {
                     siteMail,
                     setSiteMail,
 
+                    fetchData,
+
                     moveTop,
                     setMoveTop,
 
@@ -328,6 +355,8 @@ function App() {
                     setMailBanner,
                     townBanner,
                     setTownBanner,
+                    nameBanner,
+                    setNameBanner,
                     countBanner,
                     setCountBanner,
                     //</форма заявки в секции banner>
@@ -339,10 +368,12 @@ function App() {
 
                     phoneRequest,
                     mailRequest,
+                    nameRequest,
                     townRequest,
                     countRequest,
                     setPhoneRequest,
                     setMailRequest,
+                    setNameRequest,
                     setTownRequest,
                     setCountRequest,
 
@@ -376,6 +407,8 @@ function App() {
                     emailValidationMarker,
                     townValidation,
                     townValidationMarker,
+                    nameValidation,
+                    nameValidationMarker,
 
                     messageValidationMarker,
                     // </валидации значений полей>

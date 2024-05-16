@@ -19,6 +19,8 @@ export default function Home() {
         setPhoneBanner,
         mailBanner,
         setMailBanner,
+        nameBanner,
+        setNameBanner,
         townBanner,
         setTownBanner,
         countBanner,
@@ -37,6 +39,8 @@ export default function Home() {
         emailValidationMarker,
         townValidation,
         townValidationMarker,
+        nameValidation,
+        nameValidationMarker,
 
         sendRequestForm,
     } = useContext(UserContext);
@@ -163,6 +167,17 @@ export default function Home() {
             ".banner__formBottom__inpTown"
         );
         inpTownBanner.addEventListener("keydown", (event) => {
+            if (
+                (event.keyCode > 48 && event.keyCode < 57) ||
+                (event.keyCode > 96 && event.keyCode < 105)
+            ) {
+                event.preventDefault();
+            }
+        });
+        const inpNameBanner = document.querySelector(
+            ".banner__actionInp__name"
+        );
+        inpNameBanner.addEventListener("keydown", (event) => {
             if (
                 (event.keyCode > 48 && event.keyCode < 57) ||
                 (event.keyCode > 96 && event.keyCode < 105)
@@ -314,7 +329,28 @@ export default function Home() {
                                         }
                                         placeholder="Ваш e-mail"
                                     />
+                                    
                                 </div>
+                                <input
+                                        className="banner__actionInp__name"
+                                        name="inpNameB"
+                                        id="inpNameB"
+                                        type="text"
+                                        value={nameBanner}
+                                        onBlur={() => {
+                                            nameValidation(nameBanner);
+                                        
+                                            nameBanner.length > 0 &&
+                                                nameValidationMarker(
+                                                    "inpNameB",
+                                                    nameBanner
+                                                );
+                                        }}
+                                        onChange={(e) =>
+                                            setNameBanner(e.target.value)
+                                        }
+                                        placeholder="Ваше имя"
+                                    />
                                 <p className="banner__specText">
                                     Выберите специалиста
                                 </p>
@@ -415,12 +451,14 @@ export default function Home() {
                                                 "send.php",
                                                 phoneBanner,
                                                 mailBanner,
+                                                nameBanner,
                                                 selectedSpec,
                                                 townBanner,
                                                 countBanner,
                                                 "B",
                                                 setPhoneBanner,
                                                 setMailBanner,
+                                                setNameBanner,
                                                 setSelectedSpec,
                                                 setTownBanner,
                                                 setCountBanner

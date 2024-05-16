@@ -26,10 +26,12 @@ const RequestOverlay = () => {
         setRequestOverlay,
         phoneRequest,
         mailRequest,
+        nameRequest,
         townRequest,
         countRequest,
         setPhoneRequest,
         setMailRequest,
+        setNameRequest,
         setTownRequest,
         setCountRequest,
 
@@ -45,11 +47,13 @@ const RequestOverlay = () => {
         setTownValid,
         phoneValidation,
         emailValidation,
+        nameValidation,
         townValidation,
         countValidation,
         phoneValidationMarker,
         countValidationMarker,
         emailValidationMarker,
+        nameValidationMarker,
         townValidationMarker,
 
         sendRequestForm,
@@ -72,6 +76,7 @@ const RequestOverlay = () => {
         setTimeout(() => {
             setPhoneRequest("");
             setMailRequest("");
+            setNameRequest("");
             setTownRequest("");
             setCountRequest("");
             setSelectedSpec("");
@@ -90,6 +95,12 @@ const RequestOverlay = () => {
         const inpEmailBanner = document.getElementById(`inpEmailR`);
         if (inpEmailBanner) {
             inpEmailBanner.style.borderColor = "transparent";
+        }
+
+        //сброс валидации name поля
+        const inpNameBanner = document.getElementById(`inpNameR`);
+        if (inpNameBanner) {
+            inpNameBanner.style.borderColor = "transparent";
         }
 
         //сброс валидации count поля
@@ -309,6 +320,25 @@ const RequestOverlay = () => {
                                 type="text"
                             />
                         </div>
+                        <input
+                                        className={`${cl.requestDrawer__contacts_name} ${cl.default__inp}`}
+                                        id="inpNameR"
+                                        type="text"
+                                        value={nameRequest}
+                                        onBlur={() => {
+                                            nameValidation(nameRequest);
+                                        
+                                            nameRequest.length > 0 &&
+                                                nameValidationMarker(
+                                                    "inpNameR",
+                                                    nameRequest
+                                                );
+                                        }}
+                                        onChange={(e) =>
+                                            setNameRequest(e.target.value)
+                                        }
+                                        placeholder="Ваше имя"
+                                    />
                         <div className={cl.requestDrawer__specialists}>
                             <p className={cl.specialists__title}>
                                 {cardRequest
@@ -396,12 +426,14 @@ const RequestOverlay = () => {
                                         "send.php",
                                         phoneRequest,
                                         mailRequest,
+                                        nameRequest,
                                         selectedSpec,
                                         townRequest,
                                         countRequest,
                                         "R",
                                         setPhoneRequest,
                                         setMailRequest,
+                                        setNameRequest,
                                         setSelectedSpec,
                                         setTownRequest,
                                         setCountRequest

@@ -98,7 +98,7 @@
         }
 
         .requestDrawer__contacts {
-            margin-top: 50px;
+            margin-top: 20px;
 
             display: flex;
             flex-direction: row;
@@ -107,8 +107,13 @@
 
         }
 
+        .requestDrawer__contacts_name {
+            margin-top: 15px;
+            max-width: 150px;
+        }
+
         .requestDrawer__specialists {
-            margin-top: 30px;
+            margin-top: 15px;
 
             display: flex;
             flex-direction: column;
@@ -669,7 +674,7 @@
 
         .requestDrawer {
             width: 300px;
-            height: 490px;
+            height: 520px;
 
             display: flex;
             flex-direction: column;

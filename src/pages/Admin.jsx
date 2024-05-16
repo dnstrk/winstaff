@@ -1,6 +1,7 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import UserContext from "../UserContext";
 import { admPwd } from "../sideFuncs";
+import axios from "axios";
 
 export default function Admin() {
     const {
@@ -10,33 +11,88 @@ export default function Admin() {
         setLoginInp,
         loginPwd,
         setLoginPwd,
+        siteNum,
         setSiteNum,
         setSiteMail,
         newSite,
+        fetchData
     } = useContext(UserContext);
 
     const [newSiteNum, setNewSiteNum] = useState("");
     const [newSiteMail, setNewSiteMail] = useState("");
 
-    const confirmLogin = () => {
-        if (loginInp == "admin" && loginPwd == admPwd) {
-            setIsAdmin(true);
-        } else {
-            setLoginInp("");
-            setLoginPwd("");
-        }
-    };
-
     const setNewSiteNumber = () => {
         setSiteNum(newSiteNum);
+        postNum();
         setNewSiteNum("");
+        setTimeout(() => {
+            fetchData();
+        }, 1000);
     };
 
     const setNewSiteEmail = () => {
         setSiteMail(newSiteMail);
+        postMail();
         setNewSiteMail("");
+        setTimeout(() => {
+            fetchData();
+        }, 1000);
     };
-    
+
+    async function login() {
+        const loginData = {
+            login: loginInp,
+            password: loginPwd
+        }
+        const {data} = await axios.post('http://localhost:5000/auth',loginData)
+        // setIsAdmin(data.isAdmin)
+        if(data.isAdmin) {
+            setIsAdmin(data.isAdmin)
+        } else {
+            alert(data.text)
+            setLoginInp('')
+            setLoginPwd('')
+        }
+    }
+
+    function postNum() {
+        // axios({
+        //     method: "post",
+        //     url: "https://wintest.msto.ru:5000/writeFile",
+        //     data: { num: newSiteNum },
+        // });
+        axios({
+            method: "post",
+            url: "http://localhost:5000/writeFile",
+            data: { winNum: newSiteNum },
+        });
+        // axios({
+        //     method: "post",
+        //     url: "http://172.16.30.133:5000/writeFile",
+        //     data: { winNum: newSiteNum },
+        // });
+    }
+    function postMail() {
+        // axios({
+        //     method: "post",
+        //     url: "https://wintest.msto.ru:5000/writeFile",
+        //     data: { num: newSiteNum },
+        // });
+        axios({
+            method: "post",
+            url: "http://localhost:5000/writeFile",
+            data: { winMail: newSiteMail },
+        });
+        // axios({
+        //     method: "post",
+        //     url: "http://172.16.30.133:5000/writeFile",
+        //     data: { winMail: newSiteMail },
+        // });
+    }
+
+    // useEffect(() => {
+    //     fetchNum();
+    // }, []);
 
     return (
         <div className="admin">
@@ -46,6 +102,7 @@ export default function Admin() {
                         <h4 className="adminLogon__wrapTitle">
                             Панель управления
                         </h4>
+                        <h5 className="adminLogon__wrapTitle">{siteNum}</h5>
                         <div className="adminLogon__wrapNum">
                             <span>Изменение номера</span>
                             <input
@@ -112,7 +169,7 @@ export default function Admin() {
                         </div>
                         <button
                             className="admin__wrapEnter adm_btn"
-                            onClick={confirmLogin}
+                            onClick={login}
                         >
                             Войти
                         </button>

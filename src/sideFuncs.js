@@ -7,9 +7,16 @@ export function phoneValidationMarker(id, phone) {
     } else {
         inpPhone.style.borderColor = "green";
     }
-    // } else {
-    // inpPhone.style.borderColor = "";
-    // }
+}
+
+export function nameValidationMarker(id, name) {
+    const inpName = document.getElementById(`${id}`);
+    // if (phone.length > 0) {
+    if (name.length == 0) {
+        inpName.style.borderColor = "red";
+    } else {
+        inpName.style.borderColor = "green";
+    }
 }
 
 //маркировка input при незаполненном email
@@ -22,15 +29,11 @@ export function emailValidationMarker(id, email) {
         return EMAIL_REGEXP.test(value);
     }
 
-    // if (email.length > 0) {
     if (isEmailValid(email)) {
         inpEmail.style.borderColor = "green";
     } else {
         inpEmail.style.borderColor = "red";
     }
-    // } else {
-    // inpEmail.style.borderColor = "";
-    // }
 }
 
 //влидация города на заполненность и маркировка
@@ -73,5 +76,3 @@ export function scrollDisable(request, town, mess) {
         body.style.overflow = "";
     }
 }
-
-export const admPwd = "w8T$dHOEuKM{W$";
